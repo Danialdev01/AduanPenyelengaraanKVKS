@@ -2,9 +2,6 @@
 <body>
     <?php $location_index = "."; include('./components/header.php') ?>
     <?php $dir_location="."; include('./components/captcha.php') ?>
-    <?php include('./components/error_masssage.php') ?>
-    <?php session_start(); echo $_SESSION['isLoggedIn'];?>
-    <?php echo $_SESSION['error']; $_SESSION['error'] = ""?>
     <center>
         <div class="main-container p-2">
             <br><br>

@@ -24,7 +24,7 @@
                                         require_once('../../db/config.php');
 
                                         $pengguna_sql = mysqli_query($connect, "SELECT * FROM pengguna");
-                                        $i;
+                                        $i = 0;
                                         while($pengguna = mysqli_fetch_array($pengguna_sql)){
                                             $i += 1;
                                             ?>
@@ -57,6 +57,6 @@
         </div>
     </div>
 
-    <?php include('../components/footer.php') ?>
+    <?php include('../../components/footer.php') ?>
 </body>
 </html>

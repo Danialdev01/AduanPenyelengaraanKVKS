@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 
-<?php
-  // $theme page (color)
-    if($_SESSION['theme'] == "dark"){
-      $theme = "dark";
-    }
-    else if($_SESSION['theme'] == "light"){
-      $theme = "light";
-    }
-    else{
-      // default
-      $theme = "light";
-    }
-?>
-<html lang="en" class="<?php echo $theme ?>">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -27,7 +27,7 @@
                                         require_once('../../db/config.php');
 
                                         $asset_sql = mysqli_query($connect, "SELECT * FROM asset");
-                                        $i;
+                                        $i = 0;
                                         while($asset = mysqli_fetch_array($asset_sql)){
                                             $i += 1;
                                             ?>
