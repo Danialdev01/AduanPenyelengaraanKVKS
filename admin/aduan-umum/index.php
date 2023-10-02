@@ -1,17 +1,20 @@
 <?php $title = "Dashboard"; $location_index = "../.."; include('../../components/head.php')?>
 <body>
-    <?php $location_index = "../.."; include('../../components/header-admin-komputer.php') ?>
+    <?php $location_index = "../.."; include('../../components/header-admin-umum.php') ?>
     
     <div class="main-container p-2">
         <br><br>
         <center>
-            <h1>Aduan Kerosakkan Elektronik</h1>
+            <h1>Aduan Kerosakkan Umum</h1>
             <br>
         </center>
         <div class="aduan-container">
             <?php
                 require_once('../../db/config.php');
                 $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_umum WHERE status_aduan = '1'");
+                if($aduan_sql == " "){
+                    echo "Tiada Aduan";
+                };
                 while($aduan = mysqli_fetch_array($aduan_sql)){
                     ?>
                     <div
@@ -20,20 +23,12 @@
                             <h5
                             class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                             <?php
-                                $id_asset = $aduan['id_asset'];
-                                $asset_sql = mysqli_query($connect, "SELECT nama_asset FROM asset WHERE id_asset = '$id_asset'");
-                                $asset = mysqli_fetch_array($asset_sql);
-                                echo "Permasalahan " . $asset['nama_asset'];
+                                echo ucfirst($aduan['butiran_kerosakkan']);
                             ?>
                             </h5>
                             <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">
                             <?php
-                                echo $aduan['tarikh_kerosakkan']
-                            ?>
-                            </p>
-                            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            <?php
-                                echo $aduan['perihal_kerosakkan']
+                                echo $aduan['tarikh_aduan']
                             ?>
                             </p>
                             <a href="./lihat-aduan.php?id_aduan=<?php echo $aduan['id_aduan'] ?>">
