@@ -16,7 +16,7 @@
     <div>
       <a
         class="mx-2 my-1 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
-        href="<?php echo $location_index?>/admin/">
+        href="<?php echo $location_index?>/admin">
         <img
           class="mr-2"
           src="<?php echo $location_index?>/src/assets/images/logo-banner.png"
@@ -66,7 +66,7 @@
           <a
             class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
-            href="<?php echo $location_index?>/admin/aduan-komputer/"
+            href="<?php echo $location_index?>/admin/aduan-umum/"
             data-te-nav-link-ref
             >Dashboard</a
           >
@@ -77,18 +77,7 @@
           <a
             class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
-            href="<?php echo $location_index?>/admin/aduan-komputer/semua-asset.php"
-            data-te-nav-link-ref
-            >Semua Asset</a
-          >
-        </li>
-        <li
-          class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-          data-te-nav-item-ref>
-          <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            aria-current="page"
-            href="<?php echo $location_index?>/admin/aduan-komputer/aduan-lama.php"
+            href="<?php echo $location_index?>/admin/aduan-umum/aduan-lama.php"
             data-te-nav-link-ref
             >Aduan Lama</a
           >
