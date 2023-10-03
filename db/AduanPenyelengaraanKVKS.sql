@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 03, 2023 at 12:25 AM
+-- Generation Time: Sep 20, 2023 at 03:28 AM
 -- Server version: 10.11.3-MariaDB
 -- PHP Version: 8.2.6
 
@@ -53,32 +53,6 @@ INSERT INTO `aduan_kerosakkan_komputer` (`id_aduan`, `id_pensyarah`, `waktu_beng
 (1, 1, '2023-09-20', 2, 'sebelah meja guru', 2, 'persendirian', 'K1238239102FJ', '2023-09-11', 'lampu tidak hidup', NULL, '3000', '4000', 'tukar lampu belakang monitor', 2),
 (4, 4, '15/09/2023, 03:02 PM', 2, 'di meja 12', 2, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/22', '15/09/2023, 12:00 PM', 'Skrin biru', NULL, '10', '20', 'download driver', 2),
 (6, 1, '20/09/2023, 03:00 PM', 3, 'meja 14', 3, 'sumbangan', 'KPM/PBTM/BKA3001/H/54/223', '21/09/2023, 12:00 PM', 'Lampu power supply berkelip tanpa henti', NULL, NULL, NULL, NULL, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `aduan_kerosakkan_umum`
---
-
-CREATE TABLE `aduan_kerosakkan_umum` (
-  `id_aduan` int(11) NOT NULL,
-  `nama_pelapor` varchar(500) NOT NULL,
-  `lokasi_terperinci_aduan` varchar(500) NOT NULL,
-  `butiran_kerosakkan` varchar(100) NOT NULL,
-  `tarikh_aduan` varchar(50) NOT NULL,
-  `tindakkan_teknikal_aduan` varchar(500) DEFAULT NULL,
-  `tarikh_tindakkan_aduan` varchar(50) DEFAULT NULL,
-  `ulasan_aduan` text DEFAULT NULL,
-  `id_admin` int(11) DEFAULT NULL,
-  `status_aduan` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `aduan_kerosakkan_umum`
---
-
-INSERT INTO `aduan_kerosakkan_umum` (`id_aduan`, `nama_pelapor`, `lokasi_terperinci_aduan`, `butiran_kerosakkan`, `tarikh_aduan`, `tindakkan_teknikal_aduan`, `tarikh_tindakkan_aduan`, `ulasan_aduan`, `id_admin`, `status_aduan`) VALUES
-(4, 'NUR UMIRAH BT MAMAT', 'sebelah bilik guru melur', 'kerosakkan pintu', '10/10/2023, 12:00 PM', 'tukar pintu tombol', '11/10/2023, 12:00 PM', 'selesai', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -177,18 +151,6 @@ INSERT INTO `pensyarah` (`id_pensyarah`, `nama_pensyarah`, `jabatan_pensyarah`, 
 (4, 'MUHAMAD DANIAL BIN ROSDI', 'JABATAN TEKNOLOGI MAKLUMAT', '1'),
 (5, 'NUR SHAKINA BT IBRAHIM', 'JABATAN TEKNOLOGI MAKLUMAT', '');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `staff`
---
-
-CREATE TABLE `staff` (
-  `id_staff` int(11) NOT NULL,
-  `nama_staff` varchar(100) NOT NULL,
-  `jawatan_staff` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 --
 -- Indexes for dumped tables
 --
@@ -197,12 +159,6 @@ CREATE TABLE `staff` (
 -- Indexes for table `aduan_kerosakkan_komputer`
 --
 ALTER TABLE `aduan_kerosakkan_komputer`
-  ADD PRIMARY KEY (`id_aduan`);
-
---
--- Indexes for table `aduan_kerosakkan_umum`
---
-ALTER TABLE `aduan_kerosakkan_umum`
   ADD PRIMARY KEY (`id_aduan`);
 
 --
@@ -230,12 +186,6 @@ ALTER TABLE `pensyarah`
   ADD PRIMARY KEY (`id_pensyarah`);
 
 --
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`id_staff`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -244,12 +194,6 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `aduan_kerosakkan_komputer`
   MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `aduan_kerosakkan_umum`
---
-ALTER TABLE `aduan_kerosakkan_umum`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `asset`
@@ -274,12 +218,6 @@ ALTER TABLE `pengguna`
 --
 ALTER TABLE `pensyarah`
   MODIFY `id_pensyarah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `id_staff` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
