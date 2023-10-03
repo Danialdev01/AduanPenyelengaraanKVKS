@@ -5,13 +5,13 @@
     <div class="main-container p-2">
         <br><br>
         <center>
-            <h1>Aduan Kerosakkan Elektronik</h1>
+            <h1>Aduan Terkini</h1>
             <br>
         </center>
         <div class="aduan-container">
             <?php
                 require_once('../../db/config.php');
-                $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_umum WHERE status_aduan = '1'");
+                $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_komputer WHERE status_aduan = '1'");
                 while($aduan = mysqli_fetch_array($aduan_sql)){
                     ?>
                     <div
