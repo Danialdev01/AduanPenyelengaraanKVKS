@@ -5,13 +5,13 @@
     <div class="main-container p-2">
         <br><br>
         <center>
-            <h1>Aduan Kerosakkan Umum</h1>
+            <h1>Aduan Kerosakan Umum</h1>
             <br>
         </center>
         <div class="aduan-container">
             <?php
                 require_once('../../db/config.php');
-                $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_umum WHERE status_aduan = '1'");
+                $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_umum WHERE status_aduan = '1'");
                 if($aduan_sql == " "){
                     echo "Tiada Aduan";
                 };
@@ -23,7 +23,7 @@
                             <h5
                             class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                             <?php
-                                echo ucfirst($aduan['butiran_kerosakkan']);
+                                echo ucfirst($aduan['butiran_Kerosakan']);
                             ?>
                             </h5>
                             <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">

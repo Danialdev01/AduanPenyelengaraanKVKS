@@ -1,4 +1,4 @@
-# AduanKerosakkanKomputer
+# AduanKerosakanKomputer
 
 Aduan Penyelengaraan adalah sebuah sistem yang membolehkan para warga kolej vokasional mengadukan permasalahan sekitar 
 
@@ -11,11 +11,11 @@ isLoggedIn = (2 = logged in), (lain = not logged in)
 isAdmin = (id admin)
 error = (error)
 
-### Borang Aduan Kerosakkan Umum
+### Borang Aduan Kerosakan Umum
 - nama pelapor 
 - lokasi terperinci
 - tarikh
-- bil - butiran masalah / kerosakkan
+- bil - butiran masalah / Kerosakan
 
 - admin
     - tindakkan

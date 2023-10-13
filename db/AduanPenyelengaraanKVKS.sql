@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aduan_kerosakkan_komputer`
+-- Table structure for table `aduan_Kerosakan_komputer`
 --
 
-CREATE TABLE `aduan_kerosakkan_komputer` (
+CREATE TABLE `aduan_Kerosakan_komputer` (
   `id_aduan` int(11) NOT NULL,
   `id_pensyarah` int(11) NOT NULL,
   `waktu_bengkel_kosong` varchar(50) NOT NULL,
@@ -36,8 +36,8 @@ CREATE TABLE `aduan_kerosakkan_komputer` (
   `id_asset` int(11) NOT NULL,
   `jenis_kepunyaan_asset` varchar(50) NOT NULL,
   `nombor_siri_pendaftaran_asset` varchar(70) NOT NULL,
-  `tarikh_kerosakkan` varchar(50) NOT NULL,
-  `perihal_kerosakkan` text NOT NULL,
+  `tarikh_Kerosakan` varchar(50) NOT NULL,
+  `perihal_Kerosakan` text NOT NULL,
   `id_admin` int(11) DEFAULT NULL,
   `kos_penyelengaraan_terdahulu` varchar(50) DEFAULT NULL,
   `kos_penyelengaraan_anggaran` varchar(50) DEFAULT NULL,
@@ -46,10 +46,10 @@ CREATE TABLE `aduan_kerosakkan_komputer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `aduan_kerosakkan_komputer`
+-- Dumping data for table `aduan_Kerosakan_komputer`
 --
 
-INSERT INTO `aduan_kerosakkan_komputer` (`id_aduan`, `id_pensyarah`, `waktu_bengkel_kosong`, `id_lokasi`, `desc_lokasi`, `id_asset`, `jenis_kepunyaan_asset`, `nombor_siri_pendaftaran_asset`, `tarikh_kerosakkan`, `perihal_kerosakkan`, `id_admin`, `kos_penyelengaraan_terdahulu`, `kos_penyelengaraan_anggaran`, `ulasan_aduan`, `status_aduan`) VALUES
+INSERT INTO `aduan_Kerosakan_komputer` (`id_aduan`, `id_pensyarah`, `waktu_bengkel_kosong`, `id_lokasi`, `desc_lokasi`, `id_asset`, `jenis_kepunyaan_asset`, `nombor_siri_pendaftaran_asset`, `tarikh_Kerosakan`, `perihal_Kerosakan`, `id_admin`, `kos_penyelengaraan_terdahulu`, `kos_penyelengaraan_anggaran`, `ulasan_aduan`, `status_aduan`) VALUES
 (1, 1, '2023-09-20', 2, 'sebelah meja guru', 2, 'persendirian', 'K1238239102FJ', '2023-09-11', 'lampu tidak hidup', NULL, '3000', '4000', 'tukar lampu belakang monitor', 2),
 (4, 4, '15/09/2023, 03:02 PM', 2, 'di meja 12', 2, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/22', '15/09/2023, 12:00 PM', 'Skrin biru', NULL, '10', '20', 'download driver', 2),
 (6, 1, '20/09/2023, 03:00 PM', 3, 'meja 14', 3, 'sumbangan', 'KPM/PBTM/BKA3001/H/54/223', '21/09/2023, 12:00 PM', 'Lampu power supply berkelip tanpa henti', NULL, NULL, NULL, NULL, 1);
@@ -156,9 +156,9 @@ INSERT INTO `pensyarah` (`id_pensyarah`, `nama_pensyarah`, `jabatan_pensyarah`, 
 --
 
 --
--- Indexes for table `aduan_kerosakkan_komputer`
+-- Indexes for table `aduan_Kerosakan_komputer`
 --
-ALTER TABLE `aduan_kerosakkan_komputer`
+ALTER TABLE `aduan_Kerosakan_komputer`
   ADD PRIMARY KEY (`id_aduan`);
 
 --
@@ -190,9 +190,9 @@ ALTER TABLE `pensyarah`
 --
 
 --
--- AUTO_INCREMENT for table `aduan_kerosakkan_komputer`
+-- AUTO_INCREMENT for table `aduan_Kerosakan_komputer`
 --
-ALTER TABLE `aduan_kerosakkan_komputer`
+ALTER TABLE `aduan_Kerosakan_komputer`
   MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --

@@ -5,16 +5,16 @@
     <div class="main-container p-2">
         <br><br>
 
-        <!-- Aduan kerosakkan peranti elektronink -->
+        <!-- Aduan Kerosakan peranti elektronink -->
         <div
             class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
             <div class="p-6">
                 <h5
                 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Aduan Kerosakkan Peranti Elektronik
+                Aduan Kerosakan Peranti Elektronik
                 </h5>
                 <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                Kerosakkan aset peranti Komputer di Kolej Vokasional Kuala Selangor
+                Kerosakan aset peranti Komputer di Kolej Vokasional Kuala Selangor
                 </p>
                 <a href="./aduan-komputer/">
                     <button
@@ -28,16 +28,16 @@
             </div>
         </div>
 
-        <!-- Aduan kerosakkan Umum -->
+        <!-- Aduan Kerosakan Umum -->
         <div
             class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
             <div class="p-6">
                 <h5
                 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                Aduan Kerosakkan Umum
+                Aduan Kerosakan Umum
                 </h5>
                 <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                Kerosakkan Umum di Kolej Vokasional Kuala Selangor
+                Kerosakan Umum di Kolej Vokasional Kuala Selangor
                 </p>
                 <a href="./aduan-umum/">
                     <button

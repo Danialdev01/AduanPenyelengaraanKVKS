@@ -53,7 +53,7 @@
                 <div class="aduan-sah">
                     <?php
                         require_once('../../db/config.php');
-                        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_komputer WHERE status_aduan = '2'");
+                        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_komputer WHERE status_aduan = '2'");
                         while($aduan = mysqli_fetch_array($aduan_sql)){
                             ?>
                             <div
@@ -70,12 +70,12 @@
                                     </h5>
                                     <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">
                                     <?php
-                                        echo $aduan['tarikh_kerosakkan']
+                                        echo $aduan['tarikh_Kerosakan']
                                     ?>
                                     </p>
                                     <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                                     <?php
-                                        echo $aduan['perihal_kerosakkan']
+                                        echo $aduan['perihal_Kerosakan']
                                     ?>
                                     </p>
                                     <a href="./lihat-surat.php?id_aduan=<?php echo $aduan['id_aduan'] ?>">
@@ -105,7 +105,7 @@
                     <div class="aduan-batal">
                         <?php
                             require_once('../../db/config.php');
-                            $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakkan_komputer WHERE status_aduan = '0'");
+                            $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_komputer WHERE status_aduan = '0'");
                             while($aduan = mysqli_fetch_array($aduan_sql)){
                                 ?>
                                 <div
@@ -122,12 +122,12 @@
                                         </h5>
                                         <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">
                                         <?php
-                                            echo $aduan['tarikh_kerosakkan']
+                                            echo $aduan['tarikh_Kerosakan']
                                         ?>
                                         </p>
                                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                                         <?php
-                                            echo $aduan['perihal_kerosakkan']
+                                            echo $aduan['perihal_Kerosakan']
                                         ?>
                                         </p>
                                         <a href="./lihat-surat.php?id_aduan=<?php echo $aduan['id_aduan'] ?>">

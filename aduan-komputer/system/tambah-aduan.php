@@ -15,11 +15,11 @@
     echo "<br>";
     echo $nombor_siri_pendaftaran_asset  = $_POST['nombor_siri_pendaftaran_asset'];
     echo "<br>";
-    echo $tarikh_kerosakkan  = $_POST['tarikh_kerosakkan'];
+    echo $tarikh_Kerosakan  = $_POST['tarikh_Kerosakan'];
     echo "<br>";
-    echo $perihal_kerosakkan  = $_POST['perihal_kerosakkan'];
+    echo $perihal_Kerosakan  = $_POST['perihal_Kerosakan'];
 
-    $tambah_aduan = mysqli_query($connect, "INSERT INTO aduan_kerosakkan_komputer VALUES (NULL, '$id_pensyarah', '$waktu_bengkel_kosong', '$id_lokasi', '$desc_lokasi', '$id_asset', '$jenis_kepunyaan_asset', '$nombor_siri_pendaftaran_asset', '$tarikh_kerosakkan', '$perihal_kerosakkan', NULL, NULL, NULL, NULL, '1');");
+    $tambah_aduan = mysqli_query($connect, "INSERT INTO aduan_Kerosakan_komputer VALUES (NULL, '$id_pensyarah', '$waktu_bengkel_kosong', '$id_lokasi', '$desc_lokasi', '$id_asset', '$jenis_kepunyaan_asset', '$nombor_siri_pendaftaran_asset', '$tarikh_Kerosakan', '$perihal_Kerosakan', NULL, NULL, NULL, NULL, '1');");
     echo "thigi";
     header("location:../")
 

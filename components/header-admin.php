@@ -68,7 +68,7 @@
             aria-current="page"
             href="<?php echo $location_index?>/admin/aduan-komputer"
             data-te-nav-link-ref
-            >Kerosakkan Komputer</a
+            >Kerosakan Komputer</a
           >
         </li>
 
@@ -80,7 +80,7 @@
             aria-current="page"
             href="<?php echo $location_index?>/admin/aduan-umum"
             data-te-nav-link-ref
-            >Kerosakkan Umum</a
+            >Kerosakan Umum</a
           >
         </li>
 
