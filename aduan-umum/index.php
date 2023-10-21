@@ -12,16 +12,16 @@
                 class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                 <form action="./system/tambah-aduan.php" method="post">
 
-                    <!-- Nama Pensyarah -->
+                    <!-- Nama kakitangankvks -->
                     <div class="relative mb-3">
                         <select name="nama_pelapor" data-te-select-init data-te-select-filter="true" required>
-                            <option value="">Nama Staff / Pensyarah</option>
+                            <option value="">Nama Staff / kakitangankvks</option>
                             <?php
                                 require_once('../db/config.php');
-                                $pensyarah_sql = mysqli_query($connect, "SELECT * FROM pensyarah");
-                                while($pensyarah = mysqli_fetch_array($pensyarah_sql)){
+                                $kakitangankvks_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks");
+                                while($kakitangankvks = mysqli_fetch_array($kakitangankvks_sql)){
                                     ?>
-                                    <option value="<?php echo $pensyarah['nama_pensyarah']?>"><?php echo $pensyarah['nama_pensyarah']?></option>
+                                    <option value="<?php echo $kakitangankvks['nama_kakitangan']?>"><?php echo $kakitangankvks['nama_kakitangan']?></option>
                                     <?php
                                 }
                             ?>
@@ -70,7 +70,7 @@
                     <!-- Kerosakan -->
                     <div class="relative mb-3" data-te-input-wrapper-init>
                         <input
-                            name="butiran_Kerosakan"
+                            name="butiran_kerosakan"
                             type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             id="exampleInput7"

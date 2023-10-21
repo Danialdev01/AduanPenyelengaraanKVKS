@@ -3,7 +3,7 @@
     require_once('../../db/config.php');
     $id_aduan = $_GET['id_aduan'];
 
-    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_umum WHERE id_aduan = '$id_aduan' ");
+    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE id_aduan = '$id_aduan' ");
     $aduan = mysqli_fetch_array($aduan_sql);
 
 ?>
@@ -54,7 +54,7 @@
                                 <!-- Butiran Kerosakan-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
-                                        value="<?php echo $aduan['butiran_Kerosakan'] ?>"
+                                        value="<?php echo $aduan['butiran_kerosakan'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text" 

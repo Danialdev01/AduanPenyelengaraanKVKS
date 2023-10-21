@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 20, 2023 at 03:28 AM
+-- Generation Time: Oct 21, 2023 at 02:32 PM
 -- Server version: 10.11.3-MariaDB
 -- PHP Version: 8.2.6
 
@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aduan_Kerosakan_komputer`
+-- Table structure for table `aduan_kerosakan_komputer`
 --
 
-CREATE TABLE `aduan_Kerosakan_komputer` (
+CREATE TABLE `aduan_kerosakan_komputer` (
   `id_aduan` int(11) NOT NULL,
-  `id_pensyarah` int(11) NOT NULL,
+  `id_kakitangan` int(11) NOT NULL,
   `waktu_bengkel_kosong` varchar(50) NOT NULL,
   `id_lokasi` int(11) NOT NULL,
   `desc_lokasi` varchar(100) NOT NULL,
-  `id_asset` int(11) NOT NULL,
-  `jenis_kepunyaan_asset` varchar(50) NOT NULL,
-  `nombor_siri_pendaftaran_asset` varchar(70) NOT NULL,
-  `tarikh_Kerosakan` varchar(50) NOT NULL,
-  `perihal_Kerosakan` text NOT NULL,
+  `id_aset` int(11) NOT NULL,
+  `jenis_kepunyaan_aset` varchar(50) NOT NULL,
+  `nombor_siri_pendaftaran_aset` varchar(70) NOT NULL,
+  `tarikh_kerosakan` varchar(50) NOT NULL,
+  `perihal_kerosakan` text NOT NULL,
   `id_admin` int(11) DEFAULT NULL,
   `kos_penyelengaraan_terdahulu` varchar(50) DEFAULT NULL,
   `kos_penyelengaraan_anggaran` varchar(50) DEFAULT NULL,
@@ -46,39 +46,91 @@ CREATE TABLE `aduan_Kerosakan_komputer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `aduan_Kerosakan_komputer`
+-- Dumping data for table `aduan_kerosakan_komputer`
 --
 
-INSERT INTO `aduan_Kerosakan_komputer` (`id_aduan`, `id_pensyarah`, `waktu_bengkel_kosong`, `id_lokasi`, `desc_lokasi`, `id_asset`, `jenis_kepunyaan_asset`, `nombor_siri_pendaftaran_asset`, `tarikh_Kerosakan`, `perihal_Kerosakan`, `id_admin`, `kos_penyelengaraan_terdahulu`, `kos_penyelengaraan_anggaran`, `ulasan_aduan`, `status_aduan`) VALUES
-(1, 1, '2023-09-20', 2, 'sebelah meja guru', 2, 'persendirian', 'K1238239102FJ', '2023-09-11', 'lampu tidak hidup', NULL, '3000', '4000', 'tukar lampu belakang monitor', 2),
-(4, 4, '15/09/2023, 03:02 PM', 2, 'di meja 12', 2, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/22', '15/09/2023, 12:00 PM', 'Skrin biru', NULL, '10', '20', 'download driver', 2),
-(6, 1, '20/09/2023, 03:00 PM', 3, 'meja 14', 3, 'sumbangan', 'KPM/PBTM/BKA3001/H/54/223', '21/09/2023, 12:00 PM', 'Lampu power supply berkelip tanpa henti', NULL, NULL, NULL, NULL, 1);
+INSERT INTO `aduan_kerosakan_komputer` (`id_aduan`, `id_kakitangan`, `waktu_bengkel_kosong`, `id_lokasi`, `desc_lokasi`, `id_aset`, `jenis_kepunyaan_aset`, `nombor_siri_pendaftaran_aset`, `tarikh_kerosakan`, `perihal_kerosakan`, `id_admin`, `kos_penyelengaraan_terdahulu`, `kos_penyelengaraan_anggaran`, `ulasan_aduan`, `status_aduan`) VALUES
+(4, 4, '15/09/2023, 03:02 PM', 2, 'di meja 12', 2, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/22', '21/09/2023, 12:00 PM', 'Skrin biru', NULL, '10', '20', 'download driver', 2),
+(6, 1, '20/09/2023, 03:00 PM', 3, 'meja 14', 1, 'sumbangan', 'KPM/PBTM/BKA3001/H/54/223', '21/09/2023, 12:00 PM', 'Lampu power supply berkelip tanpa henti', NULL, '500', '300', 'tukar powersupply', 2),
+(8, 5, '14/10/2023, 03:00 AM', 3, 'meja guru', 3, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/20', '13/10/2023, 02:00 PM', 'Power supply berbunyi', NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `asset`
+-- Table structure for table `aduan_kerosakan_umum`
 --
 
-CREATE TABLE `asset` (
-  `id_asset` int(11) NOT NULL,
-  `nama_asset` varchar(100) NOT NULL,
-  `jenis_asset` varchar(100) NOT NULL,
-  `status_asset` int(11) NOT NULL DEFAULT 1
+CREATE TABLE `aduan_kerosakan_umum` (
+  `id_aduan` int(11) NOT NULL,
+  `nama_pelapor` varchar(500) NOT NULL,
+  `lokasi_terperinci_aduan` varchar(500) NOT NULL,
+  `butiran_kerosakan` varchar(100) NOT NULL,
+  `tarikh_aduan` varchar(50) NOT NULL,
+  `tindakkan_teknikal_aduan` varchar(500) DEFAULT NULL,
+  `tarikh_tindakkan_aduan` varchar(50) DEFAULT NULL,
+  `ulasan_aduan` text DEFAULT NULL,
+  `id_admin` int(11) DEFAULT NULL,
+  `status_aduan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `asset`
+-- Dumping data for table `aduan_kerosakan_umum`
 --
 
-INSERT INTO `asset` (`id_asset`, `nama_asset`, `jenis_asset`, `status_asset`) VALUES
-(1, 'PRINTER', 'ELEKTRONIK', 1),
-(2, 'MONITOR COMPUTER', 'ELEKTRONIK', 1),
-(3, 'POWER SUPPLY', 'ELEKTRONIK', 1),
-(4, 'PC COMPUTER', 'ELEKTRONIK', 1),
-(5, 'KEYBOARD', 'ELEKTRONIK', 1),
-(6, 'MOUSE ', 'ELEKTRONIK', 1),
+INSERT INTO `aduan_kerosakan_umum` (`id_aduan`, `nama_pelapor`, `lokasi_terperinci_aduan`, `butiran_kerosakan`, `tarikh_aduan`, `tindakkan_teknikal_aduan`, `tarikh_tindakkan_aduan`, `ulasan_aduan`, `id_admin`, `status_aduan`) VALUES
+(4, 'NUR UMIRAH BT MAMAT', 'sebelah bilik guru melur', 'kerosakkan pintu', '10/10/2023, 12:00 PM', 'tukar pintu tombol', '11/10/2023, 12:00 PM', 'selesai', NULL, 2),
+(5, 'MUHAMAD DANIAL BIN ROSDI', 'bilik mesyuarat', 'mic tidak mengeluarkan suara', '05/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1),
+(6, 'NUR UMIRAH BT MAMAT', 'bilik hep ', 'kerosakan lampu', '28/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aset`
+--
+
+CREATE TABLE `aset` (
+  `id_aset` int(11) NOT NULL,
+  `nama_aset` varchar(100) NOT NULL,
+  `jenis_aset` varchar(100) NOT NULL,
+  `status_aset` int(11) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `aset`
+--
+
+INSERT INTO `aset` (`id_aset`, `nama_aset`, `jenis_aset`, `status_aset`) VALUES
+(1, 'PRINTER', 'KOMPUTER', 1),
+(2, 'MONITOR COMPUTER', 'KOMPUTER', 1),
+(3, 'POWER SUPPLY', 'KOMPUTER', 1),
+(4, 'PC COMPUTER', 'KOMPUTER', 1),
+(5, 'KEYBOARD', 'KOMPUTER', 1),
+(6, 'MOUSE ', 'KOMPUTER', 1),
 (7, 'PLUG', 'ELEKTRONIK', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kakitangankvks`
+--
+
+CREATE TABLE `kakitangankvks` (
+  `id_kakitangan` int(11) NOT NULL,
+  `nama_kakitangan` varchar(100) NOT NULL,
+  `jawatan_kakitangan` varchar(100) NOT NULL,
+  `status_kakitangan` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `kakitangankvks`
+--
+
+INSERT INTO `kakitangankvks` (`id_kakitangan`, `nama_kakitangan`, `jawatan_kakitangan`, `status_kakitangan`) VALUES
+(1, 'MASNI BINTI RAHMAN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '1'),
+(2, 'NUR UMIRAH BT MAMAT', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '1'),
+(3, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '1'),
+(4, 'MUHAMAD DANIAL BIN ROSDI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '1'),
+(5, 'NUR SHAKINA BT IBRAHIM', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '1');
 
 -- --------------------------------------------------------
 
@@ -127,45 +179,33 @@ CREATE TABLE `pengguna` (
 INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `password_pengguna`, `status_pengguna`) VALUES
 (6, 'admin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 1);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `pensyarah`
---
-
-CREATE TABLE `pensyarah` (
-  `id_pensyarah` int(11) NOT NULL,
-  `nama_pensyarah` varchar(100) NOT NULL,
-  `jabatan_pensyarah` varchar(100) NOT NULL,
-  `status_pensyarah` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `pensyarah`
---
-
-INSERT INTO `pensyarah` (`id_pensyarah`, `nama_pensyarah`, `jabatan_pensyarah`, `status_pensyarah`) VALUES
-(1, 'MASNI BINTI RAHMAN', 'JABATAN TEKNOLOGI MAKLUMAT', '1'),
-(2, 'NUR UMIRAH BT MAMAT', 'JABATAN TEKNOLOGI MAKLUMAT', '1'),
-(3, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'JABATAN TEKNOLOGI MAKLUMAT', '1'),
-(4, 'MUHAMAD DANIAL BIN ROSDI', 'JABATAN TEKNOLOGI MAKLUMAT', '1'),
-(5, 'NUR SHAKINA BT IBRAHIM', 'JABATAN TEKNOLOGI MAKLUMAT', '');
-
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `aduan_Kerosakan_komputer`
+-- Indexes for table `aduan_kerosakan_komputer`
 --
-ALTER TABLE `aduan_Kerosakan_komputer`
+ALTER TABLE `aduan_kerosakan_komputer`
   ADD PRIMARY KEY (`id_aduan`);
 
 --
--- Indexes for table `asset`
+-- Indexes for table `aduan_kerosakan_umum`
 --
-ALTER TABLE `asset`
-  ADD PRIMARY KEY (`id_asset`);
+ALTER TABLE `aduan_kerosakan_umum`
+  ADD PRIMARY KEY (`id_aduan`);
+
+--
+-- Indexes for table `aset`
+--
+ALTER TABLE `aset`
+  ADD PRIMARY KEY (`id_aset`);
+
+--
+-- Indexes for table `kakitangankvks`
+--
+ALTER TABLE `kakitangankvks`
+  ADD PRIMARY KEY (`id_kakitangan`);
 
 --
 -- Indexes for table `lokasi`
@@ -180,26 +220,32 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id_pengguna`);
 
 --
--- Indexes for table `pensyarah`
---
-ALTER TABLE `pensyarah`
-  ADD PRIMARY KEY (`id_pensyarah`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `aduan_Kerosakan_komputer`
+-- AUTO_INCREMENT for table `aduan_kerosakan_komputer`
 --
-ALTER TABLE `aduan_Kerosakan_komputer`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `aduan_kerosakan_komputer`
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `asset`
+-- AUTO_INCREMENT for table `aduan_kerosakan_umum`
 --
-ALTER TABLE `asset`
-  MODIFY `id_asset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+ALTER TABLE `aduan_kerosakan_umum`
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `aset`
+--
+ALTER TABLE `aset`
+  MODIFY `id_aset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `kakitangankvks`
+--
+ALTER TABLE `kakitangankvks`
+  MODIFY `id_kakitangan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `lokasi`
@@ -212,12 +258,6 @@ ALTER TABLE `lokasi`
 --
 ALTER TABLE `pengguna`
   MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `pensyarah`
---
-ALTER TABLE `pensyarah`
-  MODIFY `id_pensyarah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -53,7 +53,7 @@
                 <div class="aduan-sah">
                     <?php
                         require_once('../../db/config.php');
-                        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_umum WHERE status_aduan = '2'");
+                        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2'");
                         while($aduan = mysqli_fetch_array($aduan_sql)){
                             ?>
                             <div
@@ -62,7 +62,7 @@
                                     <h5
                                     class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                                     <?php
-                                        echo $aduan['butiran_Kerosakan'];
+                                        echo $aduan['butiran_kerosakan'];
                                     ?>
                                     </h5>
                                     <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">
@@ -102,7 +102,7 @@
                     <div class="aduan-batal">
                         <?php
                             require_once('../../db/config.php');
-                            $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_umum WHERE status_aduan = '0'");
+                            $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '0'");
                             while($aduan = mysqli_fetch_array($aduan_sql)){
                                 ?>
                                 <div
@@ -111,20 +111,20 @@
                                         <h5
                                         class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                                         <?php
-                                            $id_asset = $aduan['id_asset'];
-                                            $asset_sql = mysqli_query($connect, "SELECT nama_asset FROM asset WHERE id_asset = '$id_asset'");
-                                            $asset = mysqli_fetch_array($asset_sql);
-                                            echo "Permasalahan " . $asset['nama_asset'];
+                                            $id_aset = $aduan['id_aset'];
+                                            $aset_sql = mysqli_query($connect, "SELECT nama_aset FROM aset WHERE id_aset = '$id_aset'");
+                                            $aset = mysqli_fetch_array($aset_sql);
+                                            echo "Permasalahan " . $aset['nama_aset'];
                                         ?>
                                         </h5>
                                         <p class="mb-1 text-base text-neutral-600 dark:text-neutral-200">
                                         <?php
-                                            echo $aduan['tarikh_Kerosakan']
+                                            echo $aduan['tarikh_kerosakan']
                                         ?>
                                         </p>
                                         <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                                         <?php
-                                            echo $aduan['perihal_Kerosakan']
+                                            echo $aduan['perihal_kerosakan']
                                         ?>
                                         </p>
                                         <a href="./lihat-surat.php?id_aduan=<?php echo $aduan['id_aduan'] ?>">

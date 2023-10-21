@@ -3,7 +3,7 @@
     require_once('../../db/config.php');
     $id_aduan = $_GET['id_aduan'];
 
-    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_Kerosakan_komputer WHERE id_aduan = '$id_aduan' ");
+    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE id_aduan = '$id_aduan' ");
     $aduan = mysqli_fetch_array($aduan_sql);
 
 ?>
@@ -21,16 +21,16 @@
                             class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                             <div>
         
-                                <!--jenis asset-->
+                                <!--jenis aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <?php
-                                        $id_asset = $aduan['id_asset'];
-                                        $asset_sql = mysqli_query($connect, "SELECT nama_asset FROM asset WHERE id_asset = '$id_asset'");
-                                        $asset = mysqli_fetch_array($asset_sql);
-                                        $nama_asset = $asset['nama_asset'];
+                                        $id_aset = $aduan['id_aset'];
+                                        $aset_sql = mysqli_query($connect, "SELECT nama_aset FROM aset WHERE id_aset = '$id_aset'");
+                                        $aset = mysqli_fetch_array($aset_sql);
+                                        $nama_aset = $aset['nama_aset'];
                                     ?>
                                     <input
-                                        value="<?php echo $nama_asset ?>"
+                                        value="<?php echo $nama_aset ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text"
@@ -38,14 +38,14 @@
                                     <label
                                         for="exampleInput125"
                                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Jenis Asset
+                                        >Jenis aset
                                     </label>
                                 </div>
                                 
-                                <!-- No Siri pendaftaran asset-->
+                                <!-- No Siri pendaftaran aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
-                                        value="<?php echo $aduan['nombor_siri_pendaftaran_asset'] ?>"
+                                        value="<?php echo $aduan['nombor_siri_pendaftaran_aset'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text" 
@@ -72,7 +72,7 @@
                                     </label>
                                 </div>
 
-                                <!-- Lokasi Asset-->
+                                <!-- Lokasi aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <?php
                                         $id_lokasi = $aduan['id_lokasi'];
@@ -93,7 +93,7 @@
                                     </label>
                                 </div>
 
-                                <!-- DESC Lokasi Asset-->
+                                <!-- DESC Lokasi aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
                                         value="<?php echo $aduan['desc_lokasi'] ?>"
@@ -108,10 +108,10 @@
                                     </label>
                                 </div>
 
-                                <!-- Jenis kepunyaan asset-->
+                                <!-- Jenis kepunyaan aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
-                                        value="<?php echo $aduan['jenis_kepunyaan_asset'] ?>"
+                                        value="<?php echo $aduan['jenis_kepunyaan_aset'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text" 
@@ -119,20 +119,20 @@
                                     <label
                                         for="exampleInput125"
                                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Jens Kepunyaan Asset
+                                        >Jens Kepunyaan aset
                                     </label>
                                 </div>
 
                                 <!-- Perihal Kerosakan -->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <textarea
-                                        name="perihal_Kerosakan"
+                                        name="perihal_kerosakan"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         id="exampleFormControlTextarea13"
                                         rows="3"
                                         placeholder="Message"
                                         required
-                                        readonly><?php echo $aduan['perihal_Kerosakan']?></textarea>
+                                        readonly><?php echo $aduan['perihal_kerosakan']?></textarea>
                                     <label
                                         for="exampleFormControlTextarea13"
                                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
@@ -143,7 +143,7 @@
                                 <!-- Tarikh Kerosakan-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
-                                        value="<?php echo $aduan['tarikh_Kerosakan'] ?>"
+                                        value="<?php echo $aduan['tarikh_kerosakan'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text"

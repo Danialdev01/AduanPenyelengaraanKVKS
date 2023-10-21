@@ -53,6 +53,10 @@
                             >Masukkan Captcha</label
                         >
                     </div>
+                    <div class="back-link text-left">
+                        <a style="color: #0048ff;" href="./"><u>Bukan Admin</u></a>
+                    </div>
+                    <br>
     
                     <!--Sign in button-->
                     <button

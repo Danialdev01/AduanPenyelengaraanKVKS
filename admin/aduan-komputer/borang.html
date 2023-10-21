@@ -40,7 +40,7 @@
         border-bottom: 1px dotted black;
         margin-bottom: 15px;
         padding: 0;
-        width: 300px;
+        width: 250px;
     }
     .text{
         display: flex;
@@ -60,12 +60,16 @@
         padding: 0;
         width: 250px;
     }
+    h3{
+        font-size: 1rem;
+    }
 </style>
 <body style="height: 100vh;">
     <div class="surat">
         <div class="surat-laporan" style="height: 1000px;">
+            <h4 style="right: 0;position: fixed;color: rgba(0, 0, 0, 0.801);font-size: 0.8rem;margin-top: -15px;">KEW.PA-10</h4>
             <center>
-                <h4 style="margin-left: -100px;">BORANG ADUAN Kerosakan ASET MUDAH ALIH</h4>
+                <h4 style="margin-left: -100px;font-size: 0.9rem;">BORANG ADUAN KEROSAKAN ASET MUDAH ALIH</h4>
                 <br>
             </center>
             <table>
@@ -78,35 +82,35 @@
                     <td style="width: 10px;" class="bil-data">1.</td>
                     <td class="tajuk-data">Jenis Aset</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">Pencetak</td>
+                    <td class="isi-data">{{ jenis_aset }}</td>
                 </tr>
 
                 <tr>
                     <td class="bil-data">2.</td>
                     <td class="tajuk-data">Nombor Siri Pendaftaran Aset/ Komponen</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">-</td>
+                    <td class="isi-data">{{ nombor_siri_pendaftaran_aset }}</td>
                 </tr>
 
                 <tr>
                     <td class="bil-data">3.</td>
                     <td class="tajuk-data">Pengguna Terakhir</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">Fatimah binti Satu</td>
+                    <td class="isi-data">{{ kakitangankvks }}</td>
                 </tr>
 
                 <tr>
                     <td class="bil-data">4.</td>
                     <td class="tajuk-data">Tarikh Kerosakan</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">15/08/2023</td>
+                    <td class="isi-data">{{ tarikh_kerosakan }}</td>
                 </tr>
 
                 <tr>
                     <td class="bil-data">5.</td>
                     <td class="tajuk-data">Perihal Kerosakan</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">Warna biru dan Kuning tidak keluar</td>
+                    <td class="isi-data">{{ perihal_kerosakan }}</td>
                 </tr>
 
                 <tr>
@@ -114,9 +118,9 @@
                     <td class="tajuk-data">Nama dan Jawatan</td>
                     <td class="dot-data">:</td>
                     <td class="isi-data">
-                        Fatimah Satu 
+                        {{ kakitangankvks }}
                         <br>
-                        Pembantu Perpustakaan
+                        {{ jawatan_kakitangankvks }}
                     </td>
                 </tr>
 
@@ -124,7 +128,7 @@
                     <td class="bil-data">7.</td>
                     <td class="tajuk-data">Tarikh</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data">15/08/2023</td>
+                    <td class="isi-data">{{ tarikh_kerosakan }}</td>
                 </tr>
 
                 <tr>
@@ -137,7 +141,7 @@
                     <td class="bil-data">8.</td>
                     <td class="tajuk-data">Jumlah Kos Penyelenggaraan Terdahulu</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data"></td>
+                    <td class="isi-data">RM {{ kos_penyelengaraan_terdahulu }}</td>
                 </tr>
 
                 
@@ -145,7 +149,7 @@
                     <td class="bil-data">9.</td>
                     <td class="tajuk-data">Anggaran kos penyelenggaraan</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data"></td>
+                    <td class="isi-data">RM {{ kos_penyelengaraan_anggaran }}</td>
                 </tr>
 
                 
@@ -153,7 +157,7 @@
                     <td class="bil-data">10.</td>
                     <td class="tajuk-data">Syor dan Ulasan</td>
                     <td class="dot-data">:</td>
-                    <td class="isi-data"></td>
+                    <td class="isi-data">{{ ulasan_aduan }}</td>
                 </tr>
 
                 
@@ -190,14 +194,16 @@
                     <td colspan="5">
                         <div class="signature">
                             <div class="ulasan">
-                                <p>Ulasan:</p>
+                                <p>Ulasan:</p><br>
                                 <div class="underline"></div>
                             </div>
     
                             <div class="tanda-tangan">
                                 <div class="container">
                                     <div class="sign"><hr class="underline2"></div>
-                                    <div class="text">Tandatangan</div>
+                                    <center>
+                                        <div class="text">Tandatangan</div>
+                                    </center>
                                 </div>
                             </div>
                         </div>
@@ -214,6 +220,9 @@
                             <div class="row">
                                 <p>Tarikh:</p>
                                 <div class="line"></div>
+                            </div>
+                            <div class="row">
+                                <p>Nota: * Potong mana yang tidak berkenaan.</p>
                             </div>
                         </div>
                     </td>

@@ -6,7 +6,7 @@
     $tarikh_tindakkan_aduan = $_POST['tarikh_tindakkan_aduan'];
     $ulasan_aduan = $_POST['ulasan_aduan'];
 
-    $sahkan_aduan = mysqli_query($connect, "UPDATE aduan_Kerosakan_umum SET tindakkan_teknikal_aduan = '$tindakkan_teknikal_aduan', tarikh_tindakkan_aduan = '$tarikh_tindakkan_aduan', ulasan_aduan = '$ulasan_aduan', status_aduan = '2' WHERE id_aduan = '$id_aduan'");
+    $sahkan_aduan = mysqli_query($connect, "UPDATE aduan_kerosakan_umum SET tindakkan_teknikal_aduan = '$tindakkan_teknikal_aduan', tarikh_tindakkan_aduan = '$tarikh_tindakkan_aduan', ulasan_aduan = '$ulasan_aduan', status_aduan = '2' WHERE id_aduan = '$id_aduan'");
     header("location:../");
 
 ?>

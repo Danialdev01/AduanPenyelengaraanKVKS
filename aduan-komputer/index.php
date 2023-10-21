@@ -2,33 +2,43 @@
 <body>
     <?php $location_index = ".."; include('../components/header.php') ?>
     
+    <?php
+    // TODO buat alert berjaya
+    session_start();
+    $prompt = $_SESSION['prompt'];
+    if($prompt != ""){
+        echo "<script>alert('$prompt')</script>";
+    }
+    $_SESSION['prompt'] = "";
+
+    ?>
     <div class="main-container p-2">
         <br><br>
         <!-- Form Aduan Kerosakan -->
         <center>
-            <h2>Aduan Kerosakan Elektronik</h2>
+            <h2>Aduan Kerosakan Komputer</h2>
             <br>
             <div
                 class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                 <form action="./system/tambah-aduan.php" method="post">
 
-                    <!-- Nama Pensyarah -->
+                    <!-- id kakitangan -->
                     <div class="relative mb-3">
-                        <select name="id_pensyarah" data-te-select-init data-te-select-filter="true" required>
-                            <option value="">Nama Pensyarah</option>
+                        <select name="id_kakitangan" data-te-select-init data-te-select-filter="true" required>
+                            <option>Nama Kakitangan</option>
                             <?php
                                 require_once('../db/config.php');
-                                $pensyarah_sql = mysqli_query($connect, "SELECT * FROM pensyarah");
-                                while($pensyarah = mysqli_fetch_array($pensyarah_sql)){
+                                $kakitangankvks_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks");
+                                while($kakitangankvks = mysqli_fetch_array($kakitangankvks_sql)){
                                     ?>
-                                    <option value="<?php echo $pensyarah['id_pensyarah']?>"><?php echo $pensyarah['nama_pensyarah']?></option>
+                                    <option value="<?php echo $kakitangankvks['id_kakitangan']?>"><?php echo $kakitangankvks['nama_kakitangan']?></option>
                                     <?php
                                 }
                             ?>
                         </select>
                     </div>
 
-                    <!-- Waktu Bengkel kosong -->
+                    <!-- waktu_bengkel_kosong-->
                     <div
                         class="relative mb-3"
                         data-te-date-timepicker-init
@@ -45,16 +55,15 @@
                         <label
                             for="form2"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                            >Waktu Bengkel Kosong</label
+                            >Waktu Lokasi Tidak Digunakan</label
                         >
                     </div>
 
-                    <!--Lokasi input-->
+                    <!-- id_lokasi -->
                     <div class="relative mb-3">
                         <select name="id_lokasi" data-te-select-init data-te-select-filter="true" required>
-                            <option value="">Lokasi Asset</option>
+                            <option>Lokasi Aset</option>
                             <?php
-                                require_once('../db/config.php');
                                 $lokasi_sql = mysqli_query($connect, "SELECT * FROM lokasi");
                                 while($lokasi = mysqli_fetch_array($lokasi_sql)){
                                     ?>
@@ -65,8 +74,7 @@
                         </select>
                     </div>
 
-                    <!--DESC Lokasi input-->
-                    <!-- TODO buat image location aset -->
+                    <!-- desc_lokasi-->
                     <div class="relative mb-3" data-te-input-wrapper-init>
                         <input
                             name="desc_lokasi"
@@ -80,52 +88,53 @@
                         <label
                             for="exampleInput7"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                            >Desc Lokasi Aset
+                            >Lokasi Terperinci Aduan
                         </label>
                     </div>
 
-                    <!--Jenis Asset-->
+                    <!-- id_aset -->
                     <div class="relative mb-3">
-                        <select name="id_asset" data-te-select-init data-te-select-filter="true" required>
-                            <option value="">Jenis Asset</option>
+                        <select name="id_aset" data-te-select-init data-te-select-filter="true" required>
+                            <option>Jenis Aset</option>
                             <?php
-                                require_once('../db/config.php');
-                                $asset_sql = mysqli_query($connect, "SELECT * FROM asset WHERE jenis_asset = 'ELEKTRONIK'");
-                                while($asset = mysqli_fetch_array($asset_sql)){
+                                $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE jenis_aset = 'KOMPUTER'"); 
+                                while($aset = mysqli_fetch_array($aset_sql)){
                                     ?>
-                                    <option value="<?php echo $asset['id_asset']?>"><?php echo $asset['nama_asset']?></option>
+                                    <option value="<?php echo $aset['id_aset']?>"><?php echo $aset['nama_aset']?></option>
                                     <?php
                                 }
                             ?>
                         </select>
                     </div>
 
-                    <!-- Jenis kepuyaan aset -->
+                    <!-- jenis_kepunyaan_aset -->
                     <div class="relative mb-3">
-                        <select name="jenis_kepunyaan_asset" data-te-select-init required>
-                            <option value="">Jenis kepunyaan Asset</option>
-                            <option value="sendiri">Persendirian</option>
+                        <select name="jenis_kepunyaan_aset" data-te-select-init data-te-select-filter="true" required>
+                            <option>Jenis kepunyaan Aset</option>
                             <option value="sumbangan">Sumbangan</option>
+                            <option value="persendirian">Persendirian</option>
                         </select>
                     </div>
 
-                    <!--No Siri pendaftaran aset-->
+                    <!-- nombor_siri_pendaftaran-->
                     <div class="relative mb-3" data-te-input-wrapper-init>
                         <input
-                            name="nombor_siri_pendaftaran_asset"
+                            name="nombor_siri_pendaftaran_aset"
                             type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                            id="exampleInput8"
-                            placeholder="Email address" 
-                            required/>
+                            id="exampleInput7"
+                            placeholder="Name" 
+                            required
+                            />
+
                         <label
-                            for="exampleInput8"
+                            for="exampleInput7"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                             >Nombor Siri Pendaftaran
                         </label>
                     </div>
 
-                    <!-- Tarikh Kerosakan -->
+                    <!-- tarikh_kerosakan-->
                     <div
                         class="relative mb-3"
                         data-te-date-timepicker-init
@@ -133,7 +142,7 @@
                         data-te-inline="true"
                         data-te-disable-past="true">
                         <input
-                            name="tarikh_Kerosakan"
+                            name="tarikh_kerosakan"
                             data-te-date-timepicker-toggle-ref
                             type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
@@ -142,21 +151,24 @@
                         <label
                             for="form2"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                            >Waktu Kerosakan Asset</label
+                            >Tarikh Kerosakan</label
                         >
                     </div>
-    
-                    <!--Perihal Kerosakan-->
-                    <div class="relative mb-6" data-te-input-wrapper-init>
-                        <textarea
-                            name="perihal_Kerosakan"
+                    
+
+                    <!-- perihal_kerosakan -->
+                    <div class="relative mb-3" data-te-input-wrapper-init>
+                        <input
+                            name="perihal_kerosakan"
+                            type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                            id="exampleFormControlTextarea13"
-                            rows="3"
-                            placeholder="Message"
-                            required></textarea>
+                            id="exampleInput7"
+                            placeholder="Name" 
+                            required
+                            />
+
                         <label
-                            for="exampleFormControlTextarea13"
+                            for="exampleInput7"
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                             >Perihal Kerosakan
                         </label>
@@ -167,10 +179,12 @@
                     type="submit"
                     class="dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]] inline-block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                     data-te-ripple-init
+                    name="submit"
                     data-te-ripple-color="light">
                     Hantar Aduan
                     </button>
                 </form>
+                
             </div>
             <br>
         </center>

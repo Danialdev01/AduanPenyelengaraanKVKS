@@ -10,6 +10,7 @@
 
     <title><?php echo $title ?></title>
     
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
     <!-- tailwind -->
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"

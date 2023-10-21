@@ -5,7 +5,7 @@
     <div class="main-container p-2">
         <br><br>
         <center>
-            <div class="semua-asset max-w-2xl">
+            <div class="semua-aset max-w-2xl">
                 <div class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
