@@ -36,8 +36,14 @@ use Dompdf\Options;
         $html = str_replace("{{ jawatan_kakitangankvks }}", ucfirst(strtolower($kakitangankvks['jawatan_kakitangan'])), $html);
     
         // Bahagian II (Untuk diisi oleh Pegawai Aset/ pegawai Teknikal)
-        $html = str_replace("{{ kos_penyelengaraan_terdahulu }}", $aduan['kos_penyelengaraan_terdahulu'], $html);
-        $html = str_replace("{{ kos_penyelengaraan_anggaran }}", $aduan['kos_penyelengaraan_anggaran'], $html);
+        $kos_penyelengaraan_terdahulu = $aduan['kos_penyelengaraan_terdahulu'];
+        if($aduan['kos_penyelengaraan_terdahulu'] == NULL){$kos_penyelengaraan_terdahulu = 0;}
+        $html = str_replace("{{ kos_penyelengaraan_terdahulu }}", $kos_penyelengaraan_terdahulu, $html);
+
+        $kos_penyelengaraan_terdahulu = $aduan['kos_penyelengaraan_anggaran'];
+        if($aduan['kos_penyelengaraan_anggaran'] == NULL){$kos_penyelengaraan_anggaran = 0;}
+        $html = str_replace("{{ kos_penyelengaraan_anggaran }}", $kos_penyelengaraan_anggaran, $html);
+
         $html = str_replace("{{ ulasan_aduan }}", ucfirst(strtolower($aduan['ulasan_aduan'])), $html);
 
 

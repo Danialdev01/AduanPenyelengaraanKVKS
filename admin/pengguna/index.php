@@ -4,57 +4,59 @@
     
     <div class="main-container p-2">
         <br><br>
-        <center>
-            <div class="semua-aset max-w-2xl">
-                <div class="flex flex-col">
-                    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                        <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                        <div class="overflow-hidden">
-                            <table class="min-w-full text-left text-sm font-light">
-                                <thead class="border-b font-medium dark:border-neutral-500">
-                                    <tr>
-                                        <th scope="col" class="px-6 py-4">Bil</th>
-                                        <th scope="col" class="px-6 py-4">Nama</th>
-                                        <th scope="col" class="px-6 py-4">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+        <div class="aduan-container">
+            <!--Tabs navigation-->
+            <ul
+                class="mb-5 flex list-none flex-row flex-wrap border-b-0 pl-0"
+                role="tablist"
+                data-te-nav-ref>
+                <li role="presentation" class="flex-auto text-center">
+                    <a
+                    href="#tabs-aduan-terkini"
+                    class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
+                    data-te-toggle="pill"
+                    data-te-target="#tabs-aduan-terkini"
+                    data-te-nav-active
+                    role="tab"
+                    aria-controls="tabs-aduan-terkini"
+                    aria-selected="true"
+                    >Kakitangan KVKS</a
+                    >
+                </li>
+                <li role="presentation" class="flex-auto text-center">
+                    <a
+                    href="#tabs-aduan-sah"
+                    class="my-2 block border-x-0 border-b-2 border-t-0 border-transparent px-7 pb-3.5 pt-4 text-xs font-medium uppercase leading-tight text-neutral-500 hover:isolate hover:border-transparent hover:bg-neutral-100 focus:isolate focus:border-transparent data-[te-nav-active]:border-primary data-[te-nav-active]:text-primary dark:text-neutral-400 dark:hover:bg-transparent dark:data-[te-nav-active]:border-primary-400 dark:data-[te-nav-active]:text-primary-400"
+                    data-te-toggle="pill"
+                    data-te-target="#tabs-aduan-sah"
+                    role="tab"
+                    aria-controls="tabs-aduan-sah"
+                    aria-selected="false"
+                    >Pegawai Teknikal</a
+                    >
+                </li>
+            </ul>
 
-                                    <?php
-                                        require_once('../../db/config.php');
-
-                                        $pengguna_sql = mysqli_query($connect, "SELECT * FROM pengguna");
-                                        $i = 0;
-                                        while($pengguna = mysqli_fetch_array($pengguna_sql)){
-                                            $i += 1;
-                                            ?>
-                                            <tr
-                                                class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                                <td class="whitespace-nowrap px-6 py-4 font-medium"><?php echo $i ?></td>
-                                                <td class="whitespace-nowrap px-6 py-4"><?php echo $pengguna['nama_pengguna']?></td>
-                                                <td class="whitespace-nowrap px-6 py-4">
-                                                    <a href="./system/delete-pengguna.php?id_pengguna=<?php echo $pengguna['id_pengguna'] ?>">
-                                                        <button class="bg-red-500 hover:bg-red-600 px-3 py-1 text-white rounded-sm">Delete</button>
-                                                    </a>
-                                                </td>
-                                            </tr>
-
-                                            <?php
-                                        }
-                                    ?>
-                                </tbody>
-                            </table>
-                        </div>
-                        </div>
-                    </div>
+            <!--Tabs content-->
+            <div class="mb-6">
+                <div
+                    class="hidden opacity-100 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="tabs-aduan-terkini"
+                    role="tabpanel"
+                    aria-labelledby="tabs-aduan-terkini-tab01"
+                    data-te-tab-active>
+                    <?php include('./jenis_pengguna/kakitangankvks.php') ?>
+                </div>
+                <div
+                    class="hidden opacity-0 transition-opacity duration-150 ease-linear data-[te-tab-active]:block"
+                    id="tabs-aduan-sah"
+                    role="tabpanel"
+                    aria-labelledby="tabs-aduan-sah-tab01">
+                    <?php include('./jenis_pengguna/pegawai-teknikalkvks.php') ?>
                 </div>
             </div>
-        </center>
-        <div class="button-add-pengguna">
-            <a href="./tambah-pengguna.php">
-                <button class="fixed bg-black text-white h-10 w-10 text-2xl" style="border-radius:50%;right:10vw;bottom:10vh">+</button>
-            </a>
         </div>
+        
     </div>
 
     <?php include('../../components/footer.php') ?>

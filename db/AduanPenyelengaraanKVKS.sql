@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2023 at 02:32 PM
+-- Generation Time: Oct 24, 2023 at 08:06 AM
 -- Server version: 10.11.3-MariaDB
 -- PHP Version: 8.2.6
 
@@ -162,22 +162,23 @@ INSERT INTO `lokasi` (`id_lokasi`, `nama_lokasi`, `pelan_lantai_img`, `status_lo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pengguna`
+-- Table structure for table `pegawai_teknikal`
 --
 
-CREATE TABLE `pengguna` (
-  `id_pengguna` int(11) NOT NULL,
-  `nama_pengguna` varchar(100) NOT NULL,
-  `password_pengguna` varchar(100) NOT NULL,
-  `status_pengguna` int(11) NOT NULL
+CREATE TABLE `pegawai_teknikal` (
+  `id_pegawai` int(11) NOT NULL,
+  `nama_pegawai` varchar(100) NOT NULL,
+  `password_pegawai` varchar(100) NOT NULL,
+  `jawatan_pegawai` varchar(100) NOT NULL,
+  `status_pegawai` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pengguna`
+-- Dumping data for table `pegawai_teknikal`
 --
 
-INSERT INTO `pengguna` (`id_pengguna`, `nama_pengguna`, `password_pengguna`, `status_pengguna`) VALUES
-(6, 'admin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 1);
+INSERT INTO `pegawai_teknikal` (`id_pegawai`, `nama_pegawai`, `password_pegawai`, `jawatan_pegawai`, `status_pegawai`) VALUES
+(6, 'admin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'admin', 0);
 
 --
 -- Indexes for dumped tables
@@ -214,10 +215,10 @@ ALTER TABLE `lokasi`
   ADD PRIMARY KEY (`id_lokasi`);
 
 --
--- Indexes for table `pengguna`
+-- Indexes for table `pegawai_teknikal`
 --
-ALTER TABLE `pengguna`
-  ADD PRIMARY KEY (`id_pengguna`);
+ALTER TABLE `pegawai_teknikal`
+  ADD PRIMARY KEY (`id_pegawai`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -254,10 +255,10 @@ ALTER TABLE `lokasi`
   MODIFY `id_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `pengguna`
+-- AUTO_INCREMENT for table `pegawai_teknikal`
 --
-ALTER TABLE `pengguna`
-  MODIFY `id_pengguna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `pegawai_teknikal`
+  MODIFY `id_pegawai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

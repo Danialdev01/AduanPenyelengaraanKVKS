@@ -8,21 +8,21 @@
         
         // cari nama user
         echo "nama ";
-        echo $nama_penggunaPost = $_POST['nama_pengguna'];
-        $find_pengguna_sql = mysqli_query($connect, "SELECT * FROM pengguna WHERE nama_pengguna = '$nama_penggunaPost'");
+        echo $nama_pegawaiPost = $_POST['nama_pegawai'];
+        $find_pengguna_sql = mysqli_query($connect, "SELECT * FROM pegawai_teknikal WHERE nama_pegawai = '$nama_pegawaiPost'");
         $find_pengguna = mysqli_fetch_array($find_pengguna_sql);
-        echo $nama_pengguna = $find_pengguna['nama_pengguna'];
+        echo $nama_pegawai = $find_pengguna['nama_pegawai'];
 
         // if nama jumpa
-        if($nama_pengguna == $nama_penggunaPost){
+        if($nama_pegawai == $nama_pegawaiPost){
 
             // check password
             echo $katalaluan_penggunaPost = mysqli_real_escape_string($connect, $_POST['password']);
             echo "<br> il";
-            echo $find_pengguna['password_pengguna'];
+            echo $find_pengguna['password_pegawai'];
 
             // verify password
-            $isBetul = password_verify($katalaluan_penggunaPost, $find_pengguna['password_pengguna']);
+            $isBetul = password_verify($katalaluan_penggunaPost, $find_pengguna['password_pegawai']);
 
             // if password betul
             if($isBetul == 1){

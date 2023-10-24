@@ -1,3 +1,4 @@
+
 <center>
     <div class="aduan-data-table p-2">
         <div class="mb-3">
@@ -19,26 +20,23 @@
     const data2 = {
   columns: [
     'No',
-    'Nama Pelapor',
-    'Tarikh Aduan',
-    'Butiran Kerosakan',
-    'Lokasi Aset',
-    { label: "Lihat Aduan", field: "aduan_sah", sort: false },
+    'Nama Kakitangan',
+    'Jawatan',
+    { label: "Kemaskini", field: "kemaskini", sort: false },
+    { label: "Delete", field: "delete", sort: false },
   ],
   rows: [
     <?php 
         require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2'");
+        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE status_kakitangan = '1'");
         $no = 0;
-        while($aduan = mysqli_fetch_array($aduan_sql)){
+        while($kakitangan = mysqli_fetch_array($kakitangan_sql)){
             $no++;
 
-            $nama_pelapor = $aduan['nama_pelapor'];
-            $tarikh_aduan = $aduan['tarikh_aduan'];
-            $butiran_kerosakan = $aduan['butiran_kerosakan'];
-            $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
-            $id_aduan = $aduan['id_aduan'];
-        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+            $nama_kakitangan = $kakitangan['nama_kakitangan'];
+            $jawatan_kakitangan = $kakitangan['jawatan_kakitangan'];
+            $id_kakitangan = $kakitangan['id_kakitangan'];
+        echo "[\"$no\", \"$nama_kakitangan\", \"$jawatan_kakitangan\", \"<a href='kemaskini-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
 
 
         }

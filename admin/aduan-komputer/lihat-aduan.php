@@ -8,7 +8,7 @@
 
 ?>
 <body>
-    <?php $location_index = "../.."; include('../../components/header-admin-komputer.php') ?>
+    <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     
     <div class="main-container p-2">
         <br>
@@ -219,7 +219,7 @@
                                 </button>
 
                                 <br><br>
-                                <a href="./system/batal-aduan-komputer.php?id_aduan=<? echo $id_aduan ?>">
+                                <a href="./system/batal-aduan.php?id_aduan=<?php echo $id_aduan ?>">
                                 <center>
                                     <div 
                                         class="inline-block w-full rounded bg-red-500 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]"

@@ -23,7 +23,8 @@
     'Tarikh Aduan',
     'Butiran Kerosakan',
     'Lokasi Aset',
-    { label: "Lihat Aduan", field: "contact", sort: false },
+    { label: "Lihat Aduan", field: "aduan-batal", sort: false },
+    { label: "Aktif Kembali Aduan", field: "aduan-aktif", sort: false },
   ],
   rows: [
     <?php 
@@ -37,7 +38,8 @@
             $tarikh_aduan = $aduan['tarikh_aduan'];
             $butiran_kerosakan = $aduan['butiran_kerosakan'];
             $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
-        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+            $id_aduan = $aduan['id_aduan'];
+        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\", \"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\"],";
 
 
         }

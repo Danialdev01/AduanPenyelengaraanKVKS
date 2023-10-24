@@ -1,4 +1,4 @@
-<?php $title = "Dashboard"; $location_index = "../.."; include('../../components/head.php')?>
+<?php $title = "Kerosakan Komputer"; $location_index = "../.."; include('../../components/head.php')?>
 <body>
     <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     
