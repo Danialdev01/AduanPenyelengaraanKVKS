@@ -16,17 +16,15 @@
     </style>
 </head>
 <body>
-    <h1>alsdk</h1>
     <header>
         <div class="header-items">
-
+            
         </div>
         <div class="header-items">
 
         </div>
         <div class="header-items">
             <div class="thing">.</div>
-            <!-- <img src="data:image/png;base64,{{ base64_encode(file_get_contents( "https://danialirfan.dev/images/default.png" )) }}" alt=""> -->
         </div>
     </header>   
 </body>

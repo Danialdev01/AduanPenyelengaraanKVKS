@@ -16,7 +16,8 @@ use Dompdf\Options;
         $dompdf = new Dompdf($options);
         $dompdf->setPaper("A4", "Portrate");
     
-        $html = file_get_contents("borang.php");
+        $html = '<img src="src/assets/images/kvks.png">';
+        // $html = file_get_contents("borang.php");
 
         
 

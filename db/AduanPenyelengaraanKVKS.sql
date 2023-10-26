@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 24, 2023 at 08:06 AM
+-- Generation Time: Oct 26, 2023 at 12:59 PM
 -- Server version: 10.11.3-MariaDB
 -- PHP Version: 8.2.6
 
@@ -52,7 +52,8 @@ CREATE TABLE `aduan_kerosakan_komputer` (
 INSERT INTO `aduan_kerosakan_komputer` (`id_aduan`, `id_kakitangan`, `waktu_bengkel_kosong`, `id_lokasi`, `desc_lokasi`, `id_aset`, `jenis_kepunyaan_aset`, `nombor_siri_pendaftaran_aset`, `tarikh_kerosakan`, `perihal_kerosakan`, `id_admin`, `kos_penyelengaraan_terdahulu`, `kos_penyelengaraan_anggaran`, `ulasan_aduan`, `status_aduan`) VALUES
 (4, 4, '15/09/2023, 03:02 PM', 2, 'di meja 12', 2, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/22', '21/09/2023, 12:00 PM', 'Skrin biru', NULL, '10', '20', 'download driver', 2),
 (6, 1, '20/09/2023, 03:00 PM', 3, 'meja 14', 1, 'sumbangan', 'KPM/PBTM/BKA3001/H/54/223', '21/09/2023, 12:00 PM', 'Lampu power supply berkelip tanpa henti', NULL, '500', '300', 'tukar powersupply', 2),
-(8, 5, '14/10/2023, 03:00 AM', 3, 'meja guru', 3, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/20', '13/10/2023, 02:00 PM', 'Power supply berbunyi', NULL, NULL, NULL, NULL, 1);
+(8, 5, '14/10/2023, 03:00 AM', 3, 'meja guru', 3, 'sumbangan', 'KPM/PBTM/BHA3001/H/16/20', '13/10/2023, 02:00 PM', 'Power supply berbunyi', NULL, NULL, NULL, NULL, 1),
+(14, 1, '25/11/2023, 12:00 PM', 7, 'tingkat 1', 3, 'persendirian', '5445', '26/10/2023, 12:00 PM', 'ffhg', NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,9 @@ CREATE TABLE `aduan_kerosakan_umum` (
 INSERT INTO `aduan_kerosakan_umum` (`id_aduan`, `nama_pelapor`, `lokasi_terperinci_aduan`, `butiran_kerosakan`, `tarikh_aduan`, `tindakkan_teknikal_aduan`, `tarikh_tindakkan_aduan`, `ulasan_aduan`, `id_admin`, `status_aduan`) VALUES
 (4, 'NUR UMIRAH BT MAMAT', 'sebelah bilik guru melur', 'kerosakkan pintu', '10/10/2023, 12:00 PM', 'tukar pintu tombol', '11/10/2023, 12:00 PM', 'selesai', NULL, 2),
 (5, 'MUHAMAD DANIAL BIN ROSDI', 'bilik mesyuarat', 'mic tidak mengeluarkan suara', '05/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1),
-(6, 'NUR UMIRAH BT MAMAT', 'bilik hep ', 'kerosakan lampu', '28/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1);
+(6, 'NUR UMIRAH BT MAMAT', 'bilik hep ', 'kerosakan lampu', '28/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1),
+(7, 'MASNI BINTI RAHMAN', 'bilik guru melur', 'aircond rosak', '26/10/2023, 12:00 PM', NULL, NULL, NULL, NULL, 1),
+(8, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'bilik hep,tingkat 1', 'kerosakan lampu', '27/10/2023, 12:00 AM', NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -228,13 +231,13 @@ ALTER TABLE `pegawai_teknikal`
 -- AUTO_INCREMENT for table `aduan_kerosakan_komputer`
 --
 ALTER TABLE `aduan_kerosakan_komputer`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `aduan_kerosakan_umum`
 --
 ALTER TABLE `aduan_kerosakan_umum`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `aset`
