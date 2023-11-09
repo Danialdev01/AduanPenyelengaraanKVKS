@@ -1,61 +1,64 @@
-<?php $title = "Laman Utama"; $location_index = "."; include('./components/head.php')?>
+<?php $title = "Login"; $location_index = "."; include('./components/head.php')?>
 <body>
-    <?php $location_index = "."; include('./components/header.php') ?>
-    
-    <div class="main-container p-2">
-        <br><br>
+    <?php $location_index = "."; include('./components/login-header.php') ?>
+    <?php $dir_location="."; include('./components/captcha.php') ?>
+    <center>
+        <div class="main-container p-2">
+            <br><br>
+            <div
+                class="block max-w-sm rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                <form method="post" action="./system/check-login-kakitangankvks.php">
+                    <!--Nama Pengguna-->
+                    <div class="relative mb-6" data-te-input-wrapper-init>
+                        <input
+                            required
+                            name="ic_kakitangan"
+                            type="number"
+                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"/>
+                        <label
+                            for="exampleInputEmail2"
+                            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                            >Nombor IC</label
+                        >
+                    </div>
 
-        <center>
-            
-            <!-- Aduan Kerosakan peranti elektronink -->
-            <div
-                class="text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                <div class="p-6">
-                    <h5
-                    class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                    Aduan Kerosakan Komputer
-                    </h5>
-                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                    Kerosakan Komputer di Kolej Vokasional Kuala Selangor(KEW.PA-10)
-                    </p>
-                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">Contoh : monitor, printer, powersupply</p>
-                    <a href="./aduan-komputer/">
-                        <button
-                            type="button"
-                            class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                            data-te-ripple-init
-                            data-te-ripple-color="light">
-                            Buat Aduan
-                        </button>
-                    </a>
-                </div>
-            </div>
-            <br>
+                    <input type="hidden" name="h_code" value="<?php print $code; ?>"><span class="captcha"><?php print $code; ?></span><br><br>
+
+                    <!-- Captcha  -->
+                    <div class="relative mb-6" data-te-input-wrapper-init>
+                        <input
+                            required
+                            name="captcha"
+                            type="text"
+                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                            id="exampleInputEmail2"
+                            aria-describedby="emailHelp"
+                            placeholder="Enter email" />
+                        <label
+                            for="exampleInputEmail2"
+                            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                            >Masukkan Captcha</label
+                        >
+                    </div>
+                    <div class="back-link text-left">
+                        <a style="color: #0048ff;" href="./admin-login.php"><u>Admin</u></a>
+                    </div>
+                    <br>
     
-            <!-- Aduan Kerosakan Umum -->
-            <div
-                class="text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                <div class="p-6">
-                    <h5
-                    class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-                    Aduan Kerosakan Umum
-                    </h5>
-                    <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                    Kerosakan Umum di Kolej Vokasional Kuala Selangor
-                    </p>
-                    <a href="./aduan-umum/">
-                        <button
-                            type="button"
-                            class="inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                            data-te-ripple-init
-                            data-te-ripple-color="light">
-                            Buat Aduan
-                        </button>
-                    </a>
-                </div>
+                    <!--Sign in button-->
+                    <button
+                        type="submit"
+                        name="login"
+                        class="dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]] inline-block w-full rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                        data-te-ripple-init
+                        data-te-ripple-color="light">
+                        Sign in
+                    </button>
+    
+                </form>
             </div>
-        </center>
-    </div>
+        </div>
+    </center>
 
     <?php include('./components/footer.php') ?>
 </body>

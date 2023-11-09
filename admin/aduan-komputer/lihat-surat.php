@@ -27,7 +27,10 @@ use Dompdf\Options;
         $kakitangankvks = mysqli_fetch_array($kakitangankvks_sql);
 
         // Bahagian I (Untuk diisi oleh Pengadu)
-        $html = str_replace("{{ jenis_aset }}", ucfirst($aduan['nama_aset']), $html);
+        $id_aset = $aduan['id_aset'];
+        $aset_sql = mysqli_query($connect, "SELECT nama_aset FROM aset WHERE id_aset = '$id_aset'");
+        $aset = mysqli_fetch_array($aset_sql);
+        $html = str_replace("{{ jenis_aset }}", ucfirst(strtolower($aset['nama_aset'])), $html);
         $html = str_replace("{{ nombor_siri_pendaftaran_aset }}", $aduan['nombor_siri_pendaftaran_aset'], $html);
         $html = str_replace("{{ kakitangankvks }}", ucfirst(strtolower($kakitangankvks['nama_kakitangan'])), $html);
         $tarikh_kerosakan = str_split($aduan['tarikh_kerosakan'], 10);
@@ -45,6 +48,12 @@ use Dompdf\Options;
         $html = str_replace("{{ kos_penyelengaraan_anggaran }}", $kos_penyelengaraan_anggaran, $html);
 
         $html = str_replace("{{ ulasan_aduan }}", ucfirst(strtolower($aduan['ulasan_aduan'])), $html);
+
+        $id_pegawai = $aduan['id_admin'];
+        $pegawai_sql = mysqli_query($connect, "SELECT * FROM pegawai_teknikal WHERE id_pegawai = '$id_pegawai'");
+        $pegawai = mysqli_fetch_array($pegawai_sql);
+        $html = str_replace("{{ nama_pegawai }}", ucfirst(strtolower($pegawai['nama_pegawai'])), $html);
+        $html = str_replace("{{ jawatan_pegawai }}", ucfirst(strtolower($pegawai['jawatan_pegawai'])), $html);
 
 
         $dompdf->loadHtml($html);

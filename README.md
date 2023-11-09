@@ -7,8 +7,9 @@ $location_index  = "(lokasi reference diamana file berapa contoh "." untuk root 
 $title = "(title page)"
 
 ### Session Variable
-isLoggedIn = (2 = logged in), (lain = not logged in)
-isAdmin = (id admin)
+isLoggedIn = (2 = logged in admin), (3 = logged in kakitangan), (lain = not logged in)
+idAdmin = (id admin)
+icKakitangan = (id kakitangan)
 error = (error)
 
 ### Borang Aduan Kerosakan Umum
@@ -18,7 +19,12 @@ error = (error)
 - bil - butiran masalah / Kerosakan
 
 - admin
-    - tindakkan
+    - tindakan
     - tarikh
     - penyelengaraan oleh 
     - tarikh
+
+# Status aduan 
+- 0 : batal
+- 1 : aktif
+- 2 : telah disahkan

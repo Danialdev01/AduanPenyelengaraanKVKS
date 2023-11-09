@@ -1,22 +1,10 @@
-<?php 
-    session_start();
-
-    // kalau pengguna tak log in 
-    if($_SESSION['isLoggedIn'] != 2){
-      header("location:$location_index/admin-login.php");
-    }
-    // kalau login
-    else{}
-    
-?>
-
 <nav
   class=" z-[300] sticky top-0 flex w-full flex-wrap items-center justify-between bg-[#FBFBFB] py-2 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600 lg:py-4">
   <div class="flex w-full flex-wrap items-center justify-between px-3">
     <div>
       <a
         class="mx-2 my-1 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 lg:mb-0 lg:mt-0"
-        href="<?php echo $location_index?>/admin">
+        href="<?php echo $location_index?>/">
         <img
           class="mr-2 w-40 md:52"
           src="<?php echo $location_index?>/src/assets/images/logo-banner.png"
@@ -26,7 +14,7 @@
     </div>
 
     <!-- Hamburger button for mobile view -->
-    <button
+    <!-- <button
       class="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
       type="button"
       data-te-collapse-init
@@ -34,7 +22,7 @@
       aria-controls="navbarSupportedContent4"
       aria-expanded="false"
       aria-label="Toggle navigation">
-      <!-- Hamburger icon -->
+      Hamburger icon
       <span class="[&>svg]:w-7">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +35,7 @@
             clip-rule="evenodd" />
         </svg>
       </span>
-    </button>
+    </button> -->
 
     <!-- Collapsible navbar container -->
     <div
@@ -56,87 +44,59 @@
       data-te-collapse-item>
       <!-- Left links -->
       <ul
-        class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row"
-        data-te-navbar-nav-ref>
-        
+      class="list-style-none mr-auto flex flex-col pl-0 lg:mt-1 lg:flex-row"
+      data-te-navbar-nav-ref>
+        <?php if($location_index != "."){ ?>
+        <!-- Aduan Komputer -->
         <li
           class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
           data-te-nav-item-ref>
           <a
             class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
-            href="<?php echo $location_index?>/admin/aduan-komputer"
+            href="<?php echo $location_index?>/aduan-komputer"
             data-te-nav-link-ref
             >Kerosakan Komputer</a
           >
         </li>
 
+        <!-- Aduan Umum -->
         <li
           class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
           data-te-nav-item-ref>
           <a
             class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
-            href="<?php echo $location_index?>/admin/aduan-umum"
+            href="<?php echo $location_index?>/aduan-umum"
             data-te-nav-link-ref
             >Kerosakan Umum</a
           >
         </li>
-
-        <li
-          class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-          data-te-nav-item-ref>
-          <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            aria-current="page"
-            href="<?php echo $location_index?>/admin/pengguna"
-            data-te-nav-link-ref
-            >Pengguna</a
-          >
-        </li>
-
-        <li
-          class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
-          data-te-nav-item-ref>
-          <a
-            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-            aria-current="page"
-            href="<?php echo $location_index?>/admin/aset"
-            data-te-nav-link-ref
-            >Aset</a
-          >
-        </li>
-        
+        <?php }?>
       </ul>
 
-      <div class="flex items-center">
-        <a href="<?php echo $location_index?>/admin/system/logout.php">
-          <button
-            type="button"
-            data-te-ripple-init
-            data-te-ripple-color="light"
-            class="mr-3 inline-block rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 motion-reduce:transition-none">
-            Log Keluar
-          </button>
-        </a>
-      </div>
     </div>
   </div>
 </nav>
 
 <style>
-    td{
-      color: black;
-      font-weight: bold;
-    }
-</style> 
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0;
+  }
+  /* Firefox */
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+</style>
 
 <?php
   session_start();
   $prompt = $_SESSION['prompt'];
   if($prompt != ""){
-      echo '<div class="flex justify-center"><div
-  class="top-24 fixed pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-primary-100 bg-clip-padding text-sm text-primary-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
+      echo '<div class="justify-center flex"><div
+  class="fixed z-40 top-24 pointer-events-auto mx-auto mb-4 hidden w-96 max-w-full rounded-lg bg-danger-100 bg-clip-padding text-sm text-danger-700 shadow-lg shadow-black/5 data-[te-toast-show]:block data-[te-toast-hide]:hidden"
   id="static-example"
   role="alert"
   aria-live="assertive"
@@ -145,22 +105,22 @@
   data-te-toast-init
   data-te-toast-show>
   <div
-    class="flex items-center justify-between rounded-t-lg border-b-2 border-primary-200 bg-primary-100 bg-clip-padding px-4 pb-2 pt-2.5 text-primary-700">
-    <p class="flex items-center font-bold text-primary-700">
+    class="flex items-center justify-between rounded-t-lg border-b-2 border-danger-200 bg-danger-100 bg-clip-padding px-4 pb-2 pt-2.5 text-danger-700">
+    <p class="flex items-center font-bold text-danger-700">
       <svg
         aria-hidden="true"
         focusable="false"
         data-prefix="fas"
-        data-icon="info-circle"
+        data-icon="times-circle"
         class="mr-2 h-4 w-4 fill-current"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 512 512">
         <path
           fill="currentColor"
-          d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"></path>
+          d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"></path>
       </svg>
-      Infomasi
+      Login
     </p>
     <div class="flex items-center">
       <button
@@ -187,8 +147,8 @@
     </div>
   </div>
   <div
-    class="break-words rounded-b-lg bg-primary-100 px-4 py-4 text-primary-700">
-    '. $prompt . '
+    class="break-words rounded-b-lg bg-danger-100 px-4 py-4 text-danger-700">
+    '. $prompt .'
   </div>
 </div></div>';
   }

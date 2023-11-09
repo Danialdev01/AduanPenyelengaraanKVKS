@@ -1,41 +1,34 @@
-<?php $title = "Kerosakan Komputer"; $location_index = ".."; include('../components/head.php')?>
+<?php $title = "Kerosakan Komputer"; $location_index = "../.."; include('../../components/head.php')?>
+<?php require_once('../../db/config.php');?>
 <body>
-    <?php $location_index = ".."; include('../components/header.php') ?>
+    <?php $location_index = "../.."; include('../../components/header.php') ?>
     
-    <?php
-    // TODO buat alert berjaya
-    session_start();
-    $prompt = $_SESSION['prompt'];
-    if($prompt != ""){
-        echo "<script>alert('$prompt')</script>";
-    }
-    $_SESSION['prompt'] = "";
-
-    ?>
     <div class="main-container p-2">
-        <br><br>
+        <br>
         <!-- Form Aduan Kerosakan -->
         <center>
             <h2>Aduan Kerosakan Komputer</h2>
             <br>
             <div
-                class="block max-w-md rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                <form action="./system/tambah-aduan.php" method="post">
+                class="block max-w-xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                <form action="./system/tambah-aduan.php" method="post" enctype="multipart/form-data">
 
+                    <?php 
+                        $ic_kakitangan = $_SESSION['icKakitangan'];
+                        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE ic_kakitangan = '$ic_kakitangan'");
+                        $kakitangan = mysqli_fetch_array($kakitangan_sql);
+                    ?>
                     <!-- id kakitangan -->
-                    <div class="relative mb-3">
-                        <select name="id_kakitangan" data-te-select-init data-te-select-filter="true" required>
-                            <option>Nama Kakitangan</option>
-                            <?php
-                                require_once('../db/config.php');
-                                $kakitangankvks_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks");
-                                while($kakitangankvks = mysqli_fetch_array($kakitangankvks_sql)){
-                                    ?>
-                                    <option value="<?php echo $kakitangankvks['id_kakitangan']?>"><?php echo $kakitangankvks['nama_kakitangan']?></option>
-                                    <?php
-                                }
-                            ?>
-                        </select>
+                    <input type="hidden" name="id_kakitangan" value="<?php echo $kakitangan['id_kakitangan'] ?>">
+
+                    <!-- gambar kerosakan -->
+                    <div class="mb-3 text-left">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Muat Naik Gambar Kerosakan</label>
+                        <input
+                            name="image"
+                            accept="image/*"
+                            class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.32rem] text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-te-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100 dark:focus:border-primary"
+                            type="file"/>
                     </div>
 
                     <!-- waktu_bengkel_kosong-->
@@ -44,7 +37,8 @@
                         data-te-date-timepicker-init
                         data-te-input-wrapper-init
                         data-te-inline="true"
-                        data-te-disable-past="true">
+                        data-te-disable-past="true"
+                        >
                         <input
                             name="waktu_bengkel_kosong"
                             data-te-date-timepicker-toggle-ref
@@ -58,13 +52,14 @@
                             >Waktu Lokasi Tidak Digunakan</label
                         >
                     </div>
+                    
 
                     <!-- id_lokasi -->
                     <div class="relative mb-3">
                         <select name="id_lokasi" data-te-select-init data-te-select-filter="true" required>
                             <option>Lokasi Aset</option>
                             <?php
-                                $lokasi_sql = mysqli_query($connect, "SELECT * FROM lokasi");
+                                $lokasi_sql = mysqli_query($connect, "SELECT * FROM lokasi ORDER BY nama_lokasi ASC");
                                 while($lokasi = mysqli_fetch_array($lokasi_sql)){
                                     ?>
                                     <option value="<?php echo $lokasi['id_lokasi']?>"><?php echo $lokasi['nama_lokasi']?></option>
@@ -100,7 +95,7 @@
                                 $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE jenis_aset = 'KOMPUTER'"); 
                                 while($aset = mysqli_fetch_array($aset_sql)){
                                     ?>
-                                    <option value="<?php echo $aset['id_aset']?>"><?php echo $aset['nama_aset']?></option>
+                                    <option value="<?php echo $aset['id_aset']?>"><?php echo ucfirst(strtolower($aset['nama_aset']))?></option>
                                     <?php
                                 }
                             ?>
@@ -113,6 +108,7 @@
                             <option>Jenis kepunyaan Aset</option>
                             <option value="sumbangan">Sumbangan</option>
                             <option value="persendirian">Persendirian</option>
+                            <option value="kerajaan">Hak Milik Kerajaan</option>
                         </select>
                     </div>
 
@@ -140,7 +136,7 @@
                         data-te-date-timepicker-init
                         data-te-input-wrapper-init
                         data-te-inline="true"
-                        data-te-disable-past="true">
+                        >
                         <input
                             name="tarikh_kerosakan"
                             data-te-date-timepicker-toggle-ref
@@ -190,6 +186,6 @@
         </center>
     </div>
 
-    <?php include('../components/footer.php') ?>
+    <?php include('../../components/footer.php') ?>
 </body>
 </html>

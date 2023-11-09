@@ -28,7 +28,6 @@
   ],
   rows: [
     <?php 
-        require_once('../../db/config.php');
         $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '0'");
         $no = 0;
         while($aduan = mysqli_fetch_array($aduan_sql)){

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        font-family: arial;
+    }
+    .surat{
+        display: flex;
+        justify-content: center;
+    }
+    .surat-laporan{
+        height: 29.7cm;
+        width: 21cm;
+    }
+
+    .underline{
+        border: none;
+        border-bottom: 1px dotted black;
+        padding: 0;
+        width: 230px;
+
+    }
+    .ulasan{
+        display: flex;
+    }
+    .tanda-tangan{
+        /* margin-left: 10px; */
+        width: 250px;
+        margin-top: 70px;
+    }
+    .underline2{
+        border: none;
+        border-bottom: 1px dotted black;
+        margin-bottom: 15px;
+        padding: 0;
+        width: 250px;
+    }
+    .text{
+        display: flex;
+        justify-content: center;
+    }
+    .row{
+        display: flex;
+    }
+    .pengesahan{
+        margin-top: 20px;
+        width: 295px;
+    }
+    .line{
+        border: none;
+        border-bottom: 1px dotted black;
+        margin-bottom: 15px;
+        padding: 0;
+        width: 250px;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    #bordered td{
+        border: 1px solid black;
+        padding: 5px;
+    }
+</style>
+<body style="height: 100vh;">
+    <div class="surat">
+        <div class="surat-laporan" style="height: 1000px;">
+            <header>
+                <div style="width: 200px;height:100px;position: fixed;background-color: black;" class="thing">
+                    <img src="../../src/assets/images/kvks.png" style="height: 100%;width: 100%;" alt="t">
+                </div>
+                <div style="position: fixed;margin-left: 220px;font-size: 0.8rem;">
+                    <center>
+                        <p>KOLEJ VOKASIONAL KUALA SELANGOR</p>
+                        <p>45600 BESTARI JAYA,</p>
+                        <p>SELANGOR DARUL EHSAN</p>
+                    </center>
+                </div>
+                <div style="width: 200px;height:100px;position: fixed;background-color: black;right: 20px;" class="thing">
+                    <img src="../../src/assets/images/jata-negara-malaysia-.png" style="height: 100%;width: 100%;" alt="t">
+                </div>
+                
+            </header>
+            <br><br><br><br><br>
+            <div class="content" style="margin-left: -110px;">
+                <center>
+                    <p>BORANG ADUAN KEROSAKAN</p>
+                </center>
+
+                <div class="" style="margin-left: 100px;">
+                    <table>
+                        <tr>
+                            <td>NAMA PELAPOR </td>
+                            <td>:</td>
+                            <td>{{ nama_pelapor }}</td>
+                        </tr>
+                        <tr>
+                            <td>LOKASI TERPERINCI </td>
+                            <td>:</td>
+                            <td>{{ lokasi_terperinci_aduan }}</td>
+                        </tr>
+                        <tr>
+                            <td>TARIKH </td>
+                            <td>:</td>
+                            <td>{{ tarikh_aduan }}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br><br>
+                <table id="bordered" style="border-collapse: collapse;margin-left: 100px;width: 700px;" >
+                    <tr>
+                        <td rowspan="2">BIL</td>
+                        <td rowspan="2">BUTIRAN MASALAH / KEROSAKAN</td>
+                        <td colspan="2">UNTUK KEGUNAAN KVKS</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">( UNIT PENYELENGARAAN)</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>TINDAKAN</td>
+                        <td>TARIKH</td>
+                    </tr>
+                    <tr>
+                        <td>1. </td>
+                        <td>{{ butiran_kerosakan }}</td>
+                        <td>{{ tindakan_teknikal }}</td>
+                        <td>{{ tarikh_tindakan_aduan }}</td>
+                    </tr>
+
+                    <tr>
+                        <td>2 </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>3 </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>4 </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>5 </td>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>6  </td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                    <tr>
+                        <td>7  </td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>8  </td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>9  </td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>10  </td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+
+                </table>
+            </div>
+            <br><br>
+            
+            <div class="signature">
+                <div class="ulasan">
+                    <p>PENYELENGARAAN OLEH :</p><br>
+                    <br>
+                    <div class="underline"></div>
+                </div>
+
+            </div>
+
+            <div class="tarikh">
+                <div class="ulasan">
+                    <p>TARIKH : </p><br>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

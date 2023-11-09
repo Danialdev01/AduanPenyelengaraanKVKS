@@ -1,0 +1,60 @@
+#+title: projek inovasi Enilam
+
+* Isi kandungan video
+** Pengenalan
+Perpustakaan sekolah merupakan tempat pelajar untuk meminjam dan membaca buku. Pihak pengurusan pepustakawan di sekolah memerlukan satu sistem E-Nilam yang merangkumi proses peminjaman buku, pengiraan statistik pelajar, pembacaan buku.
+** Latar belakang masalah
+- Rekod nilam pelajar di dalam sekolah dicatat di dalam buku fizikal. Buku fizikal tersebut mempunyai peluang yang tinggi untuk hilang dan rosak kerana sikap tidak bertanggungjawab segelintir pelajar.
+- Pelajar mengalami kesukaran untuk mengetahui jenis buku yang terdapat di perpustakaan.
+- Perpustakaan sukar untuk menyimpan infomasi tentang peminjaman buku, pelajar dan rekod bacaan nilam dengan cara yang sistematik.
+
+** Cadangan penyelesaian
+- Dengan cara penggunaan sistem Enilam, ia dapat memudahkan perpustakawan sekolah untuk mengemaskini infomasi tentang bilangan rekod nilam pelajar, permohonan peminjaman buku pelajar, bilangan buku di dalam perpustakawan dan bilangan pelajar berdaftar dengan cara yang selamat.
+Selain itu ia juga dapat mempromosikan dan menggalakkan murid dalam aktiviti pembacaan buku.
+
+** Carta alir , erd
+** Kelebihan penyelesaian
+Sistem yang bakal dibangunkan ini menggunakan pangkalan data berasaskan web dimana data dan malumat pelajar dapat dihasilkan secara atas talian.
+Pengurusan data bacaan nilam, permohonan buku dan pelajar menjadi lebih sistematik dan efisien.
+
+** Kesimpulan
+- Dengan mewujudkan penggunaan sistem tersebut perpustakawan dapat mewujudkan rasa minat pelajar terhadap menuntut ilmu baru melalui cara pembacaan buku yang berinfomasi yang terdapat di dalam perpustakawan
+** Pesirisian yang digunakan
+- php, mysql, javascript, html css dan cpanel hosting
+
+* video
+- Asalamualaikum dan salam malaysia madani ,
+  sungguh berharga sebutir berlian
+  terbentuk dengan pelbagai tekanan
+  dengarlah wahai penonton sekalian
+  kami generasi pencipta penyelesaian
+
+  kami dari kolej vokasional kuala selangor ingin menyelesaikan masalah tentang kehilangan tabiat membaca buku di kalangan pelajar
+  dan penyimpanan data yang tidak terurus di dalam perpustakaan.
+
+  Sebelum ini peminjaman buku di dalam perpustakaan hanya berlaku secara fizikal dan pelajar tidak mempunyai motivasi
+  untuk membaca buku kerana perpustakaan tidak mempromosikan buku yang sedia ada di dalam perpustakaan.
+
+  ** pengenalan **
+  Tak kenal maka tak cinta, Enilam kami merupakan sebuah sistem perisian laman web yang merangkumi proses peminjaman buku, pengiraan statistik pelajar,
+  pembacaan buku dan rekod pembacaan nilam pelajar.
+
+  ** latar belakang masalah **
+  Terdapat beberapa masalah terhadap cara sedia ada
+  - buku fizikal nilam direkodkan secara fizikal yang menyebabkan ia mungkin terjejas dengan sikap murid yang cuai yang boleh menyebabkan buku tersebut hilang
+    atau kerosakan.
+  - perpustakawan mengalami kesukaran untuk membuat statistik pembacaan nilam dan peminjaman buku murid kerana data tersebut tidak tersusun.
+  - tiada cara untuk mempromosikan buku yang terdapat di dalam perpustakaan.
+
+  ** cadangan penyelesaian **
+  - Ia Dapat memudahkan pustakawan sekolah untuk mengemaskini infomasi tentang bilangan rekod nilam pelajar, permohonan peminjaman buku pelajar, bilangan buku di dalam perpustakawan dan bilangan pelajar berdaftar dengan cara selamat.
+  - Ia Dapat mempromosikan dan menggalakkan murid dalam aktiviti pembacaan buku.
+
+  ** carta alir , erd
+
+  ** alatan dan perisian **
+  bagi membangunkan sistem tersebut kami menggunakan mysql, php , css , javascript dan hosting server cpanel
+
+  ** Kelebihan penyelesaian **
+  Antara kelebihan aplikasi ini ialah ia mudah diakses oleh setiap pelajar dan memudahkan mereka untuk merekod pembacaan nilam dan peminjaman buku.
+  Selain itu, ia juga dapat membekalkan perpustakawan data pelajar yang lebih sistematik dan cara untuk mempromosikan buku terkini agar dapat menarik minat pelajar untuk membaca buku.
