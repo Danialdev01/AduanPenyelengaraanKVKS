@@ -43,7 +43,7 @@
     'Jenis Kerosakan',
     'Tarikh Kerosakan',
     'Lokasi Kerosakan',
-    { label: "Status Aduan", field: "contact", sort: false },
+    { label: "Status Aduan", field: "contact", sort: true },
     { label: "Lihat Aduan", field: "contact2", sort: false },
   ],
   rows: [
