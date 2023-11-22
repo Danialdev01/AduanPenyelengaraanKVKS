@@ -83,16 +83,6 @@ CREATE TABLE `aduan_kerosakan_umum` (
 --
 -- Dumping data for table `aduan_kerosakan_umum`
 --
-
-INSERT INTO `aduan_kerosakan_umum` (`id_aduan`, `nama_pelapor`, `lokasi_terperinci_aduan`, `butiran_kerosakan`, `tarikh_aduan`, `tindakan_teknikal_aduan`, `tarikh_tindakkan_aduan`, `ulasan_aduan`, `id_admin`, `nama_img_ref`, `status_aduan`) VALUES
-(4, 'NUR UMIRAH BT MAMAT', 'sebelah bilik guru melur', 'kerosakkan pintu', '10/10/2023, 12:00 PM', 'tukar pintu tombol', '11/10/2023, 12:00 PM', 'selesai', 7, '', 2),
-(5, 'MUHAMAD DANIAL BIN ROSDI', 'bilik mesyuarat', 'mic tidak mengeluarkan suara', '05/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
-(6, 'NUR UMIRAH BT MAMAT', 'bilik hep ', 'kerosakan lampu', '28/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
-(7, 'MASNI BINTI RAHMAN', 'bilik guru melur', 'aircond rosak', '26/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
-(8, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'bilik hep,tingkat 1', 'kerosakan lampu', '27/10/2023, 12:00 AM', NULL, NULL, NULL, 7, '', 1),
-(10, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'Kiosk Aspura', 'Kerosakan lampu', '02/11/2023, 12:00 PM', 'asdasdas', '17/11/2023, 12:00 PM', 'asdasdas', 7, '', 2),
-(16, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'jhgfds', 'kjhgfds', '09/11/2023, 12:00 PM', NULL, NULL, NULL, NULL, '654b4444d3ef7.png', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -138,15 +128,6 @@ CREATE TABLE `kakitangankvks` (
 -- Dumping data for table `kakitangankvks`
 --
 
-INSERT INTO `kakitangankvks` (`id_kakitangan`, `nama_kakitangan`, `jawatan_kakitangan`, `ic_kakitangan`, `status_kakitangan`) VALUES
-(1, 'MASNI BINTI RAHMAN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
-(2, 'NUR UMIRAH BT MAMAT', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
-(3, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
-(4, 'MUHAMAD DANIAL BIN ROSIDI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
-(5, 'NUR SHAKINA BT IBRAHIM', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
-(6, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '851020085642', '1'),
-(7, 'NABILAH BINTI NADZRI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '911110105354', '1');
-
 -- --------------------------------------------------------
 
 --
@@ -191,12 +172,6 @@ CREATE TABLE `pegawai_teknikal` (
 --
 -- Dumping data for table `pegawai_teknikal`
 --
-
-INSERT INTO `pegawai_teknikal` (`id_pegawai`, `nama_pegawai`, `password_pegawai`, `jawatan_pegawai`, `status_pegawai`) VALUES
-(6, 'admin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'admin', 0),
-(7, 'Noor Aslam Bin Noorulldin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'PEGAWAI TEKNIKAL', 1),
-(9, 'Intan Fairuz Binti Ja\'afar', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'PEGAWAI TEKNIKAL', 1);
-
 --
 -- Indexes for dumped tables
 --
