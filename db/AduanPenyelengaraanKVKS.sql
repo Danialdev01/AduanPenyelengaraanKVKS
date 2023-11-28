@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2023 at 01:24 AM
+-- Generation Time: Nov 26, 2023 at 06:50 AM
 -- Server version: 10.11.3-MariaDB
 -- PHP Version: 8.2.6
 
@@ -58,7 +58,10 @@ INSERT INTO `aduan_kerosakan_komputer` (`id_aduan`, `id_kakitangan`, `waktu_beng
 (15, 6, '11/11/2023, 12:00 PM', 3, 'Meja kanan', 1, 'persendirian', 'kpdasd', '01/11/2023, 12:00 PM', 'Printer tidak mengeluarkan warna', 9, '', NULL, NULL, NULL, 0),
 (16, 6, '11/11/2023, 12:00 PM', 3, 'Meja kananasd', 1, 'persendirian', 'kpdasd', '01/11/2023, 12:00 PM', 'Printer tidak mengeluarkan warnaasdas', 9, '', '12312', '12312', 'asdasd', 2),
 (25, 6, '09/11/2023, 12:00 PM', 4, 'asdas', 3, 'sumbangan', 'asdasdas', '16/11/2023, 12:00 PM', 'asdasd', 6, '654ad5328b7b3.org', NULL, NULL, NULL, 1),
-(26, 6, '17/11/2023, 12:00 PM', 8, 'asdasd', 4, 'kerajaan', 'asdasdas', '22/11/2023, 12:00 PM', 'asdasd', 6, '654ad64b458fd.jpg', '12323', '12312', 'thinga', 2);
+(26, 6, '17/11/2023, 12:00 PM', 8, 'asdasd', 4, 'kerajaan', 'asdasdas', '22/11/2023, 12:00 PM', 'asdasd', 6, '654ad64b458fd.jpg', '12323', '12312', 'thinga', 2),
+(27, 6, '17/11/2023, 12:00 PM', 8, 'asdas', 3, 'kerajaan', 'asdasd', '17/11/2023, 12:00 PM', 'asdsas', 6, '654c52dabc46b.jpg', NULL, NULL, NULL, 1),
+(28, 6, '23/11/2023', 4, 'asdas', 4, 'kerajaan', 'asdasda', '23/11/2023, 12:00 PM', 'asdasd', 6, '', NULL, NULL, NULL, 1),
+(29, 6, '24/11/2023', 8, 'asdad', 4, 'persendirian', 'asdasd', '24/11/2023, 12:00 PM', 'asdasda', 6, '655d824c0dd94.png', NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -83,6 +86,18 @@ CREATE TABLE `aduan_kerosakan_umum` (
 --
 -- Dumping data for table `aduan_kerosakan_umum`
 --
+
+INSERT INTO `aduan_kerosakan_umum` (`id_aduan`, `nama_pelapor`, `lokasi_terperinci_aduan`, `butiran_kerosakan`, `tarikh_aduan`, `tindakan_teknikal_aduan`, `tarikh_tindakkan_aduan`, `ulasan_aduan`, `id_admin`, `nama_img_ref`, `status_aduan`) VALUES
+(4, 'NUR UMIRAH BT MAMAT', 'sebelah bilik guru melur', 'kerosakkan pintu', '10/10/2023, 12:00 PM', 'tukar pintu tombol', '11/10/2023, 12:00 PM', 'selesai', 7, '', 2),
+(5, 'MUHAMAD DANIAL BIN ROSDI', 'bilik mesyuarat', 'mic tidak mengeluarkan suara', '05/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
+(6, 'NUR UMIRAH BT MAMAT', 'bilik hep ', 'kerosakan lampu', '28/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
+(7, 'MASNI BINTI RAHMAN', 'bilik guru melur', 'aircond rosak', '26/10/2023, 12:00 PM', NULL, NULL, NULL, 7, '', 1),
+(8, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'bilik hep,tingkat 1', 'kerosakan lampu', '27/10/2023, 12:00 AM', NULL, NULL, NULL, 7, '', 1),
+(10, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'Kiosk Aspura', 'Kerosakan lampu', '02/11/2023, 12:00 PM', 'asdasdas', '17/11/2023, 12:00 PM', 'asdasdas', 7, '', 2),
+(16, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'jhgfds', 'kjhgfds', '09/11/2023, 12:00 PM', NULL, NULL, NULL, NULL, '654b4444d3ef7.png', 0),
+(17, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'jjfhjh', 'jhgjh', '17/11/2023', NULL, NULL, NULL, NULL, '', 1),
+(18, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'tandas tingkat satu blok a ', 'Kerosakan lampu', '25/11/2023', 'tukar mentol ', '25/11/2023, 12:00 PM', 'tukar ', NULL, '655ff84d12787.jpg', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -128,6 +143,15 @@ CREATE TABLE `kakitangankvks` (
 -- Dumping data for table `kakitangankvks`
 --
 
+INSERT INTO `kakitangankvks` (`id_kakitangan`, `nama_kakitangan`, `jawatan_kakitangan`, `ic_kakitangan`, `status_kakitangan`) VALUES
+(1, 'MASNI BINTI RAHMAN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
+(2, 'NUR UMIRAH BT MAMAT', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
+(3, 'NUR SYAZWANI BINTI AHMAD KAMARRUDIN', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
+(4, 'MUHAMAD DANIAL BIN ROSIDI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
+(5, 'NUR SHAKINA BT IBRAHIM', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '', '1'),
+(6, 'HALIMATUN ASIKIN BINTI ZOLKIFLI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '851020085642', '1'),
+(7, 'NABILAH BINTI NADZRI', 'PENSYARAH JABATAN TEKNOLOGI MAKLUMAT', '911110105354', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -172,6 +196,12 @@ CREATE TABLE `pegawai_teknikal` (
 --
 -- Dumping data for table `pegawai_teknikal`
 --
+
+INSERT INTO `pegawai_teknikal` (`id_pegawai`, `nama_pegawai`, `password_pegawai`, `jawatan_pegawai`, `status_pegawai`) VALUES
+(6, 'admin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'admin', 0),
+(7, 'Noor Aslam Bin Noorulldin', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'PEGAWAI TEKNIKAL', 1),
+(9, 'Intan Fairuz Binti Ja\'afar', '$2y$10$GceLVxp8qq2JUzpM18HTB.neTEK2hksZI.qvWEjiVHfk0clMFXqA.', 'PEGAWAI TEKNIKAL', 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -220,13 +250,13 @@ ALTER TABLE `pegawai_teknikal`
 -- AUTO_INCREMENT for table `aduan_kerosakan_komputer`
 --
 ALTER TABLE `aduan_kerosakan_komputer`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `aduan_kerosakan_umum`
 --
 ALTER TABLE `aduan_kerosakan_umum`
-  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id_aduan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `aset`
