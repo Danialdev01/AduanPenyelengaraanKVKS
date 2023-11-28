@@ -14,12 +14,10 @@
                 <form action="./system/tambah-aduan.php" method="post" enctype="multipart/form-data">
 
                     <?php 
-                        $ic_kakitangan = $_SESSION['icKakitangan'];
-                        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE ic_kakitangan = '$ic_kakitangan'");
-                        $kakitangan = mysqli_fetch_array($kakitangan_sql);
+                        $id_kakitangan = $_SESSION['idKakitangan'];
                     ?>
                     <!-- id kakitangan -->
-                    <input type="hidden" name="id_kakitangan" value="<?php echo $kakitangan['id_kakitangan'] ?>">
+                    <input type="hidden" name="id_kakitangan" value="<?php echo $id_kakitangan ?>">
 
                     <!-- gambar kerosakan -->
                     <div class="mb-3 text-left">

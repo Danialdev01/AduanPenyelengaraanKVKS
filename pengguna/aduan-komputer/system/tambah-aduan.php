@@ -21,7 +21,7 @@
         echo "<br>";
         echo $perihal_kerosakan  = $_POST['perihal_kerosakan'];
 
-        $ic_kakitangan = $_SESSION['icKakitangan'];
+        $id_kakitangan= $_SESSION['idKakitangan'];
         $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE ic_kakitangan = '$ic_kakitangan'");
         $kakitangan = mysqli_fetch_array($kakitangan_sql);
         

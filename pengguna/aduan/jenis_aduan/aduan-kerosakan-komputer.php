@@ -1,10 +1,7 @@
 <div class="aduan-kerosakan-komputer">
     <?php
-        $ic_kakitangan = $_SESSION['icKakitangan'];
-        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE ic_kakitangan = '$ic_kakitangan'");
-        $kakitangan = mysqli_fetch_array($kakitangan_sql);
+        $id_kakitangan = $_SESSION['idKakitangan'];
 
-        $id_kakitangan = $kakitangan['id_kakitangan'];
         $aduan_kerosakan_komputer_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE id_kakitangan = '$id_kakitangan'");
         while($aduan_kerosakan_komputer = mysqli_fetch_array($aduan_kerosakan_komputer_sql)){
             ?>

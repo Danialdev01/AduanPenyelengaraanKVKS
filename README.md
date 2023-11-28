@@ -9,7 +9,7 @@ $title = "(title page)"
 ### Session Variable
 isLoggedIn = (2 = logged in admin), (3 = logged in kakitangan), (lain = not logged in)
 idAdmin = (id admin)
-icKakitangan = (id kakitangan)
+idKakitangan = (id kakitangan)
 error = (error)
 
 ### Borang Aduan Kerosakan Umum

@@ -60,6 +60,28 @@
         padding: 0;
         width: 250px;
     }
+    td{
+        text-align: center;
+    }
+    .filler-1 td:first-child{
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+    }
+    .filler-1 td:nth-child(2){
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+    }
+    .filler-1 td:nth-child(3){
+        border-top: none !important;
+        border-right: none !important;
+        border-bottom: none !important;
+    }
+    .filler-1 td:nth-child(4){
+        border-top: none !important;
+        border-bottom: none !important;
+    }
     h3{
         font-size: 1rem;
     }
@@ -116,80 +138,79 @@
                 <br><br>
                 <table id="bordered" style="border-collapse: collapse;margin-left: 100px;width: 700px;" >
                     <tr>
-                        <td rowspan="2">BIL</td>
-                        <td rowspan="2">BUTIRAN MASALAH / KEROSAKAN</td>
+                        <td rowspan="3">BIL</td>
+                        <td rowspan="3">BUTIRAN MASALAH / KEROSAKAN</td>
                         <td colspan="2">UNTUK KEGUNAAN KVKS</td>
                     </tr>
                     <tr>
                         <td colspan="2">( UNIT PENYELENGARAAN)</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td>TINDAKAN</td>
+                        <td>ULASAN ADUAN</td>
                         <td>TARIKH</td>
                     </tr>
                     <tr>
-                        <td>1. </td>
-                        <td>{{ butiran_kerosakan }}</td>
-                        <td>{{ tindakan_teknikal }}</td>
-                        <td>{{ tarikh_tindakan_aduan }}</td>
+                        <td style="border-bottom: none;">1. </td>
+                        <td style="border-bottom: none;">{{ butiran_kerosakan }}</td>
+                        <td style="border-bottom: none;">{{ ulasan_aduan }}</td>
+                        <td style="border-bottom: none;">{{ tarikh_tindakan_aduan }}</td>
                     </tr>
 
                     <tr>
-                        <td>2 </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>3 </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>4 </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>5 </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>6  </td>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
                         <td></td>
                         <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td ></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
+                        <td> </td>
+                        <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
+                        <td></td>
                         <td> </td>
                     </tr>
 
-                    <tr>
-                        <td>7  </td>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
                         <td></td>
                         <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
+                        <td></td>
+                        <td> </td>
+                    </tr>
+                    <tr class="filler-1">
+                        <td style="color: white !important;"> l</td>
+                        <td></td>
+                        <td></td>
                         <td> </td>
                     </tr>
                     <tr>
-                        <td>8  </td>
-                        <td></td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>9  </td>
-                        <td></td>
-                        <td> </td>
-                        <td> </td>
-                    </tr>
-                    <tr>
-                        <td>10  </td>
-                        <td></td>
-                        <td> </td>
-                        <td> </td>
+                        <td class="text-white" style="color: white !important; border-top: none !important;border-right: none !important;"> l</td>
+                        <td style="border-top: none !important;border-right: none !important;"></td>
+                        <td style="border-top: none !important;border-right: none !important;"></td>
+                        <td style="border-top: none !important;"> </td>
                     </tr>
 
                 </table>

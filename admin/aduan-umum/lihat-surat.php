@@ -28,7 +28,7 @@ use Dompdf\Options;
         $html = str_replace("{{ tarikh_aduan }}", ucfirst(strtolower($aduan['tarikh_aduan'])), $html);
 
         $html = str_replace("{{ butiran_kerosakan }}", ucfirst(strtolower($aduan['butiran_kerosakan'])), $html);
-        $html = str_replace("{{ tindakan_teknikal }}", ucfirst(strtolower($aduan['tindakan_teknikal_aduan'])), $html);
+        $html = str_replace("{{ ulasan_aduan }}", ucfirst(strtolower($aduan['ulasan_aduan'])), $html);
         $html = str_replace("{{ tarikh_tindakan_aduan }}", ucfirst(strtolower($aduan['tarikh_tindakkan_aduan'])), $html);
 
         $dompdf->loadHtml($html);
@@ -37,7 +37,9 @@ use Dompdf\Options;
         // $dompdf->addInfo("Borang Penyelengaraan", "Penyelengaraan Elektronik");
         $dompdf->stream("borang.pdf", ["Attachment" => 0]);
     }
-    header("location:./")
+    else{
+        header("location:./");
+    }
 
 
 ?>

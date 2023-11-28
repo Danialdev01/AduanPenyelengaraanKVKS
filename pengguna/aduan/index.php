@@ -48,10 +48,9 @@
   ],
   rows: [
     <?php 
-        $ic_kakitangan = $_SESSION['icKakitangan'];
-        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE ic_kakitangan = '$ic_kakitangan'");
+        $id_kakitangan = $_SESSION['idKakitangan'];
+        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE id_kakitangan = '$id_kakitangan'");
         $kakitangan = mysqli_fetch_array($kakitangan_sql);
-        $id_kakitangan = $kakitangan['id_kakitangan'];
         $nama_kakitangan = $kakitangan['nama_kakitangan'];
     ?>
     <?php 
