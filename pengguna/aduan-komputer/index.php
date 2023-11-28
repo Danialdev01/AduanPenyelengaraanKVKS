@@ -183,6 +183,6 @@
         </center>
     </div>
 
-    <?php include('../../components/footer.php') ?>
+    <?php $location_index = "../..";include('../../components/footer.php') ?>
 </body>
 </html>
