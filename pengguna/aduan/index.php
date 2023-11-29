@@ -117,6 +117,6 @@ document.getElementById('datatable-search-input3').addEventListener('input', (e)
 </script>
 
 
-    <?php include('../../../components/footer.php') ?>
+    <?php $location_index = "../.."; include('../../components/footer.php') ?>
 </body>
 </html>

@@ -3,10 +3,14 @@
     require_once('../../../db/config.php');
 
     if(isset($_POST['submit'])){
-        $nama_pelapor = $_POST['nama_pelapor'];
-        $tarikh_aduan = $_POST['tarikh_aduan'];
-        $lokasi_terperinci_aduan = $_POST['lokasi_terperinci_aduan'];
-        $butiran_kerosakan = $_POST['butiran_kerosakan'];
+        echo $nama_pelapor = $_POST['nama_pelapor'];
+        echo "<br>";
+        echo $tarikh_aduan = $_POST['tarikh_aduan'];
+        echo "<br>";
+        echo $lokasi_terperinci_aduan = $_POST['lokasi_terperinci_aduan'];
+        echo "<br>";
+        echo $butiran_kerosakan = $_POST['butiran_kerosakan'];
+        echo "<br>";
 
         if($_FILES["image"]["name"] != NULL || $_FILES["image"]["name"] != ""){
 
@@ -45,8 +49,7 @@
                     echo $nama_file = $newImageName;
                     
         
-                    $tambah_aduan_kerosakan_umum = mysqli_query($connect, "INSERT INTO aduan_kerosakan_umum VALUES (NULL,'$nama_pelapor','$lokasi_terperinci_aduan','$butiran_kerosakan','$tarikh_aduan', NULL, NULL, NULL, NULL, '$nama_file', '1')");
-                    echo "thing";
+                    $tambah_aduan_kerosakan_umum = mysqli_query($connect, "INSERT INTO aduan_kerosakan_umum VALUES (NULL,'$nama_pelapor','$lokasi_terperinci_aduan','$butiran_kerosakan','$tarikh_aduan', NULL, NULL, NULL, '$nama_file', '1')");
     
                     $_SESSION['prompt'] = "Berjaya Hantar Aduan";
                     header("location:../");
@@ -54,7 +57,8 @@
             }
         }
         else{
-            $tambah_aduan_kerosakan_umum = mysqli_query($connect, "INSERT INTO aduan_kerosakan_umum VALUES (NULL,'$nama_pelapor','$lokasi_terperinci_aduan','$butiran_kerosakan','$tarikh_aduan', NULL, NULL, NULL, NULL, '$nama_file', '1')");
+            echo "No Image";
+            $tambah_aduan_kerosakan_umum = mysqli_query($connect, "INSERT INTO aduan_kerosakan_umum VALUES (NULL,'$nama_pelapor','$lokasi_terperinci_aduan','$butiran_kerosakan','$tarikh_aduan', NULL, NULL, NULL, NULL, '1')");
 
             $_SESSION['prompt'] = "Berjaya Hantar Aduan";
             header("location:../");

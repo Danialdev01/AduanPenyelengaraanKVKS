@@ -10,7 +10,7 @@
             <h2>Aduan Kerosakan Komputer</h2>
             <br>
             <div
-                class="block max-w-xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                class="z-[100] block max-w-xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                 <form action="./system/tambah-aduan.php" method="post" enctype="multipart/form-data">
 
                     <?php 

@@ -163,7 +163,7 @@
             </div>
         </div>
         
-        <div class="button bg-blue-700 rounded text-white p-2"><a href="./"><button>Kembali Kepada Halaman Aduan</button></a></div>
+        <div style="background-color: blue;" class="button bg-blue-700 rounded text-white p-2"><a href="./"><button>Kembali Kepada Halaman Aduan</button></a></div>
     </div>
     <center>
     <br></div>
