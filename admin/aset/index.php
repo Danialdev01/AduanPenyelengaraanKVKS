@@ -1,4 +1,5 @@
 <?php $title = "Semua aset"; $location_index = "../.."; include('../../components/head.php')?>
+<script src="../../dist/tw-elements.umd.min.js"></script>
 <body>
     <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     

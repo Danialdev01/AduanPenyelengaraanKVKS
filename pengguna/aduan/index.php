@@ -6,6 +6,7 @@
       font-weight: bold;
     }
 </style>
+<script src="../../dist/tw-elements.umd.min.js"></script>
 <body>
     <?php $location_index = "../.."; include('../../components/header.php') ?>
     
