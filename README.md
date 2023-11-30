@@ -1,30 +1,25 @@
-# AduanKerosakanKomputer
+# ePenyelengaraan
 
-Aduan Penyelengaraan adalah sebuah sistem yang membolehkan para warga kolej vokasional mengadukan permasalahan sekitar 
+Sistem ePenyelengaraan adalah sebuah sistem yang membolehkan para warga kolej vokasional mengadukan permasalahan sekitar.
+Ia Dibangunkan hasil kerjasama pelajar Teknologi Pengurusan Pangkalan Data dan Jabatan Teknologi Maklumat dan diaplikasikan oleh unit penyelanggaraan KVKS. 
 
-### Props variables 
-$location_index  = "(lokasi reference diamana file berapa contoh "." untuk root dan ".." untuk dalam folder)"
-$title = "(title page)"
+![Alt text](documentation/img/screenshot.png)
 
-### Session Variable
-isLoggedIn = (2 = logged in admin), (3 = logged in kakitangan), (lain = not logged in)
-idAdmin = (id admin)
-idKakitangan = (id kakitangan)
-error = (error)
+## Kelebihan 
+#### Mudah Digunakan
+Penghantaran aduan kerosakan kepada pegawai teknikal hanya dihujung jari.
 
-### Borang Aduan Kerosakan Umum
-- nama pelapor 
-- lokasi terperinci
-- tarikh
-- bil - butiran masalah / Kerosakan
+#### Pantas
+Aduan kerosakan yang diterima akan dapat diselesaikan dengan secepat yang mungkin.
 
-- admin
-    - tindakan
-    - tarikh
-    - penyelengaraan oleh 
-    - tarikh
+#### Aduan Berpusat
+Rekod aduan dan penyelenggaraan secara sistematik dan berpusat.
 
-# Status aduan 
-- 0 : batal
-- 1 : aktif
-- 2 : telah disahkan
+## Gambaran Sistem
+![Alt text](documentation/img/screenshot-admin-kerosakan.png)
+
+![Alt text](documentation/img/screenshot-admin-pengguna.png)
+
+![Alt text](documentation/img/screenshot-pengguna-komputer.png)
+
+![Alt text](documentation/img/screenshot-pengguna-umum.png)
