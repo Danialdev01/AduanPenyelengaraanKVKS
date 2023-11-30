@@ -6,6 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <center>
+        <h1>Error kot</h1>
+    </center>
 </body>
 </html>

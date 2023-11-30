@@ -14,12 +14,12 @@
     </div>
     <div id="datatable1"></div>
   </div>
-  <div class="tambah">
-    <a href="tambah-pegawai-teknikal.php">
-      <button style="background-color: black;border-radius:50%;width:40px;height:40px;color:white;font-size:1.3rem;position:absolute;bottom:5%;right:5%">+</button>
+</center>
+<div class="tambah">
+    <a href="tambah-pegawai.php">
+      <button style="background-color: black;border-radius:50%;width:40px;height:40px;color:white;font-size:1.3rem;position:relative;bottom:5%;left:90%">+</button>
     </a>
   </div>
-</center>
 
 <script>
     const data1 = {
@@ -40,7 +40,7 @@
 
             $nama_pegawai = $pegawai['nama_pegawai'];
             $jawatan_pegawai = $pegawai['jawatan_pegawai'];
-            $id_pegawai = $pegawai['pegawai'];
+            $id_pegawai = $pegawai['id_pegawai'];
         echo "[\"$no\", \"$nama_pegawai\", \"$jawatan_pegawai\", \"<a href='kemaskini-pegawai.php?id_pegawai=$id_pegawai'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-pegawai.php?id_pegawai=$id_pegawai'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
 
 

@@ -14,7 +14,12 @@
         </div>
         <div id="datatable2"></div>
     </div>
-</center>
+  </center>
+  <div class="tambah">
+    <a href="tambah-kakitangan.php">
+      <button style="background-color: black;border-radius:50%;width:40px;height:40px;color:white;font-size:1.3rem;position:relative;bottom:5%;left:90%">+</button>
+    </a>
+  </div>
 
 <script>
     const data2 = {

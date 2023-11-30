@@ -39,12 +39,12 @@
                                                 <td class="whitespace-nowrap px-6 py-4"><?php echo $aset['nama_aset']?></td>
                                                 <td class="whitespace-nowrap px-6 py-4"><?php echo $aset['jenis_aset']?></td>
                                                 <td class="whitespace-nowrap px-6 py-4">
-                                                    <a href="">
-                                                        <button class="bg-blue-500 hover:bg-blue-600 px-3 py-1 text-white rounded-sm">Kemaskini</button>
+                                                    <a href="./kemaskini-aset.php?id_aset=<?php echo $aset['id_aset']?>">
+                                                        <button style="background-color: blue;" class="hover:bg-blue-600 px-3 py-1 text-white rounded-sm">Kemaskini</button>
                                                     </a>
                                                 </td>
                                                 <td class="whitespace-nowrap px-6 py-4">
-                                                    <a href="">
+                                                    <a href="./system/delete-aset.php?id_aset=<?php echo $aset['id_aset']?>">
                                                         <button class="bg-red-500 hover:bg-red-600 px-3 py-1 text-white rounded-sm">Delete</button>
                                                     </a>
                                                 </td>
@@ -63,12 +63,12 @@
         </center>
         <br><br>
 
-        <div class="button-add-aset">
-            <a href="./tambah-aset.php">
-                <button class="fixed bg-black text-white h-10 w-10 text-2xl" style="border-radius:50%;right:10vw;bottom:10vh">+</button>
-            </a>
-        </div>
     </div>
+    <div class="button-add-aset" style="padding-bottom: 20px;">
+        <a href="./tambah-aset.php">
+        <button style="background-color: black;border-radius:50%;width:40px;height:40px;color:white;font-size:1.3rem;position:relative;bottom:5%;left:85%">+</button>
+        </a>
+  </div>
 
     <?php $location_index = "../..";include('../../components/footer.php') ?>
 </body>

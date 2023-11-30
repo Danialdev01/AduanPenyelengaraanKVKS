@@ -26,7 +26,15 @@
                         </label>
                     </div>
 
-                    <input type="hidden" name="jenis_aset" value="ELEKTRONIK">
+                    <!-- jenis aset -->
+                    <div class="relative mb-6">
+                        <select name="jenis_aset" data-te-select-init data-te-select-filter="true" required>
+                            <option>Jenis Aset</option>
+                            <option value="ELEKTRONIK">ELEKTRONIK</option>
+                            <option value="ASET ALIH">ASET ALIH</option>
+                            <option value="KOMPUTER">KOMPUTER</option>
+                        </select>
+                    </div>
 
                     <!--Submit button-->
                     <button

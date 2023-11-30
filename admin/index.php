@@ -11,14 +11,14 @@
                 <!-- Aduan Kerosakan peranti elektronink -->
                 <div class="p-3">
                     <div
-                        class="text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                        class="h-48 text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <div class="p-6">
                             <h5
                             class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
                             Aduan Kerosakan Komputer
                             </h5>
                             <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
-                            Kerosakan Komputer di Kolej Vokasional Kuala Selangor(KEW.PA-10)
+                            Kerosakan Komputer di Kolej Vokasional Kuala Selangor
                             </p>
                             <a href="./aduan-komputer/">
                                 <button
@@ -37,7 +37,7 @@
                 <!-- Aduan Kerosakan Umum -->
                 <div class="p-3">
                     <div
-                        class="text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                        class="h-48 text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <div class="p-6">
                             <h5
                             class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
