@@ -65,7 +65,7 @@
                         >
                     </div>
                     <div class="back-link text-left">
-                        <a style="color: #0048ff;" href="./"><u>Bukan Admin</u></a>
+                        <a style="color: #0048ff;" href="./"><u>Kembali</u></a>
                     </div>
                     <br>
     
