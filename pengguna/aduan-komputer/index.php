@@ -102,7 +102,7 @@
                     <!-- jenis_kepunyaan_aset -->
                     <div class="relative mb-3">
                         <select name="jenis_kepunyaan_aset" data-te-select-init data-te-select-filter="true" required>
-                            <option>Jenis kepunyaan Aset</option>
+                            <option>Jenis Kepunyaan Aset</option>
                             <option value="sumbangan">Sumbangan</option>
                             <option value="persendirian">Persendirian</option>
                             <option value="kerajaan">Hak Milik Kerajaan</option>
