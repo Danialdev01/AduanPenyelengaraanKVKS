@@ -62,7 +62,9 @@ use Dompdf\Options;
         // $dompdf->addInfo("Borang Penyelengaraan", "Penyelengaraan Elektronik");
         $dompdf->stream("borang.pdf", ["Attachment" => 0]);
     }
-    header("location:./")
+    else{
+        header("location:./");
+    }
 
 
 ?>
