@@ -11,7 +11,7 @@
                 <div class="aduan-kerosakan-komputer p-3">
                     <!-- Aduan Kerosakan peranti elektronink -->
                     <div
-                        class="h-56 text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                        class="h-64 md:h-56 text-left max-w-md block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                         <div class="p-6">
                             <h5
                             class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
@@ -20,7 +20,7 @@
                             <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                             Kerosakan Komputer di Kolej Vokasional Kuala Selangor(KEW.PA-10)
                             </p>
-                            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">Contoh : monitor, printer, powersupply ..</p>
+                            <p class="mb-4 md:text-base text-sm text-neutral-600 dark:text-neutral-200">Contoh : monitor, printer, powersupply...</p>
                             <a href="./aduan-komputer/">
                                 <button
                                     type="button"
@@ -47,7 +47,7 @@
                             <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                             Kerosakan Umum di Kolej Vokasional Kuala Selangor
                             </p>
-                            <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                            <p class="mb-4 md:text-base text-sm text-neutral-600 dark:text-neutral-200">
                             Contoh : lampu, kipas , paip ...
                             </p>
                             <a href="./aduan-umum/">
