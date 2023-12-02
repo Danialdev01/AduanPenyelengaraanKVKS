@@ -85,6 +85,28 @@
     ?>
 
     <?php 
+        // Aduan kerosakan penyaman udara
+        $aduan_kerosakan_penyaman_udara_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_penyaman_udara WHERE id_kakitangan = '$id_kakitangan'");
+
+        while($aduan_kerosakan_penyaman_udara = mysqli_fetch_array($aduan_kerosakan_penyaman_udara_sql)){
+
+            $id_aduan_kerosakan_penyaman_udara = $aduan_kerosakan_penyaman_udara['id_aduan'];
+            $tarikh_kerosakan = $aduan_kerosakan_penyaman_udara['tarikh_kerosakan'];
+            $lokasi = $aduan_kerosakan_penyaman_udara['lokasi'];
+            $status_aduan = $aduan_kerosakan_penyaman_udara['status_aduan'];
+
+            if($status_aduan == 1){$status_aduan_text = "Sedang Diproses";$color = "blue";}
+            else if($status_aduan == 2){$status_aduan_text = "Telah Disiapkan";$color = "green";}
+            else if($status_aduan == 0){$status_aduan_text = "Telah Dibatalkan";$color = "red";}
+            else{$status_aduan_text = "Error";}
+
+        echo "[\"Kerosakan Penyaman Udara\", \"Penyaman Udara\", \"$tarikh_kerosakan\", \"$lokasi\", \"<p style='color:$color'>$status_aduan_text<p>\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan_kerosakan_penyaman_udara&jenis=kerosakan_penyaman_udara'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+
+
+        }
+    ?>
+
+    <?php 
         // Aduan kerosakan umum 
         $aduan_kerosakan_umum_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE nama_pelapor = '$nama_kakitangan'");
 

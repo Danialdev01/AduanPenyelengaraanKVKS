@@ -91,6 +91,18 @@
           <a
             class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
             aria-current="page"
+            href="<?php echo $location_index?>/pengguna/aduan-penyaman-udara"
+            data-te-nav-link-ref
+            >Kerosakan Penyaman Udara</a
+          >
+        </li>
+
+        <li
+          class="my-4 pl-2 lg:my-0 lg:pl-2 lg:pr-1"
+          data-te-nav-item-ref>
+          <a
+            class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
+            aria-current="page"
             href="<?php echo $location_index?>/pengguna/aduan"
             data-te-nav-link-ref
             >Aduan Terdahulu</a

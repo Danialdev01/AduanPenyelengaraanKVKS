@@ -18,7 +18,7 @@ use Dompdf\Options;
 
         $id_aduan = $_GET['id_aduan'];
         // dapatkan info tentang aduan selected
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE id_aduan = '$id_aduan'");
+        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_penyaman_udara WHERE id_aduan = '$id_aduan'");
         $aduan = mysqli_fetch_array($aduan_sql);
 
         // dapatkan info kakitangankvks aduan selected
@@ -27,10 +27,7 @@ use Dompdf\Options;
         $kakitangankvks = mysqli_fetch_array($kakitangankvks_sql);
 
         // Bahagian I (Untuk diisi oleh Pengadu)
-        $id_aset = $aduan['id_aset'];
-        $aset_sql = mysqli_query($connect, "SELECT nama_aset FROM aset WHERE id_aset = '$id_aset'");
-        $aset = mysqli_fetch_array($aset_sql);
-        $html = str_replace("{{ jenis_aset }}", ucfirst(strtolower($aset['nama_aset'])), $html);
+        $html = str_replace("{{ jenis_aset }}", "Penyaman Udara", $html);
         $html = str_replace("{{ nombor_siri_pendaftaran_aset }}", $aduan['nombor_siri_pendaftaran_aset'], $html);
         $html = str_replace("{{ kakitangankvks }}", ucfirst(strtolower($kakitangankvks['nama_kakitangan'])), $html);
         $tarikh_kerosakan = str_split($aduan['tarikh_kerosakan'], 10);
@@ -59,7 +56,6 @@ use Dompdf\Options;
         $dompdf->loadHtml($html);
         $dompdf->render();
     
-        // $dompdf->addInfo("Borang Penyelengaraan", "Penyelengaraan Elektronik");
         $dompdf->stream("borang.pdf", ["Attachment" => 0]);
     }
     else{

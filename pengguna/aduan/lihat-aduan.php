@@ -17,6 +17,12 @@
             else if($jenis_aduan == "kerosakan_umum"){
                 include('./jenis_aduan/lihat_aduan_kerosakan_umum.php');
             }
+            else if($jenis_aduan == "kerosakan_penyaman_udara"){
+                include('./jenis_aduan/lihat_aduan_kerosakan_penyaman_udara.php');
+            }
+            else{
+                echo "<center><h1>???</h1></center>";
+            }
             
         ?>
     </div>

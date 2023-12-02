@@ -27,27 +27,27 @@
     
                 // if password betul
                 if($isBetul == 1){
-                    $_SESSION['idAdmin'] = $id_admin;
+                    $_SESSION['idAdmin'] = $find_pengguna['id_pegawai'];
                     $_SESSION['isLoggedIn'] = 2;
                     header("location:../admin/");
                 }
                 else{
-                    $_SESSION['error'] = "Salah password";
+                    $_SESSION['prompt'] = "Salah password";
                     header("location:../admin-login.php");
                 }
             }
             else{
-                $_SESSION['error'] = "Pengguna Tidak Boleh Dijumpai";
+                $_SESSION['prompt'] = "Pengguna Tidak Boleh Dijumpai";
                 header("location:../admin-login.php");
             }
         }
         else{
-            $_SESSION['error'] = "Captcha tidak sepadan";
+            $_SESSION['prompt'] = "Captcha tidak sepadan";
             header("location:../admin-login.php");
         }
     }
     else{
-        $_SESSION['error'] = "Tidak Masukkan Input";
+        $_SESSION['prompt'] = "Tidak Masukkan Input";
         header("location:../admin-login.php");
     }
 

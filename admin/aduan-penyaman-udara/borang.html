@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        width: 100%;
+        height: 100%;
+        font-family: arial;
+    }
+    .surat{
+        display: flex;
+        justify-content: center;
+    }
+    .surat-laporan{
+        height: 29.7cm;
+        width: 21cm;
+    }
+
+    .underline{
+        border: none;
+        border-bottom: 1px dotted black;
+        padding: 0;
+        width: 550px;
+
+    }
+    .ulasan{
+        display: flex;
+    }
+    .tanda-tangan{
+        /* margin-left: 10px; */
+        width: 250px;
+        margin-top: 70px;
+    }
+    .underline2{
+        border: none;
+        border-bottom: 1px dotted black;
+        margin-bottom: 15px;
+        padding: 0;
+        width: 250px;
+    }
+    .text{
+        display: flex;
+        justify-content: center;
+    }
+    .row{
+        display: flex;
+    }
+    .pengesahan{
+        margin-top: 20px;
+        width: 295px;
+    }
+    .line{
+        border: none;
+        border-bottom: 1px dotted black;
+        margin-bottom: 15px;
+        padding: 0;
+        width: 250px;
+    }
+    h3{
+        font-size: 1rem;
+    }
+</style>
+<body style="height: 100vh;">
+    <div class="surat">
+        <div class="surat-laporan" style="height: 1000px;">
+            <h4 style="right: 0;position: fixed;color: rgba(0, 0, 0, 0.801);font-size: 0.8rem;margin-top: -15px;">KEW.PA-10</h4>
+            <center>
+                <h4 style="margin-left: -100px;font-size: 0.9rem;">BORANG ADUAN KEROSAKAN ASET MUDAH ALIH</h4>
+                <br>
+            </center>
+            <table>
+                <tr>
+                    <td class="header" colspan="4">
+                        <h3>Bahagian I (Untuk diisi oleh Pengadu)</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 10px;" class="bil-data">1.</td>
+                    <td class="tajuk-data">Jenis Aset</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ jenis_aset }}</td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">2.</td>
+                    <td class="tajuk-data">Nombor Siri Pendaftaran Aset/ Komponen</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ nombor_siri_pendaftaran_aset }}</td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">3.</td>
+                    <td class="tajuk-data">Pengguna Terakhir</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ kakitangankvks }}</td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">4.</td>
+                    <td class="tajuk-data">Tarikh Kerosakan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ tarikh_kerosakan }}</td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">5.</td>
+                    <td class="tajuk-data">Perihal Kerosakan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ perihal_kerosakan }}</td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">6.</td>
+                    <td class="tajuk-data">Nama dan Jawatan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">
+                        {{ kakitangankvks }}
+                        <br>
+                        {{ jawatan_kakitangankvks }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">7.</td>
+                    <td class="tajuk-data">Tarikh</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ tarikh_kerosakan }}</td>
+                </tr>
+
+                <tr>
+                    <td class="header" colspan="4">
+                        <h3>Bahagian II (Untuk diisi oleh Pegawai Aset/ pegawai Teknikal)</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="bil-data">8.</td>
+                    <td class="tajuk-data">Jumlah Kos Penyelenggaraan Terdahulu</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">RM {{ kos_penyelengaraan_terdahulu }}</td>
+                </tr>
+
+                
+                <tr>
+                    <td class="bil-data">9.</td>
+                    <td class="tajuk-data">Anggaran kos penyelenggaraan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">RM {{ kos_penyelengaraan_anggaran }}</td>
+                </tr>
+
+                
+                <tr>
+                    <td class="bil-data">10.</td>
+                    <td class="tajuk-data">Syor dan Ulasan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">{{ ulasan_aduan }}</td>
+                </tr>
+
+                
+                <tr>
+                    <td class="bil-data">11.</td>
+                    <td class="tajuk-data">Nama dan Jawatan</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data">
+                        <!-- {{ nama_pegawai }} -->
+                        <!-- ( {{ jawatan_pegawai }} ) -->
+                    </td>
+                </tr>
+
+                
+                <tr>
+                    <td class="bil-data">12.</td>
+                    <td class="tajuk-data">Tarikh</td>
+                    <td class="dot-data">:</td>
+                    <td class="isi-data"></td>
+                </tr>
+
+                <tr>
+                    <td class="header" colspan="4">
+                        <h3>Bahagian III (Keputusan Ketua Jabatan/ Bahagian/ Seksyen/ Unit)</h3>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="4">Diluluskan/Tidak Diluluskan*</td>
+                </tr>
+
+                <tr>
+                    <td colspan="5">
+                        <div class="signature">
+                            <div class="ulasan">
+                                <p>Ulasan:</p><br>
+                                <div class="underline"></div>
+                            </div>
+    
+                            <div class="tanda-tangan">
+                                <div class="container">
+                                    <div class="sign"><hr class="underline2"></div>
+                                    <center>
+                                        <div class="text">Tandatangan</div>
+                                    </center>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pengesahan">
+                            <div class="row">
+                                <p>Nama:</p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="row">
+                                <p>Jawatan:</p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="row">
+                                <p>Tarikh:</p>
+                                <div class="line"></div>
+                            </div>
+                            <div class="row">
+                                <p>Nota: * Potong mana yang tidak berkenaan.</p>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -19,8 +19,7 @@
     const data3 = {
   columns: [
     'No',
-    'Jenis Aset',
-    'Waktu Bengkel Kosong',
+    'Waktu Lokasi Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
     { label: "Lihat Aduan", field: "contact", sort: false },
@@ -28,20 +27,16 @@
   ],
   rows: [
     <?php 
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '0' ORDER BY tarikh_kerosakan DESC");
+        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_penyaman_udara WHERE status_aduan = '0' ORDER BY tarikh_kerosakan DESC");
         $no = 0;
         while($aduan = mysqli_fetch_array($aduan_sql)){
             $no++;
-            $id_aset = $aduan['id_aset'];
-            $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE id_aset = '$id_aset'");
-            $aset = mysqli_fetch_array($aset_sql);
 
             $id_aduan = $aduan['id_aduan'];
-            $jenis_aset = $aset['nama_aset'];
-            $waktu_bengkel_kosong = $aduan['waktu_bengkel_kosong'];
+            $waktu_lokasi_kosong = $aduan['waktu_lokasi_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
-        echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\"],";
+        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\"],";
 
 
         }

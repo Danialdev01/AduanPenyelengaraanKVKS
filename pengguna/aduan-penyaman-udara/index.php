@@ -7,7 +7,7 @@
         <br>
         <!-- Form Aduan Kerosakan -->
         <center>
-            <h2>Aduan Kerosakan Komputer</h2>
+            <h2>Aduan Kerosakan Kerosakan Penyaman Udara</h2>
             <br>
             <div
                 class="z-[100] block max-w-xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
@@ -29,7 +29,7 @@
                             type="file"/>
                     </div>
 
-                    <!-- waktu_bengkel_kosong-->
+                    <!-- waktu_lokasi_kosong-->
                     <div
                         class="relative mb-3"
                         data-te-datepicker-init
@@ -38,7 +38,7 @@
                         data-te-input-wrapper-init>
                         <input
                             type="text"
-                            name="waktu_bengkel_kosong"
+                            name="waktu_lokasi_kosong"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 peer-focus:text-primary data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:peer-focus:text-primary [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             placeholder="Select a date"
                             data-te-datepicker-toggle-ref
@@ -49,29 +49,11 @@
                             >Waktu Lokasi Tidak Digunakan</label
                         >
                     </div>
-
                     
-                    
-
-                    <!-- id_lokasi -->
-                    <div class="relative mb-3">
-                        <select name="id_lokasi" data-te-select-init data-te-select-filter="true" required>
-                            <option>Lokasi Aset</option>
-                            <?php
-                                $lokasi_sql = mysqli_query($connect, "SELECT * FROM lokasi ORDER BY nama_lokasi DESC");
-                                while($lokasi = mysqli_fetch_array($lokasi_sql)){
-                                    ?>
-                                    <option value="<?php echo $lokasi['id_lokasi']?>"><?php echo $lokasi['nama_lokasi']?></option>
-                                    <?php
-                                }
-                            ?>
-                        </select>
-                    </div>
-
-                    <!-- desc_lokasi-->
+                    <!-- lokasi-->
                     <div class="relative mb-3" data-te-input-wrapper-init>
                         <input
-                            name="desc_lokasi"
+                            name="lokasi"
                             type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                             id="exampleInput7"
@@ -84,31 +66,6 @@
                             class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                             >Lokasi Terperinci Aduan
                         </label>
-                    </div>
-
-                    <!-- id_aset -->
-                    <div class="relative mb-3">
-                        <select name="id_aset" data-te-select-init data-te-select-filter="true" required>
-                            <option>Jenis Aset</option>
-                            <?php
-                                $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE jenis_aset = 'KOMPUTER'"); 
-                                while($aset = mysqli_fetch_array($aset_sql)){
-                                    ?>
-                                    <option value="<?php echo $aset['id_aset']?>"><?php echo ucfirst(strtolower($aset['nama_aset']))?></option>
-                                    <?php
-                                }
-                            ?>
-                        </select>
-                    </div>
-
-                    <!-- jenis_kepunyaan_aset -->
-                    <div class="relative mb-3">
-                        <select name="jenis_kepunyaan_aset" data-te-select-init data-te-select-filter="true" required>
-                            <option>Jenis Kepunyaan Aset</option>
-                            <option value="sumbangan">Sumbangan</option>
-                            <option value="persendirian">Persendirian</option>
-                            <option value="kerajaan">Hak Milik Kerajaan</option>
-                        </select>
                     </div>
 
                     <!-- nombor_siri_pendaftaran-->

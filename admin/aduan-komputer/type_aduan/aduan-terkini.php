@@ -28,7 +28,7 @@
   rows: [
     <?php 
         require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '1'");
+        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '1' ORDER BY tarikh_kerosakan DESC");
         $no = 0;
         while($aduan = mysqli_fetch_array($aduan_sql)){
             $no++;
@@ -41,7 +41,7 @@
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
             $id_aduan = $aduan['id_aduan'];
-        echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+            echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
 
 
         }

@@ -23,12 +23,13 @@
     'Tarikh Aduan',
     'Butiran Kerosakan',
     'Lokasi Aset',
+    { label: "Batal Aduan", field: "aduan_batal", sort: false },
     { label: "Lihat Aduan", field: "aduan_sah", sort: false },
   ],
   rows: [
     <?php 
         require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2'");
+        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2' ORDER BY tarikh_aduan DESC");
         $no = 0;
         while($aduan = mysqli_fetch_array($aduan_sql)){
             $no++;
@@ -38,7 +39,7 @@
             $butiran_kerosakan = $aduan['butiran_kerosakan'];
             $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
             $id_aduan = $aduan['id_aduan'];
-        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\",\"<a href='./system/batal-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Batal Aduan</button></a>\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
 
 
         }

@@ -11,12 +11,10 @@ use Dompdf\Options;
     
         $options = new Options();
         $options->setChroot(__DIR__);
-        $options->set(array('isRemoteEnabled' => true));
     
         $dompdf = new Dompdf($options);
         $dompdf->setPaper("A4", "Portrate");
     
-        // $html = '<img src="src/assets/images/kvks.png">';
         $html = file_get_contents("borang.html");
 
         $id_aduan = $_GET['id_aduan'];
@@ -30,6 +28,13 @@ use Dompdf\Options;
         $html = str_replace("{{ butiran_kerosakan }}", ucfirst(strtolower($aduan['butiran_kerosakan'])), $html);
         $html = str_replace("{{ ulasan_aduan }}", ucfirst(strtolower($aduan['ulasan_aduan'])), $html);
         $html = str_replace("{{ tarikh_tindakan_aduan }}", ucfirst(strtolower($aduan['tarikh_tindakkan_aduan'])), $html);
+
+        $id_pegawai = $aduan['id_admin'];
+        $admin_sql = mysqli_query($connect, "SELECT * FROM pegawai_teknikal WHERE id_pegawai = '$id_pegawai'");
+        $admin = mysqli_fetch_array($admin_sql);
+        $nama_admin = $admin['nama_pegawai'];
+
+        $html = str_replace("{{  nama_admin  }}", ucfirst(strtolower($nama_admin)), $html);
 
         $dompdf->loadHtml($html);
         $dompdf->render();

@@ -3,7 +3,7 @@
     require_once('../../db/config.php');
     $id_aduan = $_GET['id_aduan'];
 
-    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE id_aduan = '$id_aduan' ");
+    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_penyaman_udara WHERE id_aduan = '$id_aduan' ");
     $aduan = mysqli_fetch_array($aduan_sql);
 
 ?>
@@ -26,31 +26,11 @@
                                     <div class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                                         <img
                                         class="rounded-lg aspect-video w-full"
-                                        src="../../pengguna/aduan-komputer/system/uploads/<?php echo $aduan['nama_img_ref'] ?>"
+                                        src="../../pengguna/aduan-penyaman-udara/system/uploads/<?php echo $aduan['nama_img_ref'] ?>"
                                         alt="" />
                                     </div>
                                 </div>
 
-                                <!--jenis aset-->
-                                <div class="relative mb-6" data-te-input-wrapper-init>
-                                    <?php
-                                        $id_aset = $aduan['id_aset'];
-                                        $aset_sql = mysqli_query($connect, "SELECT nama_aset FROM aset WHERE id_aset = '$id_aset'");
-                                        $aset = mysqli_fetch_array($aset_sql);
-                                        $nama_aset = $aset['nama_aset'];
-                                    ?>
-                                    <input
-                                        value="<?php echo $nama_aset ?>"
-                                        type="text"
-                                        class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        placeholder="text"
-                                        readonly />
-                                    <label
-                                        for="exampleInput125"
-                                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Jenis aset
-                                    </label>
-                                </div>
                                 
                                 <!-- No Siri pendaftaran aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
@@ -70,7 +50,7 @@
                                 <!-- Waktu Bengkel Kosong-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
                                     <input
-                                        value="<?php echo $aduan['waktu_bengkel_kosong'] ?>"
+                                        value="<?php echo $aduan['waktu_lokasi_kosong'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text" 
@@ -78,20 +58,14 @@
                                     <label
                                         for="exampleInput125"
                                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Waktu Bengkel Kosong
+                                        >Waktu Lokasi Kosong
                                     </label>
                                 </div>
 
                                 <!-- Lokasi aset-->
                                 <div class="relative mb-6" data-te-input-wrapper-init>
-                                    <?php
-                                        $id_lokasi = $aduan['id_lokasi'];
-                                        $lokasi_sql = mysqli_query($connect, "SELECT nama_lokasi FROM lokasi WHERE id_lokasi = '$id_lokasi'");
-                                        $lokasi = mysqli_fetch_array($lokasi_sql);
-                                        $nama_lokasi = $lokasi['nama_lokasi']
-                                    ?>
                                     <input
-                                        value="<?php echo $nama_lokasi ?>"
+                                        value="<?php echo $aduan['lokasi'] ?>"
                                         type="text"
                                         class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                                         placeholder="text" 
@@ -100,36 +74,6 @@
                                         for="exampleInput125"
                                         class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
                                         >Nama Lokasi
-                                    </label>
-                                </div>
-
-                                <!-- DESC Lokasi aset-->
-                                <div class="relative mb-6" data-te-input-wrapper-init>
-                                    <input
-                                        value="<?php echo $aduan['desc_lokasi'] ?>"
-                                        type="text"
-                                        class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        placeholder="text" 
-                                        readonly/>
-                                    <label
-                                        for="exampleInput125"
-                                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Perincian Lokasi
-                                    </label>
-                                </div>
-
-                                <!-- Jenis kepunyaan aset-->
-                                <div class="relative mb-6" data-te-input-wrapper-init>
-                                    <input
-                                        value="<?php echo $aduan['jenis_kepunyaan_aset'] ?>"
-                                        type="text"
-                                        class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                                        placeholder="text" 
-                                        readonly/>
-                                    <label
-                                        for="exampleInput125"
-                                        class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-neutral-200"
-                                        >Jenis Kepunyaan aset
                                     </label>
                                 </div>
 
