@@ -19,7 +19,10 @@
         }
     </style>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script> -->
+    <!-- SEO  -->
+    <meta name="title" content="ePenyelenggaraan KVKS"></meta>
+    <meta name="description" content="Sistem ePenyelengaraan adalah sebuah sistem yang membolehkan para warga kolej vokasional mengadukan permasalahan sekitar."></meta>
+
     <style>
       .main-container{
         min-height: 100dvh;

@@ -1,0 +1,16 @@
+{
+	"short_name": "e Penyelenggaraan KVKS",
+	"name": "e Penyelenggaraan Kolej Vokasional Kuala Selangor",
+	"icons": [
+		{
+			"src": "/src/assets/images/logo.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		}
+	],
+	"start_url": "/?source=pwa",
+	"background_color": "#0d1017",
+	"display": "standalone",
+	"scope": "/",
+	"theme_color": "#0d1017"
+}

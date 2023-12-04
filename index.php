@@ -1,11 +1,24 @@
 <?php $title = "eAduan Penyelenggaraan KV Kuala Selangor"; $location_index = "."; include('./components/head.php')?>
 <body>
     <style>
-        body{
-            background-image: linear-gradient(to left bottom, #0013c7, #9f00a0, #d3006f, #e9003e, #e70000);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
+        
+        body {
+            background: linear-gradient(-45deg, #37c8c8, #0258c8, #26bbd2, #26d2cc);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 20% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 20% 50%;
+            }
         }
         </style>
     <?php $location_index = "."; include('./components/login-header.php') ?>
@@ -23,7 +36,7 @@
                 </div>
                 <div class="container p-2">
                     <br><br>
-                    <h3 class="text-4xl font-bold text-white">
+                    <h3 class="text-3xl font-bold text-white">
                         Log Masuk
                     </h3>
                     <br><br>

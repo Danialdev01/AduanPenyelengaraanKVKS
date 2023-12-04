@@ -1,11 +1,23 @@
 <?php $title = "Login"; $location_index = "."; include('./components/head.php')?>
 <body>
     <style>
-        body{
-            background-image: linear-gradient(to left bottom, #0013c7, #9f00a0, #d3006f, #e9003e, #e70000);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
+        body {
+            background: linear-gradient(-45deg, #0dbec7, #0258c8, #0be491, #08aa6e);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
     </style>
     <?php $location_index = "."; include('./components/login-header.php') ?>
