@@ -3,7 +3,7 @@
     <style>
         
         body {
-            background: linear-gradient(-45deg, #37c8c8, #0258c8, #26bbd2, #26d2cc);
+            background: linear-gradient(-45deg, #2ecc7d,#302bc2, #1c9dcc, #3535c2);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
             height: 100vh;
@@ -59,7 +59,7 @@
                                 </select>
                             </div>
                             
-                            <div class="back-link mb-4 text-left">
+                            <div class="back-link mb-4 text-center">
                                 <a style="color: #0048ff" href="./admin-login.php"><u>Admin</u></a>
                             </div>
                             
