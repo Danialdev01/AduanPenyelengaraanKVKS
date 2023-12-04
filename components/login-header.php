@@ -8,7 +8,7 @@
         href="<?php echo $location_index?>/">
         <img
           class="mr-2 w-40 md:w-48 md:52"
-          src="<?php echo $location_index?>/src/assets/images/logo-banner.png"
+          src="<?php echo $location_index?>/src/assets/images/logo-banner-1.png"
           alt="Logo"
           loading="lazy" />
       </a>
