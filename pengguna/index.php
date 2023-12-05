@@ -1,8 +1,12 @@
 <?php $title = "Laman Utama"; $location_index = ".."; include('../components/head.php')?>
 <body>
     <?php $location_index = ".."; include('../components/header.php') ?>
-    
+
+    <script>
+        // console.log("id : <?php echo $_SESSION['idKakitangan']?>");
+    </script>
     <div class="main-container p-2">
+
         <br><br>
 
         <center>

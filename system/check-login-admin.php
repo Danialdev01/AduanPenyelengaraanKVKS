@@ -29,6 +29,8 @@
                 if($isBetul == 1){
                     $_SESSION['idAdmin'] = $find_pengguna['id_pegawai'];
                     $_SESSION['isLoggedIn'] = 2;
+                    setcookie("isLoginCookie","2", time() + (86400 * 30), "/");
+                    setcookie("idAdminCookie", $find_pengguna['id_pegawai'], time() + (86400 * 30), "/");
                     header("location:../admin/");
                 }
                 else{

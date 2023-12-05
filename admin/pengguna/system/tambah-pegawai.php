@@ -14,11 +14,11 @@
             $password_pegawai = password_hash($password_pegawaiPost, PASSWORD_DEFAULT);
     
             $tambah_pegawai = mysqli_query($connect, "INSERT INTO pegawai_teknikal VALUES (NULL,'$nama_pegawai','$password_pegawai','$jawatan_pegawai','1')");
-            $_SESSION['prompt'] = "Berjaya Tambah Pegawai";
+            $_SESSION['prompt'] = "Berjaya Tambah Admin";
             header("location:../");
         }
         else{
-            $_SESSION['prompt'] = "Gagal Tambah Pengguna";
+            $_SESSION['prompt'] = "Gagal Tambah Admin";
             header("location:../");
         }
     }

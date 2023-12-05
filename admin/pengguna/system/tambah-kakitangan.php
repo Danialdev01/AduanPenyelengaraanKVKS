@@ -4,7 +4,7 @@
 
     if(isset($_POST['submit'])){
 
-        $nama_kakitangan = mysqli_escape_string($connect, strtoupper($_POST['nama_kakitangan']));
+        $nama_kakitangan = mysqli_escape_string($connect, $_POST['nama_kakitangan']);
         $jawatan_kakitangan = $_POST['jawatan_kakitangan'];
     
         $tambah_kakitangan = mysqli_query($connect, "INSERT INTO kakitangankvks VALUES (NULL,'$nama_kakitangan','$jawatan_kakitangan','1')");

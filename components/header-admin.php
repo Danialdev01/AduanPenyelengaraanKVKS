@@ -2,12 +2,12 @@
     session_start();
 
     // kalau pengguna tak log in 
-    if($_SESSION['isLoggedIn'] != 2){
+    $_SESSION['idAdmin'] = $_COOKIE['idAdminCookie'];
+    $_SESSION['isLoggedIn'] = $_COOKIE['isLoginCookie'];
+    if($_SESSION['isLoggedIn'] == 2){}
+    else{
       header("location:$location_index/admin-login.php");
     }
-    // kalau login
-    else{}
-    
 ?>
 
 <nav

@@ -7,6 +7,8 @@
         if($_POST['id_kakitangan'] != 0){
             $_SESSION['idKakitangan'] = $_POST['id_kakitangan'];
             $_SESSION['isLoggedIn'] = 3;
+            setcookie("isLoginCookie","3", time() + (86400 * 30), "/");
+            setcookie("idKakitanganCookie",$_POST['id_kakitangan'], time() + (86400 * 30), "/");
             header("location:../pengguna");
         }
         else{

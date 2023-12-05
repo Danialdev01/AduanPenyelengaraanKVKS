@@ -22,7 +22,7 @@
 
             $kemaskini_pegawai = mysqli_query($connect, "UPDATE pegawai_teknikal SET nama_pegawai = '$nama_pegawai', password_pegawai = '$password_pegawaiHashed', jawatan_pegawai = '$jawatan_pegawai' WHERE id_pegawai = '$id_pegawai'");
 
-            $_SESSION['prompt'] = "Berjaya Kemaskini Kakitangan";
+            $_SESSION['prompt'] = "Berjaya Kemaskini Admin";
             header("location:../");
         }
         else{
@@ -31,7 +31,7 @@
         }
     }
     else{
-        $_SESSION['prompt'] = "Gagal Kemaskini Kakitangan";
+        $_SESSION['prompt'] = "Gagal Kemaskini Admin";
         header("location:../");
     }
 

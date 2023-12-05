@@ -33,7 +33,7 @@
                     role="tab"
                     aria-controls="tabs-aduan-sah"
                     aria-selected="false"
-                    >Pegawai Teknikal</a
+                    >Admin</a
                     >
                 </li>
             </ul>

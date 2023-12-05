@@ -2,11 +2,13 @@
     session_start();
 
     // kalau pengguna tak log in 
-    if($_SESSION['isLoggedIn'] != 3){
+    $_SESSION['isLoggedIn'] = $_COOKIE['isLoginCookie'];
+    $_SESSION['idKakitangan'] = $_COOKIE['idKakitanganCookie'];
+    if($_SESSION['isLoggedIn'] == 3){}
+    else{
       header("location:$location_index/");
+
     }
-    // kalau login
-    else{}
     
 ?>
 

@@ -25,7 +25,7 @@
     const data1 = {
   columns: [
     'No',
-    'Nama Pegawai Teknikal',
+    'Nama Admin',
     'Jawatan',
     { label: "Kemaskini", field: "kemaskini", sort: false },
     { label: "Delete", field: "delete", sort: false },

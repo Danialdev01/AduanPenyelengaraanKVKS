@@ -1,4 +1,10 @@
 <?php $title = "eAduan Penyelenggaraan KV Kuala Selangor"; $location_index = "."; include('./components/head.php')?>
+<?php     
+    if($_COOKIE['isLoginCookie'] == 3){
+        $_SESSION['isLoggedIn'] = 3;
+        header("location:./pengguna");
+    }
+?>
 <body>
     <style>
         
@@ -49,7 +55,7 @@
                                     <option value="0">Nama Pengguna</option>
                                     <?php
                                         require_once("./db/config.php");
-                                        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks ORDER BY nama_kakitangan ASC");
+                                        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE status_kakitangan = '1' ORDER BY nama_kakitangan ASC");
                                         while($kakitangan = mysqli_fetch_array($kakitangan_sql)){
                                             ?>
                                             <option value="<?php echo $kakitangan['id_kakitangan']?>"><?php echo $kakitangan['nama_kakitangan']?></option>

@@ -5,7 +5,9 @@ $title = "(title page)"
 ### Session Variable
 isLoggedIn = (2 = logged in admin), (3 = logged in kakitangan), (lain = not logged in)
 idAdmin = (id admin)
+idAdminCookie = (id admin)- cookie
 idKakitangan = (id kakitangan)
+idKakitanganCookie = (id kakitangan) -cookie
 error = (error)
 prompt = (prompt using tailwind alert js)
 
