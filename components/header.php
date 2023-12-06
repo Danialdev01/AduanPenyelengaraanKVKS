@@ -1,13 +1,24 @@
 <?php 
-    session_start();
 
-    // kalau pengguna tak log in 
-    $_SESSION['isLoggedIn'] = $_COOKIE['isLoginCookie'];
-    $_SESSION['idKakitangan'] = $_COOKIE['idKakitanganCookie'];
-    if($_SESSION['isLoggedIn'] == 3){}
+    // kalau pengguna tak login cookie 
+    if(isset($_COOKIE['isLoginCookie'])){
+      $_SESSION['isLoggedIn'] = $_COOKIE['isLoginCookie'];
+
+      if(isset($_COOKIE['idKakitanganCookie'])){
+        $_SESSION['idKakitangan'] = $_COOKIE['idKakitanganCookie'];
+
+      }
+
+    }
+
+    // kalau user tak login
+    if(isset($_SESSION['isLoggedIn'])){
+      if($_SESSION['isLoggedIn'] == 3){}
+      else{header("location:$location_index/");}  
+
+    }
     else{
       header("location:$location_index/");
-
     }
     
 ?>
@@ -129,7 +140,6 @@
 </nav>
 
 <?php
-  session_start();
   $prompt = $_SESSION['prompt'];
   if($prompt != ""){
       echo '<div class="flex justify-center"><div

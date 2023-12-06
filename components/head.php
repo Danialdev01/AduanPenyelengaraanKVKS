@@ -28,5 +28,6 @@
         min-height: 100dvh;
       }
     </style>
+    <?php session_start() ?>
 </head>
 

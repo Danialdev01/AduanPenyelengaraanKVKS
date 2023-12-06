@@ -93,7 +93,7 @@
 </style>
 
 <?php
-  session_start();
+  if(isset($_SESSION['prompt'])){
   $prompt = $_SESSION['prompt'];
   if($prompt != ""){
       echo '<div style="z-index:10000" class="justify-center flex"><div
@@ -154,5 +154,5 @@
 </div></div>';
   }
   $_SESSION['prompt'] = "";
-
+  }
 ?>

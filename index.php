@@ -1,8 +1,10 @@
 <?php $title = "eAduan Penyelenggaraan KV Kuala Selangor"; $location_index = "."; include('./components/head.php')?>
 <?php     
-    if($_COOKIE['isLoginCookie'] == 3){
-        $_SESSION['isLoggedIn'] = 3;
-        header("location:./pengguna");
+    if(isset($_COOKIE['isLoginCookie'])){
+        if($_COOKIE['isLoginCookie'] == 3){
+            $_SESSION['isLoggedIn'] = 3;
+            header("location:./pengguna");
+        }
     }
 ?>
 <body>
