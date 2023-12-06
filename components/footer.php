@@ -8,7 +8,7 @@
       <div class="mb-6 md:mb-0">
 
         <p class="mb-0">
-          Sistem e Penyelenggaraan merupakan sistem yang dibangunkan untuk membantu warga KVKS terutama pensyarah dan staf dalam membuat aduan yang berlaku di kolej. Dibangunkan hasil kerjasama pelajar Teknologi Sistem Pengurusan Pangkalan Data dan Aplikasi Web di bawah Jabatan Teknologi Maklumat. Sistem ini diaplikasikan oleh Unit Penyelenggaraan  dan Teknikal KVKS.
+          Sistem e Penyelenggaraan merupakan sistem yang dibangunkan untuk membantu warga KVKS terutama pensyarah dan staf dalam membuat aduan yang berlaku di kolej. Dibangunkan hasil kerjasama pelajar Teknologi Sistem Pengurusan Pangkalan Data dan Aplikasi Web di bawah Jabatan Teknologi Maklumat. Sistem ini diaplikasikan oleh Unit Penyelenggaraan  dan Pembangunan KVKS.
         </p>
       </div>
 
