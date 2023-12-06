@@ -1,6 +1,8 @@
 <?php $title = "Login"; $location_index = "."; include('./components/head.php')?>
 <?php 
-    if($_SESSION['isLoggedIn'] == 2 || $_COOKIE['isLoginCookie'] == 2){header("location:./admin");}
+    if(isset($_SESSION['isLoggedIn']) || isset($_COOKIE['isLoginCookie'])){
+        if($_SESSION['isLoggedIn'] == 2 || $_COOKIE['isLoginCookie'] == 2){header("location:./admin");}
+    }
 ?>
 <body>
     <style>
