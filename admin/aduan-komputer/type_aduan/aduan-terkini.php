@@ -19,6 +19,7 @@
     const data1 = {
   columns: [
     'No',
+    'Nama Pelapor',
     'Jenis Aset',
     'Waktu Bengkel Kosong',
     'Tarikh Kerosakan',
@@ -36,12 +37,17 @@
             $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE id_aset = '$id_aset'");
             $aset = mysqli_fetch_array($aset_sql);
 
+            $id_kakitangan = $aduan['id_kakitangan'];
+            $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE id_kakitangan = '$id_kakitangan'");
+            $kakitangan = mysqli_fetch_array($kakitangan_sql);
+
+            $nama_kakitangan = $kakitangan['nama_kakitangan'];
             $jenis_aset = $aset['nama_aset'];
             $waktu_bengkel_kosong = $aduan['waktu_bengkel_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
             $id_aduan = $aduan['id_aduan'];
-            echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+            echo "[\"$no\", \"$nama_kakitangan\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
 
 
         }
