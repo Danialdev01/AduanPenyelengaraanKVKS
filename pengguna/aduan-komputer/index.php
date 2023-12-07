@@ -94,7 +94,7 @@
                                 $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE jenis_aset = 'KOMPUTER'"); 
                                 while($aset = mysqli_fetch_array($aset_sql)){
                                     ?>
-                                    <option value="<?php echo $aset['id_aset']?>"><?php echo ucfirst(strtolower($aset['nama_aset']))?></option>
+                                    <option value="<?php echo $aset['id_aset']?>"><?php echo $aset['nama_aset']?></option>
                                     <?php
                                 }
                             ?>
