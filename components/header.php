@@ -140,6 +140,7 @@
 </nav>
 
 <?php
+  if(isset($_SESSION['prompt'])){
   $prompt = $_SESSION['prompt'];
   if($prompt != ""){
       echo '<div class="flex justify-center"><div
@@ -200,5 +201,5 @@
 </div></div>';
   }
   $_SESSION['prompt'] = "";
-
+  };
 ?>
