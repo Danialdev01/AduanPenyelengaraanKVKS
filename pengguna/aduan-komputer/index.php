@@ -134,7 +134,6 @@
                         class="relative mb-3"
                         data-te-datepicker-init
                         data-te-inline="true"
-                        data-te-disable-past="true"
                         data-te-input-wrapper-init>
                         <input
                             type="text"

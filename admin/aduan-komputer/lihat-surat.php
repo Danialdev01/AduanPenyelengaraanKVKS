@@ -32,7 +32,7 @@ use Dompdf\Options;
         $aset = mysqli_fetch_array($aset_sql);
         $html = str_replace("{{ jenis_aset }}", ucfirst(strtolower($aset['nama_aset'])), $html);
         $html = str_replace("{{ nombor_siri_pendaftaran_aset }}", $aduan['nombor_siri_pendaftaran_aset'], $html);
-        $html = str_replace("{{ kakitangankvks }}", ucfirst(strtolower($kakitangankvks['nama_kakitangan'])), $html);
+        $html = str_replace("{{ kakitangankvks }}", ucwords($kakitangankvks['nama_kakitangan']), $html);
         $tarikh_kerosakan = str_split($aduan['tarikh_kerosakan'], 10);
         $html = str_replace("{{ tarikh_kerosakan }}", $tarikh_kerosakan[0], $html);
         $html = str_replace("{{ perihal_kerosakan }}", $aduan['perihal_kerosakan'], $html);
