@@ -26,17 +26,19 @@
                         </label>
                     </div>
 
-                    <!--Jawatan select-->
-                    <div class="relative mb-6 mt-4 rounded bg-white">
-                        <select style="z-index:-100 !important" name="jawatan_kakitangan" class="rounded-md bg-white" data-te-select-init data-te-select-filter="true" required>
-                            <option value="0">Pilih Jawatan</option>
-                            <option value="PENSYARAH JABATAN TEKNOLOGI MAKLUMAT">PENSYARAH JABATAN TEKNOLOGI MAKLUMAT</option>
-                            <option value="PENSYARAH JABATAN HOSPITALITY">PENSYARAH JABATAN HOSPITALITY</option>
-                            <option value="PENSYARAH JABATAN PENIAGAAN">PENSYARAH JABATAN PENIAGAAN</option>
-                            <option value="PENSYARAH JABATAN SENI REKA">PENSYARAH JABATAN SENI REKA</option>
-                            <option value="PENSYARAH JABATAN UMUM">PENSYARAH JABATAN UMUM</option>
-                            <option value="STAF">STAF</option> 
-                        </select>
+                    <!--Jawatan input-->
+                    <div class="relative mb-6 mt-4 rounded bg-white" data-te-input-wrapper-init>
+                        <input
+                            name="jawatan_kakitangan"
+                            type="text"
+                            class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
+                            id="exampleInput90"
+                            placeholder="Name" />
+                        <label
+                            for="exampleInput90"
+                            class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[0.9rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[0.9rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                            >Jawatan
+                        </label>
                     </div>
                    
                     <!--Submit button-->
