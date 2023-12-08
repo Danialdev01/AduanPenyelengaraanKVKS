@@ -12,7 +12,7 @@
             echo $nama_pegawaiPost = mysqli_escape_string($connect,$_POST['nama_pegawai']);
             $find_pengguna_sql = mysqli_query($connect, "SELECT * FROM pegawai_teknikal WHERE nama_pegawai = '$nama_pegawaiPost'");
             $find_pengguna = mysqli_fetch_array($find_pengguna_sql);
-            echo $nama_pegawai = $find_pengguna['nama_pegawai'];
+            echo $nama_pegawai = mysqli_escape_string($connect, $find_pengguna['nama_pegawai']);
     
             // if nama jumpa
             if($nama_pegawai == $nama_pegawaiPost){
