@@ -51,7 +51,7 @@
 
 const instance2 = new te.Datatable(document.getElementById('datatable2'), data2)
 
-document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
+document.getElementById('datatable-search-input2').addEventListener('input', (e) => {
   instance2.search(e.target.value);
 });
 </script>
