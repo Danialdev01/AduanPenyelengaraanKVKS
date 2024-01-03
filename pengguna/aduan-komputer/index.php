@@ -12,12 +12,14 @@
             <div
                 class="z-[100] block max-w-xl rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
                 <form action="./system/tambah-aduan.php" method="post" enctype="multipart/form-data">
-
+                    
                     <?php 
                         $id_kakitangan = $_SESSION['idKakitangan'];
                     ?>
                     <!-- id kakitangan -->
                     <input type="hidden" name="id_kakitangan" value="<?php echo $id_kakitangan ?>">
+
+                    
 
                     <!-- gambar kerosakan -->
                     <div class="mb-3 text-left">
@@ -29,6 +31,12 @@
                             type="file"/>
                     </div>
 
+                    <div
+                        class="text-left text-red-500 w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"
+                        data-te-input-helper-ref>
+                        Sila jangan masukkan simbol " atau ' kedalam input dibawah
+                    </div>
+                    
                     <!-- waktu_bengkel_kosong-->
                     <div
                         class="relative mb-3"
@@ -49,9 +57,6 @@
                             >Waktu Lokasi Tidak Digunakan</label
                         >
                     </div>
-
-                    
-                    
 
                     <!-- id_lokasi -->
                     <div class="relative mb-3">

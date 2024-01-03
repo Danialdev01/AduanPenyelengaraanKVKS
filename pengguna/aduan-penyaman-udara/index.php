@@ -29,6 +29,12 @@
                             type="file"/>
                     </div>
 
+                    <div
+                        class="text-left text-red-500 w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"
+                        data-te-input-helper-ref>
+                        Sila jangan masukkan simbol " atau ' kedalam input dibawah
+                    </div>
+
                     <!-- waktu_lokasi_kosong-->
                     <div
                         class="relative mb-3"
