@@ -56,7 +56,7 @@
                     <!-- id_lokasi -->
                     <div class="relative mb-3">
                         <select name="id_lokasi" data-te-select-init data-te-select-filter="true" required>
-                            <option>Lokasi Aset</option>
+                            <option value="0">Lokasi Aset</option>
                             <?php
                                 $lokasi_sql = mysqli_query($connect, "SELECT * FROM lokasi ORDER BY nama_lokasi DESC");
                                 while($lokasi = mysqli_fetch_array($lokasi_sql)){
@@ -89,7 +89,7 @@
                     <!-- id_aset -->
                     <div class="relative mb-3">
                         <select name="id_aset" data-te-select-init data-te-select-filter="true" required>
-                            <option>Jenis Aset</option>
+                            <option value="0">Jenis Aset</option>
                             <?php
                                 $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE jenis_aset = 'KOMPUTER'"); 
                                 while($aset = mysqli_fetch_array($aset_sql)){
@@ -104,7 +104,7 @@
                     <!-- jenis_kepunyaan_aset -->
                     <div class="relative mb-3">
                         <select name="jenis_kepunyaan_aset" data-te-select-init data-te-select-filter="true" required>
-                            <option>Jenis Kepunyaan Aset</option>
+                            <option value="0">Jenis Kepunyaan Aset</option>
                             <option value="sumbangan">Sumbangan</option>
                             <option value="persendirian">Persendirian</option>
                             <option value="kerajaan">Hak Milik Kerajaan</option>
