@@ -7,13 +7,13 @@
         echo "<br>";
         echo $waktu_lokasi_kosong  = $_POST['waktu_lokasi_kosong'];
         echo "<br>";
-        echo $lokasi  = $_POST['lokasi'];
+        echo $lokasi  = mysqli_escape_string($connect,$_POST['lokasi']);
         echo "<br>";
-        echo $nombor_siri_pendaftaran_aset  = $_POST['nombor_siri_pendaftaran_aset'];
+        echo $nombor_siri_pendaftaran_aset  = mysqli_escape_string($connect,$_POST['nombor_siri_pendaftaran_aset']);
         echo "<br>";
         echo $tarikh_kerosakan  = $_POST['tarikh_kerosakan'];
         echo "<br>";
-        echo $perihal_kerosakan  = $_POST['perihal_kerosakan'];
+        echo $perihal_kerosakan  = mysqli_escape_string($connect,$_POST['perihal_kerosakan']);
         echo "<br>";
 
         if($_FILES["image"]["name"] != NULL || $_FILES["image"]["name"] != ""){
@@ -35,10 +35,6 @@
                 if(!in_array($imageExtension, $validImageExtension)){
                     $_SESSION['prompt'] = "Maaf Gambar Tidak Valid";
                     header("location:../");               
-                }
-                if($fileSize > 1000000){
-                    $_SESSION['prompt'] = "Maaf Gambar Saiz File Terlalu Besar";
-                    header("location:../");
                 }
                 else{
                     $newImageName = uniqid();
