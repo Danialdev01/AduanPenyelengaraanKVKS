@@ -11,6 +11,7 @@ use Dompdf\Options;
     
         $options = new Options();
         $options->setChroot(__DIR__);
+        $options->set('isRemoteEnabled', true);
     
         $dompdf = new Dompdf($options);
         $dompdf->setPaper("A4", "Portrate");
