@@ -34,7 +34,7 @@ use Dompdf\Options;
         $admin = mysqli_fetch_array($admin_sql);
         $nama_admin = $admin['nama_pegawai'];
 
-        $html = str_replace("{{  nama_admin  }}", ucfirst(strtolower($nama_admin)), $html);
+        $html = str_replace("{{  nama_admin  }}", strtoupper($nama_admin), $html);
 
         $dompdf->loadHtml($html);
         $dompdf->render();
