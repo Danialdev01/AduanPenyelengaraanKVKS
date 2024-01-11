@@ -18,7 +18,7 @@
                 include('./jenis_aduan/lihat_aduan_kerosakan_umum.php');
             }
             else if($jenis_aduan == "kerosakan_penyaman_udara"){
-                include('./jenis_aduan/lihat_aduan_kerosakan_penyaman_udara.php');
+                include('./jenis_aduan/lihat_aduan_kerosakan_aset_alih.php');
             }
             else{
                 echo "<center><h1>???</h1></center>";
