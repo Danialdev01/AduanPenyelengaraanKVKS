@@ -33,7 +33,6 @@
             $no++;
 
             $id_aduan = $aduan['id_aduan'];
-            $jenis_aset = $aset['nama_aset'];
             $waktu_lokasi_kosong = $aduan['waktu_lokasi_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
