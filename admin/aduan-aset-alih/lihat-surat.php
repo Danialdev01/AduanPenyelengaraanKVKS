@@ -50,7 +50,7 @@ use Dompdf\Options;
         $pegawai_sql = mysqli_query($connect, "SELECT * FROM pegawai_teknikal WHERE id_pegawai = '$id_pegawai'");
         $pegawai = mysqli_fetch_array($pegawai_sql);
         $html = str_replace("{{ nama_pegawai }}", ucfirst(strtolower($pegawai['nama_pegawai'])), $html);
-        $html = str_replace("{{ jawatan_pegawai }}", ucfirst(strtolower($pegawai['jawatan_pegawai'])), $html);
+        $html = str_replace("{{ jawatan_pegawai }}", ucfirst(strtoupper($pegawai['jawatan_pegawai'])), $html);
 
 
         $dompdf->loadHtml($html);
