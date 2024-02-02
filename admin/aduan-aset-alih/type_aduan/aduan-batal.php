@@ -22,8 +22,9 @@
     'Waktu Lokasi Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
-    { label: "Lihat Aduan", field: "contact", sort: false },
-    { label: "Aktif Kembali Aduan", field: "contact2", sort: false },
+    { label: "Lihat Aduan", field: "lihat", sort: false },
+    { label: "Aktif Kembali", field: "aktif", sort: false },
+    { label: "Delete", field: "delete", sort: false },
   ],
   rows: [
     <?php 
@@ -36,7 +37,7 @@
             $waktu_lokasi_kosong = $aduan['waktu_lokasi_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
-        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\"],";
+        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\",\"<a href='system/delete-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
 
 
         }

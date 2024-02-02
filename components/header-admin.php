@@ -151,11 +151,26 @@
 </nav>
 
 <style>
-    td{
-      color: black;
-      font-weight: bold;
-    }
-</style> 
+  td{
+    color: black;
+    font-weight: bold;
+  }
+    
+  button{
+  font-family: Roboto, sans-serif;
+  font-weight: 0;
+  font-size: 13px;
+  padding: 7px 18px;
+  border-radius: 4px;
+  transition : 0ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  }
+</style>
 
 <?php
   if(isset($_SESSION['prompt'])){

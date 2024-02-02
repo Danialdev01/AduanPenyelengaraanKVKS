@@ -31,11 +31,11 @@
                             type="file"/>
                     </div>
 
-                    <div
+                    <!-- <div
                         class="text-left text-red-500 w-full text-sm text-neutral-500 peer-focus:text-primary dark:text-neutral-200 dark:peer-focus:text-primary"
                         data-te-input-helper-ref>
                         Jangan masukkan simbol " atau ' kedalam input dibawah
-                    </div>
+                    </div> -->
                     
                     <!-- waktu_bengkel_kosong-->
                     <div
@@ -161,8 +161,8 @@
                             name="perihal_kerosakan"
                             type="text"
                             class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[1.6] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                            id="exampleInput7"
                             placeholder="Name" 
+                            id="tableinput"
                             required
                             />
 
@@ -188,6 +188,15 @@
             <br>
         </center>
     </div>
+    <script>
+        document.getElementById('tableinput').addEventListener('input', function(e) {
+            var inputText = e.target.value;
+            var restrictedChars = /["\\,',]/g;
+            if (restrictedChars.test(inputText)) {
+                e.target.value = inputText.replace(restrictedChars, '');
+            }
+        });
+    </script>
 
     <?php $location_index = "../..";include('../../components/footer.php') ?>
 </body>
