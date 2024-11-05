@@ -29,7 +29,7 @@
   rows: [
     <?php 
         require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2' ORDER BY tarikh_aduan DESC");
+        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '2' ORDER BY STR_TO_DATE(tarikh_aduan, '%d/%m/%Y') DESC");
         $no = 0;
         while($aduan = mysqli_fetch_array($aduan_sql)){
             $no++;
