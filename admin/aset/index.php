@@ -1,5 +1,14 @@
 <?php $title = "Semua aset"; $location_index = "../.."; include('../../components/head.php')?>
 <script src="../../dist/tw-elements.umd.min.js"></script>
+<script>
+//padam confirmation
+  function confirmDelete(url) {
+    if (confirm('Anda pasti mahu hapus data ini?')) {
+      window.location.href = url;
+    }
+    return false;
+  }
+</script>
 <body>
     <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     
@@ -19,7 +28,7 @@
                                         <th scope="col" class="px-6 py-4">Nama</th>
                                         <th scope="col" class="px-6 py-4">Jenis</th>
                                         <th scope="col" class="px-6 py-4">Kemaskini</th>
-                                        <th scope="col" class="px-6 py-4">Delete</th>
+                                        <th scope="col" class="px-6 py-4">Padam</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -43,9 +52,13 @@
                                                         <button style="background-color: blue;" class="hover:bg-blue-600 px-3 py-1 text-white rounded-sm">Kemaskini</button>
                                                     </a>
                                                 </td>
+                                                <!-- padam button with confirmation -->
                                                 <td class="whitespace-nowrap px-6 py-4">
-                                                    <a href="./system/delete-aset.php?id_aset=<?php echo $aset['id_aset']?>">
-                                                        <button class="bg-red-500 hover:bg-red-600 px-3 py-1 text-white rounded-sm">Delete</button>
+                                                    <a href='#' onclick='return confirmDelete("system/delete-aset.php?id_aset=<?php echo $aset['id_aset']?>")'>
+                                                        <button>
+                                                            <i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'>
+                                                            </i>
+                                                        </button>
                                                     </a>
                                                 </td>
                                             </tr>

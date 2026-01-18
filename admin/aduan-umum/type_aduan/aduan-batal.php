@@ -25,7 +25,7 @@
     'Lokasi Aset',
     { label: "Lihat Aduan", field: "aduan-batal", sort: false },
     { label: "Aktif Kembali", field: "aduan-aktif", sort: false },
-    { label: "Delete", field: "delete-aduan", sort: false },
+    { label: "Padam", field: "delete-aduan", sort: false },
   ],
   rows: [
     <?php 
@@ -40,7 +40,7 @@
             $butiran_kerosakan = $aduan['butiran_kerosakan'];
             $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
             $id_aduan = $aduan['id_aduan'];
-        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\", \"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\", \"<a href='system/delete-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\", \"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\", \"<a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a>\"],";
 
 
         }
@@ -53,4 +53,13 @@ const instance3 = new te.Datatable(document.getElementById('datatable3'), data3)
 document.getElementById('datatable-search-input3').addEventListener('input', (e) => {
   instance3.search(e.target.value);
 });
+</script>
+<script>
+//padam confirmation
+  function confirmDelete(url) {
+    if (confirm('Anda pasti mahu hapus data ini?')) {
+      window.location.href = url;
+    }
+    return false;
+  }
 </script>

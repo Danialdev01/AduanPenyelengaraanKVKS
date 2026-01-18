@@ -1,4 +1,3 @@
-xam
 <center>
   <div class="aduan-data-table p-2">
     <div class="mb-3">
@@ -28,7 +27,7 @@ xam
     'Nama Admin',
     'Jawatan',
     { label: "Kemaskini", field: "kemaskini", sort: false },
-    { label: "Delete", field: "delete", sort: false },
+    { label: "Padam", field: "delete", sort: false },
   ],
   rows: [
     <?php 
@@ -41,7 +40,7 @@ xam
             $nama_pegawai = $pegawai['nama_pegawai'];
             $jawatan_pegawai = $pegawai['jawatan_pegawai'];
             $id_pegawai = $pegawai['id_pegawai'];
-        echo "[\"$no\", \"$nama_pegawai\", \"$jawatan_pegawai\", \"<a href='kemaskini-pegawai.php?id_pegawai=$id_pegawai'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-pegawai.php?id_pegawai=$id_pegawai'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+        echo "[\"$no\", \"$nama_pegawai\", \"$jawatan_pegawai\", \"<a href='kemaskini-pegawai.php?id_pegawai=$id_pegawai'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='#' onclick='return confirmDelete(\\\"system/batal-pegawai.php?id_pegawai=$id_pegawai\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a>\"],";
 
 
         }
@@ -54,4 +53,13 @@ const instance1 = new te.Datatable(document.getElementById('datatable1'), data1)
 document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
   instance1.search(e.target.value);
 });
+</script>
+<script>
+//padam confirmation
+  function confirmDelete(url) {
+    if (confirm('Anda pasti mahu hapus data ini?')) {
+      window.location.href = url;
+    }
+    return false;
+  }
 </script>

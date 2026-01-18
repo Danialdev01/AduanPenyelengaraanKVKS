@@ -19,7 +19,7 @@
 
     $delete_aduan_sql = mysqli_query($connect, "DELETE FROM `aduan_kerosakan_umum` WHERE id_aduan = $id_aduan");
 
-    $_SESSION['prompt'] = "Aduan Berjaya Delete";
+    $_SESSION['prompt'] = "Aduan Berjaya Dipadamkan";
     header("location:../");
     
 ?>

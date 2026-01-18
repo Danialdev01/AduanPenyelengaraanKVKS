@@ -28,7 +28,6 @@
     'Nama Kakitangan',
     'Jawatan',
     { label: "Kemaskini", field: "kemaskini", sort: false },
-    { label: "Delete", field: "delete", sort: false },
   ],
   rows: [
  <?php 
@@ -44,7 +43,7 @@
           $jawatan_kakitangan = mysqli_real_escape_string($connect, $kakitangan['jawatan_kakitangan']);
           $id_kakitangan = $kakitangan['id_kakitangan'];
         
-          echo "[\"$no\", \"$nama_kakitangan\", \"$jawatan_kakitangan\", \"<a href='kemaskini-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+          echo "[\"$no\", \"$nama_kakitangan\", \"$jawatan_kakitangan\", \"<a href='kemaskini-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\"],";
       }
     
 ?>

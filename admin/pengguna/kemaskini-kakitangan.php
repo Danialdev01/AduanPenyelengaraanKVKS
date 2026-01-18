@@ -1,4 +1,4 @@
-xam<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; include('../../components/head.php')?>
+<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; include('../../components/head.php')?>
 <body>
     <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     
@@ -60,6 +60,17 @@ xam<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; includ
                         Kemaskini Kakitangan
                     </button>
                 </form>
+                <div>
+                        <a href='#' onclick='return confirmDelete("system/batal-kakitangan.php?id_kakitangan=<?php echo $kakitangan['id_kakitangan']?>")'>
+                        <button
+                            data-te-ripple-init
+                            data-te-ripple-color="light"   
+                            class="dark:active:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.2),0_4px_18px_0_rgba(220,38,38,0.1)] inline-block w-full rounded bg-red-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#dc2626] transition duration-150 ease-in-out hover:bg-red-700 hover:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.3),0_4px_18px_0_rgba(220,38,38,0.2)] focus:bg-red-700 focus:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.3),0_4px_18px_0_rgba(220,38,38,0.2)] focus:outline-none focus:ring-0 active:bg-red-800 active:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.3),0_4px_18px_0_rgba(220,38,38,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(220,38,38,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.2),0_4px_18px_0_rgba(220,38,38,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(220,38,38,0.2),0_4px_18px_0_rgba(220,38,38,0.1)]" style="margin-top:10px;"
+                            >
+                            Padamkan Kakitangan
+                        </button>
+                        </a>
+                    </div>
             </div>
         </center>
     </div>
@@ -67,3 +78,12 @@ xam<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; includ
     <?php $location_index = "../..";include('../../components/footer.php') ?>
 </body>
 </html>
+<script>
+//padam confirmation
+  function confirmDelete(url) {
+    if (confirm('Anda pasti mahu hapus data ini?')) {
+      window.location.href = url;
+    }
+    return false;
+  }
+</script>

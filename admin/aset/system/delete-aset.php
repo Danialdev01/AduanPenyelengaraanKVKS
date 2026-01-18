@@ -5,7 +5,7 @@
     $id_aset = $_GET['id_aset'];
 
     $tambah = mysqli_query($connect, "DELETE FROM aset WHERE id_aset = '$id_aset'");
-    $_SESSION['prompt'] = "Berjaya Delete Aset";
+    $_SESSION['prompt'] = "Aset Berjaya Dipadamkan";
     header("location:../");
 
 ?>

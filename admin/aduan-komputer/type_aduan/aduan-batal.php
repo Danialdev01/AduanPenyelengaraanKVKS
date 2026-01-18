@@ -24,8 +24,8 @@
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
     { label: "Lihat Aduan", field: "contact", sort: false },
-    { label: "Aktif Kembali Aduan", field: "contact2", sort: false },
-    { label: "Delete", field: "contact3", sort: false },
+    { label: "Aktif Kembali ", field: "contact2", sort: false },
+    { label: "Padam", field: "contact3", sort: false },
   ],
   rows: [
     <?php 
@@ -42,7 +42,7 @@
             $waktu_bengkel_kosong = $aduan['waktu_bengkel_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
-        echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\", \"<a href='system/delete-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+        echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\", \"<a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a>\"],";
 
 
         }
@@ -55,4 +55,13 @@ const instance3 = new te.Datatable(document.getElementById('datatable3'), data3)
 document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
   instance3.search(e.target.value);
 });
+</script>
+<script>
+//padam confirmation
+  function confirmDelete(url) {
+    if (confirm('Anda pasti mahu hapus data ini?')) {
+      window.location.href = url;
+    }
+    return false;
+  }
 </script>

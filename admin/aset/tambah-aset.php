@@ -1,6 +1,6 @@
 <?php $title = "Tambah aset"; $location_index = "../.."; include('../../components/head.php')?>
 <body>
-    <?php $location_index = "../.."; include('../../components/header-admin-komputer.php') ?>
+    <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     
     <div class="main-container p-2">
         <br><br>
