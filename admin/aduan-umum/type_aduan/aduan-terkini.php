@@ -17,38 +17,44 @@
 
 <script>
     const data1 = {
-  columns: [
-    'No',
-    'Nama Pelapor',
-    'Tarikh Aduan',
-    'Butiran Kerosakan',
-    'Lokasi Aset',
-    { label: "Lihat Aduan", field: "aduan-terkini", sort: false },
-  ],
-  rows: [
-    <?php 
-        require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '1' ORDER BY STR_TO_DATE(tarikh_aduan, '%d/%m/%Y') DESC");
-        $no = 0;
-        while($aduan= mysqli_fetch_array($aduan_sql)){
-            $no++;
+      columns: [
+        'No',
+        'Nama Pelapor',
+        'Tarikh Aduan',
+        'Butiran Kerosakan',
+        'Lokasi Aset',
+        { label: "Lihat Aduan", field: "aduan-terkini", sort: false },
+      ],
+      rows: [
+        <?php 
+            require_once('../../db/config.php');
+            $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE status_aduan = '1' ORDER BY STR_TO_DATE(tarikh_aduan, '%d/%m/%Y') DESC");
+            $no = 0;
+            $rows = [];
+            
+            while($aduan = mysqli_fetch_array($aduan_sql)){
+                $no++;
 
-            $nama_pelapor = $aduan['nama_pelapor'];
-            $tarikh_aduan = $aduan['tarikh_aduan'];
-            $butiran_kerosakan = $aduan['butiran_kerosakan'];
-            $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
-            $id_aduan = $aduan['id_aduan'];
-        echo "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+                $nama_pelapor = $aduan['nama_pelapor'];
+                $tarikh_aduan = $aduan['tarikh_aduan'];
+                $butiran_kerosakan = $aduan['butiran_kerosakan'];
+                $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
+                $id_aduan = $aduan['id_aduan'];
+                
+                $rows[] = "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"]";
+            }
+            
+            echo implode(',', $rows);
+        ?>
+      ],
+    };
 
+    console.log('Total rows:', data1.rows.length);
+    console.log('Data:', data1);
 
-        }
-    ?>
-  ],
-};
+    const instance1 = new te.Datatable(document.getElementById('datatable1'), data1);
 
-const instance1 = new te.Datatable(document.getElementById('datatable1'), data1)
-
-document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
-  instance1.search(e.target.value);
-});
+    document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
+      instance1.search(e.target.value);
+    });
 </script>

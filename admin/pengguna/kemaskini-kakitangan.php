@@ -1,4 +1,4 @@
-<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; include('../../components/head.php')?>
+xam<?php $title = "Kemaskini Kakitangan KVKS"; $location_index = "../.."; include('../../components/head.php')?>
 <body>
     <?php $location_index = "../.."; include('../../components/header-admin.php') ?>
     

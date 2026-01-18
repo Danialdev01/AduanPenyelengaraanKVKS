@@ -1,3 +1,33 @@
+<?php 
+    require_once('../../db/config.php');
+    
+    $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '0' ORDER BY tarikh_kerosakan DESC");
+    
+    $no = 0;
+    $rows = [];
+    
+    while($aduan = mysqli_fetch_array($aduan_sql)){
+        $no++;
+        $id_aset = $aduan['id_aset'];
+        $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE id_aset = '$id_aset'");
+        $aset = mysqli_fetch_array($aset_sql);
+
+        $id_kakitangan = $aduan['id_kakitangan'];
+        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE id_kakitangan = '$id_kakitangan'");
+        $kakitangan = mysqli_fetch_array($kakitangan_sql);
+
+        // CLEAN DATA - Remove newlines and extra spaces
+        $nama_kakitangan = $kakitangan ? trim(str_replace(["\n", "\r", "\t"], ' ', $kakitangan['nama_kakitangan'])) : 'N/A';
+        $jenis_aset = $aset ? trim(str_replace(["\n", "\r", "\t"], ' ', $aset['nama_aset'])) : 'N/A';
+        $waktu_bengkel_kosong = trim(str_replace(["\n", "\r", "\t"], ' ', $aduan['waktu_bengkel_kosong']));
+        $tarikh_kerosakan = trim(str_replace(["\n", "\r", "\t"], ' ', $aduan['tarikh_kerosakan']));
+        $perihal_kerosakan = trim(str_replace(["\n", "\r", "\t"], ' ', $aduan['perihal_kerosakan']));
+        $id_aduan = $aduan['id_aduan'];
+        
+        $rows[] = "[\"$no\", \"$nama_kakitangan\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"]";
+    }
+?>
+
 <center>
     <div class="aduan-data-table p-2">
         <div class="mb-3">
@@ -17,47 +47,26 @@
 
 <script>
     const data1 = {
-  columns: [
-    'No',
-    'Nama Pelapor',
-    'Jenis Aset',
-    'Waktu Bengkel Kosong',
-    'Tarikh Kerosakan',
-    'Perihal Kerosakan',
-    { label: "Lihat Aduan", field: "contact", sort: false },
-  ],
-  rows: [
-    <?php 
-        require_once('../../db/config.php');
-        $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_komputer WHERE status_aduan = '1' ORDER BY tarikh_kerosakan DESC");
-        $no = 0;
-        while($aduan = mysqli_fetch_array($aduan_sql)){
-            $no++;
-            $id_aset = $aduan['id_aset'];
-            $aset_sql = mysqli_query($connect, "SELECT * FROM aset WHERE id_aset = '$id_aset'");
-            $aset = mysqli_fetch_array($aset_sql);
+      columns: [
+        'No',
+        'Nama Pelapor',
+        'Jenis Aset',
+        'Waktu Bengkel Kosong',
+        'Tarikh Kerosakan',
+        'Perihal Kerosakan',
+        { label: "Lihat Aduan", field: "contact", sort: false },
+      ],
+      rows: [
+        <?php echo implode(',', $rows); ?>
+      ],
+    };
 
-            $id_kakitangan = $aduan['id_kakitangan'];
-            $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE id_kakitangan = '$id_kakitangan'");
-            $kakitangan = mysqli_fetch_array($kakitangan_sql);
+    console.log('Total rows:', data1.rows.length);
+    console.log('Data1:', data1);
 
-            $nama_kakitangan = $kakitangan['nama_kakitangan'];
-            $jenis_aset = $aset['nama_aset'];
-            $waktu_bengkel_kosong = $aduan['waktu_bengkel_kosong'];
-            $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
-            $perihal_kerosakan = $aduan['perihal_kerosakan'];
-            $id_aduan = $aduan['id_aduan'];
-            echo "[\"$no\", \"$nama_kakitangan\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+    const instance1 = new te.Datatable(document.getElementById('datatable1'), data1);
 
-
-        }
-    ?>
-  ],
-};
-
-const instance1 = new te.Datatable(document.getElementById('datatable1'), data1)
-
-document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
-  instance1.search(e.target.value);
-});
+    document.getElementById('datatable-search-input1').addEventListener('input', (e) => {
+      instance1.search(e.target.value);
+    });
 </script>

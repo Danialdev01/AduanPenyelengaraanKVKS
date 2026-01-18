@@ -31,21 +31,23 @@
     { label: "Delete", field: "delete", sort: false },
   ],
   rows: [
-    <?php 
-        require_once('../../db/config.php');
-        $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE status_kakitangan = '1'");
-        $no = 0;
-        while($kakitangan = mysqli_fetch_array($kakitangan_sql)){
-            $no++;
+ <?php 
+      require_once('../../db/config.php');
 
-            $nama_kakitangan = $kakitangan['nama_kakitangan'];
-            $jawatan_kakitangan = $kakitangan['jawatan_kakitangan'];
-            $id_kakitangan = $kakitangan['id_kakitangan'];
-        echo "[\"$no\", \"$nama_kakitangan\", \"$jawatan_kakitangan\", \"<a href='kemaskini-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+      $kakitangan_sql = mysqli_query($connect, "SELECT * FROM kakitangankvks WHERE status_kakitangan = '1'");
 
+      $no = 0;
 
-        }
-    ?>
+      while($kakitangan = mysqli_fetch_array($kakitangan_sql)) {
+          $no++;  
+          $nama_kakitangan = mysqli_real_escape_string($connect, $kakitangan['nama_kakitangan']);
+          $jawatan_kakitangan = mysqli_real_escape_string($connect, $kakitangan['jawatan_kakitangan']);
+          $id_kakitangan = $kakitangan['id_kakitangan'];
+        
+          echo "[\"$no\", \"$nama_kakitangan\", \"$jawatan_kakitangan\", \"<a href='kemaskini-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:blue;padding:5px;color:white'>Kemaskini</button></a>\", \"<a href='system/batal-kakitangan.php?id_kakitangan=$id_kakitangan'><button style='background-color:red;padding:5px;color:white'>Delete</button></a>\"],";
+      }
+    
+?>
   ],
 };
 
