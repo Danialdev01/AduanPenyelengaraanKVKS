@@ -38,7 +38,7 @@
                     <div class="text hidden lg:block" style="padding: 5%;padding-left:6%">
                         <br><br><br>
                         <center>
-                            <h1 class="text-left text-white mt-6 font-bold"><span style="font-size: 3rem;">ePenyelenggaraan</span> <br> <span style="font-size: 3.5rem;">KV Kuala Selangor</span></h1>
+                            <h1 class="text-left text-white mt-6 font-bold"><span style="font-size: 3rem;">e-Penyelenggaraan</span> <br> <span style="font-size: 3.5rem;">KV Kuala Selangor</span></h1>
                         </center>
                     </div>
                 </div>

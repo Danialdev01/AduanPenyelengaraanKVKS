@@ -8,7 +8,7 @@
       <div class="mb-6 md:mb-0">
 
         <p class="mb-0">
-          Sistem e Penyelenggaraan merupakan sistem yang dibangunkan untuk membantu warga KVKS terutama pensyarah dan staf dalam membuat aduan yang berlaku di kolej. Dibangunkan hasil kerjasama pelajar Teknologi Sistem Pengurusan Pangkalan Data dan Aplikasi Web di bawah Jabatan Teknologi Maklumat. Sistem ini diaplikasikan oleh Unit Penyelenggaraan  dan Pembangunan KVKS.
+          Sistem e-Penyelenggaraan memudahkan warga KV Kuala Selangor membuat aduan penyelenggaraan secara dalam talian. Sistem ini dibangunkan oleh pelajar Jabatan Teknologi Maklumat dan digunakan oleh Unit Penyelenggaraan KVKS bagi pengurusan aduan yang lebih cekap dan sistematik.
         </p>
       </div>
 
@@ -18,7 +18,14 @@
           <span>
 
             Kolej Vokasional Kuala Selangor, 45600 Bestari Jaya, Selangor<br>
-            BHA3001@moe.edu.my<br>
+            <span style="display: flex;">
+
+              <svg style="color:black;padding-right: 5px;" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16v-5.5A3.5 3.5 0 0 0 7.5 7m3.5 9H4v-5.5A3.5 3.5 0 0 1 7.5 7m3.5 9v4M7.5 7H14m0 0V4h2.5M14 7v3m-3.5 6H20v-6a3 3 0 0 0-3-3m-2 9v4m-8-6.5h1"/>
+              </svg>
+
+              BHA3001@moe.edu.my<br>
+            </span>
             <span class="pt-2 flex text-center lg:justify-start justify-center">
               <span style="padding-right: 5px;">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
