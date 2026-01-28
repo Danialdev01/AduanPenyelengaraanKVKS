@@ -24,7 +24,7 @@
         $perihal_kerosakan = trim(str_replace(["\n", "\r", "\t"], ' ', $aduan['perihal_kerosakan']));
         $id_aduan = $aduan['id_aduan'];
         
-        $rows[] = "[\"$no\", \"$nama_kakitangan\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"]";
+        $rows[] = "[\"$no\", \"$nama_kakitangan\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a>\"]";
     }
 ?>
 
@@ -54,7 +54,7 @@
         'Waktu Bengkel Kosong',
         'Tarikh Kerosakan',
         'Perihal Kerosakan',
-        { label: "Lihat Aduan", field: "contact", sort: false },
+        { label: "Tindakan", field: "contact", sort: false },
       ],
       rows: [
         <?php echo implode(',', $rows); ?>

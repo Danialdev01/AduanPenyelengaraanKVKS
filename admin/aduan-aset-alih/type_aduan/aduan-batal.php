@@ -22,9 +22,7 @@
     'Waktu Lokasi Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
-    { label: "Lihat Aduan", field: "lihat", sort: false },
-    { label: "Aktif Kembali", field: "aktif", sort: false },
-    { label: "Padam", field: "Padam", sort: false },
+    { label: "Tindakan", field: "lihat", sort: false },
   ],
   rows: [
     <?php 
@@ -37,7 +35,7 @@
             $waktu_lokasi_kosong = $aduan['waktu_lokasi_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
-        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\",\"<a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a>\"],";
+        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<div class='flex'> <div class='p-1'><a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a></div> <div class='p-1'><a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a></div> <div class='p-1'><a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button style='background-color:red;padding:5px;color:white'>Batal</button></a></div>  </div>\"],";
 
 
         }

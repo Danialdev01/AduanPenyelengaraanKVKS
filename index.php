@@ -11,9 +11,12 @@
     <style>
         
         body {
-            background: linear-gradient(-45deg, #2ecc7d,#302bc2, #1c9dcc, #3535c2);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
+            background-image: url("./src/assets/images/bg.jpeg");
+            /* background-size: 400% 400%; */
+            /* animation: gradient 15s ease infinite; */
+            background-repeat: none;
+            background-size: cover;
+            background-position: center;
             height: 100vh;
         }
 

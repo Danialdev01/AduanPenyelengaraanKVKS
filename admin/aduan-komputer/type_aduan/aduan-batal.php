@@ -23,9 +23,7 @@
     'Waktu Bengkel Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
-    { label: "Lihat Aduan", field: "contact", sort: false },
-    { label: "Aktif Kembali ", field: "contact2", sort: false },
-    { label: "Padam", field: "contact3", sort: false },
+    { label: "Tindakan", field: "contact", sort: false },
   ],
   rows: [
     <?php 
@@ -42,7 +40,7 @@
             $waktu_bengkel_kosong = $aduan['waktu_bengkel_kosong'];
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
-        echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\",\"<a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a>\", \"<a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a>\"],";
+            echo "[\"$no\", \"$jenis_aset\", \"$waktu_bengkel_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<div class='flex'><div class='p-1'><a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a></div>   <div class='p-1'><a href='system/aktif-kembali.php?id_aduan=$id_aduan'><button style='background-color:green;padding:5px;color:white'>Aktif</button></a></div>      <a href='#' onclick='return confirmDelete(\\\"system/delete-aduan.php?id_aduan=$id_aduan\\\")'><button><i class='fas fa-trash' style='color:red; font-size:20px; cursor:pointer;'></button></a></div>\"],";
 
 
         }

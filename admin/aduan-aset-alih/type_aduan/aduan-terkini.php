@@ -22,7 +22,7 @@
     'Waktu Lokasi Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
-    { label: "Lihat Aduan", field: "contact", sort: false },
+    { label: "Tindakan", field: "contact", sort: false },
   ],
   rows: [
     <?php 
@@ -37,7 +37,7 @@
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
 
-        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"],";
+        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='lihat-aduan.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a>\"],";
 
 
         }

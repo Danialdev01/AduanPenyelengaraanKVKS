@@ -22,8 +22,7 @@
     'Waktu Lokasi Kosong',
     'Tarikh Kerosakan',
     'Perihal Kerosakan',
-    { label: "Batal Aduan", field: "batal", sort: false },
-    { label: "Lihat Surat", field: "lihat", sort: false },
+    { label: "Tindakan", field: "batal", sort: false },
   ],
   rows: [
     <?php 
@@ -38,8 +37,7 @@
             $tarikh_kerosakan = $aduan['tarikh_kerosakan'];
             $perihal_kerosakan = $aduan['perihal_kerosakan'];
 
-        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<a href='./system/batal-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Batal Aduan</button></a>\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Surat</button></a>\"],";
-
+        echo "[\"$no\", \"$waktu_lokasi_kosong\", \"$tarikh_kerosakan\", \"$perihal_kerosakan\", \"<div class='flex'>  <div class='p-1'><a href='./system/batal-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Batal</button></a></div> <div class='p-1'><a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a></div>  </div>\", \"\"],";
 
         }
     ?>

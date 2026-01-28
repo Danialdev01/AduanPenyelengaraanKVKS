@@ -23,8 +23,7 @@
         'Tarikh Aduan',
         'Butiran Kerosakan',
         'Lokasi Aset',
-        { label: "Batal Aduan", field: "aduan_batal", sort: false },
-        { label: "Lihat Aduan", field: "aduan_sah", sort: false },
+        { label: "Tindakan", field: "aduan_batal", sort: false },
       ],
       rows: [
         <?php 
@@ -42,7 +41,7 @@
                 $lokasi_terperinci = $aduan['lokasi_terperinci_aduan'];
                 $id_aduan = $aduan['id_aduan'];
                 
-                $rows[] = "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\",\"<a href='./system/batal-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Batal Aduan</button></a>\", \"<a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat Aduan</button></a>\"]";
+                $rows[] = "[\"$no\", \"$nama_pelapor\", \"$tarikh_aduan\", \"$butiran_kerosakan\", \"$lokasi_terperinci\",\"<div class='flex'>  <div class='p-1'><a href='./system/batal-aduan.php?id_aduan=$id_aduan'><button style='background-color:red;padding:5px;color:white'>Batal</button></a></div>  <div class='p-1'><a href='lihat-surat.php?id_aduan=$id_aduan'><button style='background-color:blue;padding:5px;color:white'>Lihat</button></a></div> </div>\", \"\"]";
             }
             
             echo implode(',', $rows);
