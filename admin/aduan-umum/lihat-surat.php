@@ -25,7 +25,18 @@ use Dompdf\Options;
         $html = str_replace("{{ nama_pelapor }}", strtoupper($aduan['nama_pelapor']), $html);
         $html = str_replace("{{ lokasi_terperinci_aduan }}", ucfirst(strtolower($aduan['lokasi_terperinci_aduan'])), $html);
         $html = str_replace("{{ tarikh_aduan }}", ucfirst(strtolower($aduan['tarikh_aduan'])), $html);
-
+        $gambarBukti = '<div style="padding: 10px; border: 1px solid #ccc; color: #666; font-size: 12px; width: 180px; text-align: center;">Tiada bukti gambar</div>';
+        if (!empty($aduan['nama_img_ref'])) {
+            $gambarPath = __DIR__ . "/../../pengguna/aduan-umum/system/uploads/" . basename($aduan['nama_img_ref']);
+            if (file_exists($gambarPath)) {
+                $gambarData = file_get_contents($gambarPath);
+                $gambarJenis = mime_content_type($gambarPath);
+                if (in_array($gambarJenis, ['image/jpeg', 'image/png', 'image/jpg', 'image/webp'], true)) {
+                    $gambarBukti = '<img src="data:' . $gambarJenis . ';base64,' . base64_encode($gambarData) . '" alt="Bukti aduan" style="display: block; max-width: 180px; max-height: 120px; margin-bottom: 8px; border: 1px solid #ccc;" />';
+                }
+            }
+        }
+        $html = str_replace("{{ bukti_gambar }}", $gambarBukti, $html);
         $html = str_replace("{{ butiran_kerosakan }}", ucfirst(strtolower($aduan['butiran_kerosakan'])), $html);
         $html = str_replace("{{ ulasan_aduan }}", ucfirst(strtolower($aduan['ulasan_aduan'])), $html);
         $html = str_replace("{{ tarikh_tindakan_aduan }}", ucfirst(strtolower($aduan['tarikh_tindakkan_aduan'])), $html);
