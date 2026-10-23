@@ -30,7 +30,6 @@
       display: flex;
     }
     .tanda-tangan {
-      /* margin-left: 10px; */
       width: 250px;
       margin-top: 70px;
     }
@@ -91,7 +90,7 @@
   </style>
   <body style="height: 100vh">
     <div class="surat">
-      <div class="surat-laporan" style="height: 1000px">
+      <div class="surat-laporan">
         <header style="margin-top: -30px">
           <div
             style="
@@ -108,7 +107,25 @@
               alt="t"
             />
           </div>
+
+          <div
+            style="
+              width: 250px;
+              height: 50px;
+              position: fixed;
+              margin-left: 350px;
+              margin-top: 30px;
+            "
+            class="thing"
+          >
+            <img
+              src="{{ logo_kvks }}"
+              style="height: 100%; width: 100%; object-fit: contain"
+              alt="Logo KVKS"
+            />
+          </div>
         </header>
+
         <div
           style="
             position: fixed;
@@ -211,50 +228,12 @@
               <td></td>
               <td></td>
             </tr>
-
             <tr class="filler-1">
               <td style="color: white !important">l</td>
               <td></td>
               <td></td>
               <td></td>
             </tr>
-            <tr class="filler-1">
-              <td style="color: white !important">l</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="filler-1">
-              <td style="color: white !important">l</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr class="filler-1">
-              <td style="color: white !important">l</td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <!-- <tr class="filler-1">
-                        <td style="color: white !important;"> l</td>
-                        <td></td>
-                        <td></td>
-                        <td> </td>
-                    </tr>
-                    <tr class="filler-1">
-                        <td style="color: white !important;"> l</td>
-                        <td></td>
-                        <td></td>
-                        <td> </td>
-                    </tr>
-                    
-                    <tr class="filler-1">
-                        <td style="color: white !important;"> l</td>
-                        <td></td>
-                        <td></td>
-                        <td> </td>
-                    </tr> -->
             <tr>
               <td
                 class="text-white"
@@ -296,8 +275,8 @@
 
         <div class="tarikh">
           <div class="ulasan">
+            <p>NAMA :</p>
             <p>TARIKH :</p>
-            <br />
           </div>
         </div>
       </div>

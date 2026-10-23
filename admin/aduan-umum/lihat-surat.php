@@ -22,6 +22,14 @@ use Dompdf\Options;
         $aduan_sql = mysqli_query($connect, "SELECT * FROM aduan_kerosakan_umum WHERE id_aduan = '$id_aduan'");
         $aduan = mysqli_fetch_array($aduan_sql);
 
+        $logoKvks = ''; // Default kosong jika fail tak jumpa
+        $pathLogo = __DIR__ . "/../../src/assets/images/kvks.jpeg";
+            if (file_exists($pathLogo)) {
+                $logoData = file_get_contents($pathLogo);
+                $logoJenis = mime_content_type($pathLogo);
+                $logoKvks = 'data:' . $logoJenis . ';base64,' . base64_encode($logoData);
+                }
+        $html = str_replace("{{ logo_kvks }}", $logoKvks, $html);
         $html = str_replace("{{ nama_pelapor }}", strtoupper($aduan['nama_pelapor']), $html);
         $html = str_replace("{{ lokasi_terperinci_aduan }}", ucfirst(strtolower($aduan['lokasi_terperinci_aduan'])), $html);
         $html = str_replace("{{ tarikh_aduan }}", ucfirst(strtolower($aduan['tarikh_aduan'])), $html);
